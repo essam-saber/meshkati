@@ -24,8 +24,8 @@ class PagesController extends Controller
         $sales = Sale::where('year', Carbon::now()->year)->orWhere('year', $lastYear)->ascOrder()->get()->groupBy(function($sale){
             return $sale->year;
         });
-        $lastYearSales = Arr::get($sales, $lastYear);
-        $currentYearSales = Arr::get($sales, $currentYear);
+        $lastYearSales = Arr::get($sales, $lastYear) ?? collect();
+        $currentYearSales = Arr::get($sales, $currentYear) ?? collect();
         return view('pages.dashboard', compact(
             'page_title',
             'page_description',
