@@ -14,16 +14,16 @@
                                 <div class="">
                                     <div class="input-group date">
                                         <input type="text"
-                                               class="form-control {{$errors->has('sales_year') ? 'is-invalid': ''}}"
-                                               name="'" required id="kt_datepicker_1" readonly="readonly"
+                                               class="form-control {{$errors->has('first_date') ? 'is-invalid': ''}}"
+                                               name="first_date" required id="kt_datepicker_1" readonly="readonly"
                                                placeholder="Sales Year">
                                         <div class="input-group-append">
 															<span class="input-group-text">
 																<i class="la la-calendar"></i>
 															</span>
                                         </div>
-                                        @if($errors->has('sales_year'))
-                                            <div class="invalid-feedback">{{$errors->first('sales_year')}}</div>
+                                        @if($errors->has('first_date'))
+                                            <div class="invalid-feedback">{{$errors->first('first_date')}}</div>
                                         @endif
                                     </div>
                                 </div>
@@ -34,16 +34,16 @@
                                 <div class="">
                                     <div class="input-group date">
                                         <input type="text"
-                                               class="form-control {{$errors->has('budget_date') ? 'is-invalid': ''}}"
-                                               name="budget_date" required id="kt_datepicker_2" readonly="readonly"
+                                               class="form-control {{$errors->has('last_date') ? 'is-invalid': ''}}"
+                                               name="last_date" required id="kt_datepicker_2" readonly="readonly"
                                                placeholder="Compared with a year">
                                         <div class="input-group-append">
 															<span class="input-group-text">
 																<i class="la la-calendar"></i>
 															</span>
                                         </div>
-                                        @if($errors->has('budget_date'))
-                                            <div class="invalid-feedback">{{$errors->first('budget_date')}}</div>
+                                        @if($errors->has('last_date'))
+                                            <div class="invalid-feedback">{{$errors->first('last_date')}}</div>
                                         @endif
                                     </div>
                                 </div>
@@ -116,70 +116,54 @@
                                     <th colspan="2">Sales</th>
                                     <th colspan="2">G.Profit</th>
                                     <th colspan="2">% G.P</th>
-                                    <th colspan="2">Net Profit Comm</th>
+                                    <th colspan="2">N.Profit</th>
+                                    <th colspan="2">% N.P</th>
                                 </tr>
                                 <tr bgcolor="#d3d3d3" class="text-center">
                                     <th></th>
-
                                     <th>Monthly</th>
                                     <th>Cumm</th>
                                     <th>Monthly</th>
                                     <th>Cumm</th>
                                     <th>Monthly</th>
                                     <th>Cumm</th>
-                                    <th colspan="2"></th>
+                                    <th>Monthly</th>
+                                    <th>Cumm</th>
+                                    <th>Monthly</th>
+                                    <th>Cumm</th>
                                 </thead>
                                 <tbody>
                                 <tbody>
-                                {{--                                @php--}}
-                                {{--                                    $totalGprofit = 0;--}}
-                                {{--                                    $totalGpPercentage = 0;--}}
-                                {{--                                    $totalNetProfit = 0;--}}
-                                {{--                                    $totalNetProfitPercentage = 0;--}}
-                                {{--                                    $lastTotalGpPercentage = 0;--}}
-                                {{--                                    $lastNetProfitComm = 0;--}}
-                                {{--                                @endphp--}}
                                 @foreach($actualSales as $key => $sale)
-                                    {{--                                    @php--}}
-                                    {{--                                        $sales = $sale->net;--}}
-                                    {{--                                        $salesCumm = $key === 0 ? $sale->net : $sale->net + $currentYearSales[$key - 1]->net;--}}
-                                    {{--                                        $gProfit = $sale->net - $sale->expenses;--}}
-                                    {{--                                        $totalGprofit+= $gProfit;--}}
-                                    {{--                                        $gProfitCumm = $key === 0 ? $gProfit : $gProfit + ($currentYearSales[$key-1]->net - $currentYearSales[$key-1]->expenses);--}}
-                                    {{--                                        $gpPercentage = round($gProfit / $sales * 100,2);--}}
-                                    {{--                                        $totalGpPercentage += $gpPercentage;--}}
-                                    {{--                                        $gpPercentageCumm = $key === 0 ? $gpPercentage : round($gProfitCumm / $salesCumm * 100,2);--}}
-                                    {{--                                        $lastTotalGpPercentage = $gpPercentageCumm;--}}
-                                    {{--                                        $netProfit = $gProfit;--}}
-                                    {{--                                        $netProfitPercentage = round($netProfit / $salesCumm * 100,2);--}}
-                                    {{--                                        $lastNetProfitComm = $netProfitPercentage;--}}
-                                    {{--                                    @endphp--}}
                                     <tr>
                                         <td>{{$sale->monthName}}</td>
-                                        <td>{{$sale->net}}</td>
+                                        <td>{{$sale->net_sales}}</td>
                                         <td>{{$sale->net_sales_cum}}</td>
-                                        <td>{{$sale->g_profit}}</td>
-                                        <td>{{$sale->g_profit_cum}}</td>
-                                        <td>{{$sale->g_profit_percentage}}%</td>
-                                        <td>{{$sale->g_profit_cum_percentage}}%</td>
+                                        <td>{{$sale->gross_profit}}</td>
+                                        <td>{{$sale->gross_profit_cum}}</td>
+                                        <td>{{$sale->rounded_gross_profit_percentage}}%</td>
+                                        <td>{{$sale->rounded_gross_profit_cum_percentage}}%</td>
                                         <td>{{$sale->net_profit}}</td>
-                                        <td>{{$sale->net_profit_percentage}}%</td>
+                                        <td>{{$sale->net_profit_cum}}</td>
+                                        <td>{{$sale->rounded_net_profit_percentage}}%</td>
+                                        <td>{{$sale->rounded_net_profit_cum_percentage}}%</td>
                                     </tr>
                                 @endforeach
                                 <tr bgcolor="#d3d3d3">
                                     <td><strong>Total</strong></td>
-                                    <td><strong>{{$actualSales->sum('net')}}</strong></td>
+                                    <td><strong>{{$actualSales->sum('net_sales')}}</strong></td>
                                     <td></td>
-                                    <td><strong>{{$actualSales->sum('g_profit')}}</strong></td>
+                                    <td><strong>{{$actualSales->sum('gross_profit')}}</strong></td>
                                     <td></td>
                                     <td></td>
                                     <td>
-                                        <strong>{{round($actualSales->sum('g_profit') / $actualSales->sum('net') * 100,2)}}
+                                        <strong>{{round($actualSales->sum('gross_profit') / $actualSales->sum('net_sales') * 100,0)}}
                                             %</strong></td>
                                     <td></td>
-                                    <td><strong>{{$actualSales->values()->last()->net_profit}}%</strong></td>
+                                    <td><strong>{{$actualSales->sum('net_profit')}}</strong></td>
+                                    <td></td>
+                                    <td>{{round($actualSales->sum('net_profit') / $actualSales->sum('net_sales') * 100,0)}}%</td>
                                 </tr>
-                                </tbody>
                                 </tbody>
                             </table>
                         </div>
@@ -196,67 +180,53 @@
                                     <th colspan="2">Sales</th>
                                     <th colspan="2">G.Profit</th>
                                     <th colspan="2">% G.P</th>
-                                    <th colspan="2">Net Profit Comm</th>
+                                    <th colspan="2">N.Profit</th>
+                                    <th colspan="2">% N.P</th>
                                 </tr>
                                 <tr bgcolor="#d3d3d3" class="text-center">
                                     <th></th>
-
                                     <th>Monthly</th>
                                     <th>Cumm</th>
                                     <th>Monthly</th>
                                     <th>Cumm</th>
                                     <th>Monthly</th>
                                     <th>Cumm</th>
-                                    <th colspan="2"></th>
+                                    <th>Monthly</th>
+                                    <th>Cumm</th>
+                                    <th>Monthly</th>
+                                    <th>Cumm</th>
                                 </thead>
                                 <tbody>
-                                {{--                                    @php--}}
-                                {{--                                        $totalGprofit = 0;--}}
-                                {{--                                        $totalGpPercentage = 0;--}}
-                                {{--                                        $totalNetProfit = 0;--}}
-                                {{--                                        $totalNetProfitPercentage = 0;--}}
-                                {{--                                        $lastTotalGpPercentage = 0;--}}
-                                {{--                                        $lastNetProfitComm = 0;--}}
-                                {{--                                    @endphp--}}
+                                <tbody>
                                 @foreach($budgetSales as $key => $sale)
-                                    {{--                                    @php--}}
-                                    {{--                                        $sales = $sale->net;--}}
-                                    {{--                                        $salesCumm = $key === 0 ? $sale->net : $sale->net + $currentYearBudget[$key - 1]->net;--}}
-                                    {{--                                        $gProfit = $sale->net - $sale->expenses;--}}
-                                    {{--                                        $totalGprofit+= $gProfit;--}}
-                                    {{--                                        $gProfitCumm = $key === 0 ? $gProfit : $gProfit + ($currentYearBudget[$key-1]->net - $currentYearBudget[$key-1]->expenses);--}}
-                                    {{--                                        $gpPercentage = round($gProfit / $sales * 100,2);--}}
-                                    {{--                                        $totalGpPercentage += $gpPercentage;--}}
-                                    {{--                                        $gpPercentageCumm = $key === 0 ? $gpPercentage : round($gProfitCumm / $salesCumm * 100,2);--}}
-                                    {{--                                        $lastTotalGpPercentage = $gpPercentageCumm;--}}
-                                    {{--                                        $netProfit = $gProfit;--}}
-                                    {{--                                        $netProfitPercentage = round($netProfit / $salesCumm * 100,2);--}}
-                                    {{--                                        $lastNetProfitComm = $netProfitPercentage;--}}
-                                    {{--                                    @endphp--}}
                                     <tr>
                                         <td>{{$sale->monthName}}</td>
-                                        <td>{{$sale->net}}</td>
+                                        <td>{{$sale->net_sales}}</td>
                                         <td>{{$sale->net_sales_cum}}</td>
-                                        <td>{{$sale->g_profit}}</td>
-                                        <td>{{$sale->g_profit_cum}}</td>
-                                        <td>{{$sale->g_profit_percentage}}%</td>
-                                        <td>{{$sale->g_profit_cum_percentage}}%</td>
+                                        <td>{{$sale->gross_profit}}</td>
+                                        <td>{{$sale->gross_profit_cum}}</td>
+                                        <td>{{$sale->rounded_gross_profit_percentage}}%</td>
+                                        <td>{{$sale->rounded_gross_profit_cum_percentage}}%</td>
                                         <td>{{$sale->net_profit}}</td>
-                                        <td>{{$sale->net_profit_percentage}}%</td>
+                                        <td>{{$sale->net_profit_cum}}</td>
+                                        <td>{{$sale->rounded_net_profit_percentage}}%</td>
+                                        <td>{{$sale->rounded_net_profit_cum_percentage}}%</td>
                                     </tr>
                                 @endforeach
                                 <tr bgcolor="#d3d3d3">
                                     <td><strong>Total</strong></td>
-                                    <td><strong>{{$budgetSales->sum('net')}}</strong></td>
+                                    <td><strong>{{$budgetSales->sum('net_sales')}}</strong></td>
                                     <td></td>
-                                    <td><strong>{{$budgetSales->sum('g_profit')}}</strong></td>
+                                    <td><strong>{{$budgetSales->sum('gross_profit')}}</strong></td>
                                     <td></td>
                                     <td></td>
                                     <td>
-                                        <strong>{{round($budgetSales->sum('g_profit') / $budgetSales->sum('net') * 100,2)}}
+                                        <strong>{{round($budgetSales->sum('gross_profit') / $budgetSales->sum('net_sales') * 100,0)}}
                                             %</strong></td>
                                     <td></td>
-                                    <td><strong>{{$budgetSales->values()->last()->net_profit}}%</strong></td>
+                                    <td><strong>{{$budgetSales->sum('net_profit')}}</strong></td>
+                                    <td></td>
+                                    <td>{{round($budgetSales->sum('net_profit') / $budgetSales->sum('net_sales') * 100,0)}}%</td>
                                 </tr>
                                 </tbody>
                             </table>

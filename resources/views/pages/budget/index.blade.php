@@ -43,7 +43,7 @@
                         <td>{{$sale->cash}}</td>
                         <td>{{$sale->total}}</td>
                         <td>{{$sale->returns}}</td>
-                        <td>{{$sale->net}}</td>
+                        <td>{{$sale->net_sales}}</td>
                         <td>
                             <a href="{{route('budget.edit', $sale->id)}}" class="btn btn-xs btn-info  p-2 pl-3"><i class="fa fa-pen"></i></a>
                             <a  href="#" data-sale-id="{{$sale->id}}" class="delete-sale btn btn-xs btn-danger  p-2 pl-3"><i class="fa fa-trash"></i></a>

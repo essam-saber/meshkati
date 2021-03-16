@@ -3,19 +3,18 @@
 
 {{-- Content --}}
 @section('content')
-    <!--begin::Card-->
-    <div class="card card-custom">
+    <div class="card card-custom overflow-hidden">
         <div class="card-header">
             <div class="card-title">
 											<span class="card-icon">
 												<i class="flaticon2-layers text-primary"></i>
 											</span>
-                <h3 class="card-label">Monthly Sales</h3>
+                <h3 class="card-label">Inventory</h3>
             </div>
             <div class="card-toolbar">
                 <!--end::Dropdown-->
                 <!--begin::Button-->
-                <a href="{{route('sales.create')}}" class="btn btn-primary font-weight-bolder">
+                <a href="{{route('inventory.create')}}" class="btn btn-primary font-weight-bolder">
                     <i class="la la-plus"></i>New Record</a>
                 <!--end::Button-->
             </div>
@@ -24,36 +23,34 @@
             <!--begin: Datatable-->
             <table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
                 <thead>
-                <tr >
+                <tr>
                     <th>Year</th>
                     <th>Month</th>
-                    <th>Credit</th>
-                    <th>Cash</th>
-                    <th>Total</th>
-                    <th>Returns</th>
-                    <th>Net</th>
-                    <th>Cost of Sales</th>
-                    <th>Expenses</th>
+                    <th>Goods Ready For Sale</th>
+                    <th>Finished Products</th>
+                    <th>Semi-Finished Products</th>
+                    <th>Work In Process</th>
+                    <th>Raw Materials</th>
+                    <th>Spare Parts & Others</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($sales as $sale)
+                @foreach($inventories as $inventory)
                     <tr>
-                        <td>{{$sale->year}}</td>
-                        <td>{{$sale->monthName}}</td>
-                        <td>{{$sale->credit}}</td>
-                        <td>{{$sale->cash}}</td>
-                        <td>{{$sale->total}}</td>
-                        <td>{{$sale->returns}}</td>
-                        <td>{{$sale->net_sales}}</td>
-                        <td>{{$sale->cost_of_sales}}</td>
-                        <td>{{$sale->expenses}}</td>
+                        <td>{{$inventory->year}}</td>
+                        <td>{{$inventory->monthName}}</td>
+                        <td>{{$inventory->goods_ready_for_sale}}</td>
+                        <td>{{$inventory->finished_products}}</td>
+                        <td>{{$inventory->semi_finished_products}}</td>
+                        <td>{{$inventory->work_in_process}}</td>
+                        <td>{{$inventory->raw_materials}}</td>
+                        <td>{{$inventory->spare_parts_and_others}}</td>
                         <td>
-                            <a href="{{route('sales.edit', $sale->id)}}" class="btn btn-xs btn-info p-2 pl-3"><i class="fa fa-pen"></i></a>
-                            <a  href="#" data-sale-id="{{$sale->id}}" class="delete-sale btn btn-xs btn-danger p-2 pl-3"><i class="fa fa-trash"></i></a>
+                            <a href="{{route('inventory.edit', $inventory->id)}}" class="btn btn-xs btn-info  p-2 pl-3"><i class="fa fa-pen"></i></a>
+                            <a  href="#" data-sale-id="{{$inventory->id}}" class="delete-sale btn btn-xs btn-danger  p-2 pl-3"><i class="fa fa-trash"></i></a>
 
-                            <form style="display: none" method="post" action="{{route('sales.destroy', $sale->id)}}" id="delete-form-{{$sale->id}}">
+                            <form style="display: none" method="post" action="{{route('inventory.destroy', $inventory->id)}}" id="delete-form-{{$inventory->id}}">
                                 @csrf()
                                 @method('delete')
 
@@ -64,15 +61,16 @@
                 </tbody>
             </table>
             <!--end: Datatable-->
+            <div class="row justify-content-center py-8 px-8 py-md-10 px-md-0">
+            </div>
+
+
         </div>
     </div>
-    <!--end::Card-->
-    <!--begin::Card-->
 
-    <!--end::Card-->
 @endsection
-@section('styles')
 
+@section('styles')
     <style>
         .footer{
             position: absolute;
@@ -86,15 +84,14 @@
 @section('scripts')
     <script src="{{asset('plugins/custom/datatables/datatables.bundle.js')}}"></script>
 
-{{--    <script src="{{asset('js/pages/crud/datatables/basic/paginations.js')}}"></script>--}}
-
     <script>
         $(".delete-sale").on("click", function(){
-           const saleId = $(this).data('sale-id');
-           if(confirm('Are you sure?!')) {
-               $(`#delete-form-${saleId}`).submit();
-           }
+            const saleId = $(this).data('sale-id');
+            if(confirm('Are you sure?!')) {
+                $(`#delete-form-${saleId}`).submit();
+            }
         })
+
         var table = $('#kt_datatable');
 
         // begin first table
@@ -107,8 +104,9 @@
         $(function(){
             $('.sorting_asc').addClass('sorting_desc');
         });
-    </script>
 
+
+    </script>
     @if(session()->has('success'))
         <script>
 

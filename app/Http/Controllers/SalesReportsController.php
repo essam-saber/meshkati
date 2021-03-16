@@ -38,20 +38,20 @@ class SalesReportsController extends Controller
 
     public function salesAndGPBudget(Request $request)
     {
-        $salesYear = $request->sales_year ?? Carbon::now()->year;
-        $budgetYear = $request->budget_year??Carbon::now()->year;
-        $actualSales = Sale::where('year', $salesYear)->ascOrder()->get();
-        $budgetSales = Sale::where('year', $budgetYear)->ascOrder()->get();
+        $firstDate = $request->first_date ?? Carbon::now()->year;
+        $lastDate = $request->second_date??Carbon::now()->year;
+        $actualSales = Sale::where('year', $firstDate)->ascOrder()->get();
+        $budgetSales = Sale::where('year', $lastDate)->ascOrder()->get();
         if($request->report_type === self::ACTUAL_WITH_BUDGET) {
-            $budgetSales = Sale::where('year', $budgetYear)->ascOrder()->get();
+            $budgetSales = Budget::where('year', $lastDate)->ascOrder()->get();
         }
         return view('pages.reports.sales-gp-budget')->with([
             'page_title' => 'Sales Reports',
             'page_description' => 'Display Sales Reports And Filtering Them',
             'actualSales' => $actualSales,
             'budgetSales' => $budgetSales,
-            'salesYear' => $salesYear,
-            'budgetYear' => $budgetYear
+            'salesYear' => $firstDate,
+            'budgetYear' => $lastDate
         ]);
     }
 

@@ -25,7 +25,7 @@ class CreateInventoriesTable extends Migration
             $table->decimal('spare_parts_and_others')->default(0.00);
             $table->decimal('inventory_provision')->default(0.00);
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('company_id');
+            $table->unsignedBigInteger('company_id')->nullable();
             $table->timestamps();
         });
     }

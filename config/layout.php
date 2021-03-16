@@ -173,89 +173,20 @@ return [
     ],
 
     // Extras
-//    'extras' => [
-//
-//        // Search
-//        'search' => [
-//            'display' => true,
-//            'layout' => 'dropdown', // offcanvas, dropdown
-//            'offcanvas' => [
-//                'direction' => 'right'
-//            ],
-//        ],
-//
-//        // Notifications
-//        'notifications' => [
-//            'display' => true,
-//            'layout' => 'dropdown', // offcanvas, dropdown
-//            'dropdown' => [
-//                'style' => 'dark' // light|dark
-//            ],
-//            'offcanvas' => [
-//                'direction' => 'right'
-//            ]
-//        ],
-//
-//        // Quick Actions
-//        'quick-actions' => [
-//            'display' => true,
-//            'layout' => 'dropdown', // offcanvas, dropdown
-//            'dropdown' => [
-//                'style' => 'dark' // light|dark
-//            ],
-//            'offcanvas' => [
-//                'direction' => 'right'
-//            ]
-//        ],
-//
-//        // User
-//        'user' => [
-//            'display' => true,
-//            'layout' => 'offcanvas', // offcanvas, dropdown
-//            'dropdown' => [
-//                'style' => 'dark' // light|dark
-//            ],
-//            'offcanvas' => [
-//                'direction' => 'right'
-//            ]
-//        ],
-//
-//        // Languages
-//        'languages' => [
-//            'display' => true
-//        ],
-//
-//        // Cart
-//        'cart' => [
-//            'display' => true,
-//            'dropdown' => [
-//                'style' => 'dark' // light|dark
-//            ]
-//        ],
-//
-//        // Quick Panel
-//        'quick-panel' => [
-//            'display' => true,
-//            'offcanvas' => [
-//                'direction' => 'right'
-//            ]
-//        ],
-//
-//        // Chat
-//        'chat' => [
-//            'display' => true,
-//        ],
-//
-//        // Page Toolbar
-//        'toolbar' => [
-//            'display' => true
-//        ],
-//
-//        // Scrolltop
-//        'scrolltop' => [
-//            'display' => true
-//        ]
-//    ],
+    'extras' => [
+
+
+        'user' => [
+            'display' => true,
+            'layout' => 'dropdown', // offcanvas, dropdown
+            'dropdown' => [
+                'style' => 'dark' // light|dark
+            ],
+            'offcanvas' => [
+                'direction' => 'right'
+            ]
+        ],
+    ],
 
     // Demo Assets
     'resources' => [

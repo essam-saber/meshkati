@@ -53,7 +53,7 @@
                    </div>
                 </div>
             </form>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" id="">
                 <div class="col-md-9">
                     <div class="d-flex justify-content-between pb-10 pb-md-20 flex-column flex-md-row">
                         <h1 class="display-4 font-weight-boldest mb-10">MISHKATI TRADING CO</h1>
@@ -85,7 +85,7 @@
             </div>
             <!-- end: Invoice header-->
             <!-- begin: Invoice body-->
-            <div class="row p-5">
+            <div class="row p-5" id="tables">
 
 
                 @if(sizeof($secondYearSales))
@@ -111,7 +111,7 @@
                                             <td>{{$sale->credit}}</td>
                                             <td>{{$sale->total}}</td>
                                             <td class="text-danger">{{$sale->returns}}</td>
-                                            <td>{{$sale->net}}</td>
+                                            <td>{{$sale->net_sales}}</td>
                                         </tr>
                                     @endforeach
                                     <tr bgcolor="#d3d3d3">
@@ -120,7 +120,7 @@
                                         <th>{{$secondYearSales->sum('credit')}}</th>
                                         <th>{{$secondYearSales->sum('total')}}</th>
                                         <th class="text-danger">{{$secondYearSales->sum('returns')}}</th>
-                                        <th>{{$secondYearSales->sum('net')}}</th>
+                                        <th>{{$secondYearSales->sum('net_sales')}}</th>
                                     </tr>
                                     <tr bgcolor="#d3d3d3">
                                         <th>%</th>
@@ -140,7 +140,7 @@
                         <div class="col-md-6">
                             <div class="table-responsive">
                                 <p class="text-center"><strong>{{$firstYear}}</strong></p>
-                                <table class="table table-bordered">
+                                <table class="table table-bordered" id="">
                                     <thead>
                                     <tr bgcolor="#d3d3d3">
                                         <th>{{$firstYear}}</th>
@@ -159,7 +159,7 @@
                                             <td>{{$sale->credit}}</td>
                                             <td>{{$sale->total}}</td>
                                             <td class="text-danger">{{$sale->returns}}</td>
-                                            <td>{{$sale->net}}</td>
+                                            <td>{{$sale->net_sales}}</td>
                                         </tr>
                                     @endforeach
                                     <tr bgcolor="#d3d3d3">
@@ -168,14 +168,14 @@
                                         <th>{{$firstYearSales->sum('credit')}}</th>
                                         <th>{{$firstYearSales->sum('total')}}</th>
                                         <th class="text-danger">{{$firstYearSales->sum('returns')}}</th>
-                                        <th>{{$firstYearSales->sum('net')}}</th>
+                                        <th>{{$firstYearSales->sum('net_sales')}}</th>
                                     </tr>
                                     <tr bgcolor="#d3d3d3">
                                         <th>%</th>
-                                        <th>{{round(($firstYearSales->sum('cash') / $firstYearSales->sum('total')) * 100,2)}}%</th>
-                                        <th>{{round(($firstYearSales->sum('credit') / $firstYearSales->sum('total')) * 100,2)}}%</th>
+                                        <th>{{round(($firstYearSales->sum('cash') / $firstYearSales->sum('total')) * 100,0)}}%</th>
+                                        <th>{{round(($firstYearSales->sum('credit') / $firstYearSales->sum('total')) * 100,0)}}%</th>
                                         <th>100%</th>
-                                        <th class="text-danger">{{round(($firstYearSales->sum('returns') / $firstYearSales->sum('total')) * 100,2)}}%</th>
+                                        <th class="text-danger">{{round(($firstYearSales->sum('returns') / $firstYearSales->sum('total')) * 100,0)}}%</th>
                                         <th></th>
                                     </tr>
                                     </tbody>
@@ -190,6 +190,7 @@
                     <div class="d-flex justify-content-between">
                         <button type="button" class="btn btn-light-primary font-weight-bold" onclick="window.print();">Download Report</button>
                         <button type="button" class="btn btn-primary font-weight-bold" onclick="window.print();">Print Report</button>
+                        <button type="button" class="btn btn-success font-weight-bold" id="exportBtn"><i class="fa fa-file-excel"></i>Export to Excel</button>
                     </div>
                 </div>
             </div>
@@ -198,9 +199,15 @@
         </div>
     </div>
 @endsection
+@section('styles')
 
+    <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+
+@endsection
 {{-- Scripts Section --}}
 @section('scripts')
+{{--        <script type="text/javascript" src="//www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+--}}
     <script>
         jQuery(document).ready(function() {
             $('#kt_datepicker_1').datepicker({
@@ -223,6 +230,17 @@
                 // endDate: new Date(),
                 autoclose: true,
 
+            });
+
+            $(document).ready(function () {
+                $("#exportBtn1").click(function(){
+                    TableToExcel.convert(document.getElementById("tables"), {
+                        name: `${(new Date()).toDateString()}.xlsx`,
+                        sheet: {
+                            name: "Sheet1"
+                        }
+                    });
+                });
             });
 
 

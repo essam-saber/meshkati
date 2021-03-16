@@ -17,7 +17,6 @@ class PagesController extends Controller
         $lastYear = Carbon::now()->subYear()->year;
         $page_title = 'Dashboard';
         $page_description = 'Some description for the page';
-        $sales = Sale::where('year', Carbon::now()->year)->ascOrder()->get();
         $budgets = Budget::where('year', Carbon::now()->year)->ascOrder()->get();
 
         $months = $this->getMonthsNames();
@@ -26,6 +25,10 @@ class PagesController extends Controller
         });
         $lastYearSales = Arr::get($sales, $lastYear) ?? collect();
         $currentYearSales = Arr::get($sales, $currentYear) ?? collect();
+        $currentYearSalesMonths = $currentYearSales->map(function($sale){
+           return Carbon::parse($sale->year.'-'.$sale->month)->monthName;
+        })->toArray();
+
         return view('pages.dashboard', compact(
             'page_title',
             'page_description',
@@ -35,7 +38,8 @@ class PagesController extends Controller
             'currentYear',
             'lastYear',
             'lastYearSales',
-            'currentYearSales'
+            'currentYearSales',
+            'currentYearSalesMonths'
         ));
     }
 

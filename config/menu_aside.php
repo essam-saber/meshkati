@@ -21,41 +21,62 @@ return [
             'bullet' => 'dot',
             'submenu' => [
                 [
-                    'title' => 'Sales',
-                    'bullet' => 'dot',
-                    'submenu' => [
-                        [
-                            'title' => 'Browse Actual Sales',
-                            'page' => 'sales'
-                        ],
-                        [
-                            'title' => 'Browse Sales Budget',
-                            'page' => 'budget'
-                        ],
-
-                    ]
+                    'title' => 'Browse Actual Sales',
+                    'page' => 'sales'
                 ],
                 [
-                    'title' => 'Reports',
-                    'bullet' => 'dot',
-                    'submenu' => [
-                        [
-                            'title' => 'Sales Analysis & Comparative',
-                            'page' => 'reports/sales-analysis-and-comparative'
-                        ],
-                        [
-                            'title' => 'Sales & GP Budget',
-                            'page' => 'reports/sales-and-gp-budget'
-                        ],
-//                        [
-//                            'title' => 'Sales & GP Budget Prior Year',
-//                            'page' => 'reports/sales-and-gp-budget-prior-year'
-//                        ],
-                    ]
+                    'title' => 'Browse Sales Budget',
+                    'page' => 'budget'
+                ],
+
+            ]
+        ],
+        [
+            'section' => 'inventory'
+        ],
+        [
+            'title' => 'Inventory ',
+            'icon' => 'media/svg/icons/Media/Equalizer.svg',
+            'root' => true,
+            'bullet' => 'dot',
+            'submenu' => [
+                [
+                    'title' => 'Aging of Debit',
+                    'page' => '/aging-of-debit'
+                ],
+                [
+                    'title' => 'Inventory',
+                    'page' => '/inventory'
+                ],
+                [
+                    'title' => 'Summary Report',
+                    'page' => '#'
                 ],
             ],
         ],
-
+        [
+            'section' => 'reports'
+        ],
+        [
+            'title' => 'Reports',
+            'icon' => 'media/svg/icons/Media/Equalizer.svg',
+            'root' => true,
+            'bullet' => 'dot',
+            'submenu' => [
+                [
+                    'title' => 'Sales Analysis & Comparative',
+                    'page' => 'reports/sales-analysis-and-comparative'
+                ],
+                [
+                    'title' => 'Sales & GP Budget',
+                    'page' => 'reports/sales-and-gp-budget'
+                ],
+                [
+                    'title' => 'Summary',
+                    'page' => 'reports/summary'
+                ],
+            ]
+        ],
 
     ]
 

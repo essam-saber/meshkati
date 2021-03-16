@@ -6,11 +6,11 @@
     <!--begin::Card-->
     <div class="card card-custom gutter-b example example-compact">
         <div class="card-header">
-            <h3 class="card-title">Insert the sales info for this month</h3>
+            <h3 class="card-title">Edit goods state </h3>
 
         </div>
         <!--begin::Form-->
-        <form class="form" method="post" action="{{route('sales.update', $sale->id)}}">
+        <form class="form" method="post" action="{{route('inventory.update', $inventory->id)}}">
             @csrf()
             @method('put')
             <div class="card-body">
@@ -18,7 +18,7 @@
                     <label class="col-form-label text-left col-lg-3 col-sm-12">Select Month </label>
                     <div class="col-lg-4 col-md-9 col-sm-12">
                         <div class="input-group date">
-                            <input value="{{$sale->month}}-{{$sale->year}}"  type="text" class="form-control {{$errors->has('month') ? 'is-invalid': ''}}" name="month" required id="kt_datepicker_1" readonly="readonly" placeholder="Select date">
+                            <input value="{{$inventory->month.'-'.$inventory->year}}" type="text" class="form-control {{$errors->has('month') ? 'is-invalid': ''}}" name="month" required id="kt_datepicker_1" readonly="readonly" placeholder="Select date">
                             <div class="input-group-append">
 															<span class="input-group-text">
 																<i class="la la-calendar"></i>
@@ -33,136 +33,117 @@
 
                 </div>
                 <div class="form-group row">
-                    <label class="col-form-label text-left col-lg-3 col-sm-12">Cash</label>
-
+                    <label class="col-form-label text-left col-lg-3 col-sm-12">Goods Ready For Sale</label>
                     <div class="col-lg-4 col-md-9 col-sm-12">
                         <div class="input-group">
-                            <input id="cash" type="number" required name="cash" min="0" value="{{$sale->cash}}" step=".01" class="{{$errors->has('cash') ? 'is-invalid': ''}} form-control" aria-label="Amount (to the nearest SAR)">
-
+                            <input type="number" required name="goods_ready_for_sale" min="0" value="{{$inventory->goods_ready_for_sale}}" step=".01" class="form-control" aria-label="Amount (to the nearest SAR)">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">SAR</span>
-
                             </div>
-                            @if($errors->has('cash'))
-                                <div class="invalid-feedback">{{$errors->first('cash')}}</div>
+                            @if($errors->has('goods_ready_for_sale'))
+                                <div class="invalid-feedback">{{$errors->first('goods_ready_for_sale')}}</div>
                             @endif
                         </div>
                     </div>
-
-
-                </div>
-                <div class="form-group row">
-                    <label class="col-form-label text-left col-lg-3 col-sm-12">Credit</label>
-
-                    <div class="col-lg-4 col-md-9 col-sm-12">
-                        <div class="input-group">
-                            <input id="credit" type="number" required name="credit" min="0" value="{{$sale->credit}}" step=".01" class="form-control {{$errors->has('credit') ? 'is-invalid': ''}} " aria-label="Amount (to the nearest SAR)">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">SAR</span>
-
-                            </div>
-                            @if($errors->has('credit'))
-                                <div class="invalid-feedback">{{$errors->first('credit')}}</div>
-                            @endif
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-                <div class="form-group row">
-                    <label class="col-form-label text-left col-lg-3 col-sm-12">Total</label>
-
-                    <div class="col-lg-4 col-md-9 col-sm-12">
-                        <div class="input-group">
-                            <input id="total" required value="{{$sale->total}}" name="total" readonly type="text" class="form-control {{$errors->has('total') ? 'is-invalid': ''}}" aria-label="Amount (to the nearest SAR)">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">SAR</span>
-
-                            </div>
-                            @if($errors->has('total'))
-                                <div class="invalid-feedback">{{$errors->first('total')}}</div>
-                            @endif
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="form-group row ">
-                    <label class="col-form-label text-left col-lg-3 col-sm-12">Returns</label>
-
-                    <div class="col-lg-4 col-md-9 col-sm-12">
-                        <div class="input-group">
-                            <input id="returns" type="number" required name="returns" min="0" value="{{$sale->returns}}" step=".01"  class="form-control border-warning {{$errors->has('returns') ? 'is-invalid': ''}}" aria-label="Amount (to the nearest SAR)">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">SAR</span>
-
-                            </div>
-                            @if($errors->has('returns'))
-                                <div class="invalid-feedback">{{$errors->first('returns')}}</div>
-                            @endif
-                        </div>
-                    </div>
-
-
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-form-label text-left col-lg-3 col-sm-12">Net</label>
-
+                    <label class="col-form-label text-left col-lg-3 col-sm-12">Finished Products</label>
                     <div class="col-lg-4 col-md-9 col-sm-12">
                         <div class="input-group">
-                            <input type="text" required value="{{$sale->net_sales}}" readonly name="net_sales" id="net" class="form-control {{$errors->has('net_sales') ? 'is-invalid': ''}}" aria-label="Amount (to the nearest SAR)">
+                            <input type="number" required name="finished_products" min="0" value="{{$inventory->finished_products}}" step=".01" class="form-control" aria-label="Amount (to the nearest SAR)">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">SAR</span>
-
                             </div>
-                            @if($errors->has('net_sales'))
-                                <div class="invalid-feedback">{{$errors->first('net_sales')}}</div>
+                            @if($errors->has('finished_products'))
+                                <div class="invalid-feedback">{{$errors->first('finished_products')}}</div>
                             @endif
                         </div>
                     </div>
-
-
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-form-label text-left col-lg-3 col-sm-12">Cost Of Sales</label>
+                    <label class="col-form-label text-left col-lg-3 col-sm-12">Semi-Finished Products</label>
                     <div class="col-lg-4 col-md-9 col-sm-12">
                         <div class="input-group">
-                            <input id="cost_of_sales" type="number" required name="cost_of_sales" min="0" value="{{$sale->cost_of_sales}}" step=".01" class="{{$errors->has('cost_of_sales') ? 'is-invalid': ''}} form-control" aria-label="Amount (to the nearest SAR)">
+                            <input type="number" required name="semi_finished_products" min="0" value="{{$inventory->semi_finished_products}}" step=".01" class="form-control" aria-label="Amount (to the nearest SAR)">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">SAR</span>
                             </div>
-                            @if($errors->has('cost_of_sales'))
-                                <div class="invalid-feedback">{{$errors->first('cost_of_sales')}}</div>
+                            @if($errors->has('semi_finished_products'))
+                                <div class="invalid-feedback">{{$errors->first('semi_finished_products')}}</div>
                             @endif
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group row">
-                    <label class="col-form-label text-left col-lg-3 col-sm-12">Expenses</label>
+                    <label class="col-form-label text-left col-lg-3 col-sm-12">Work In Process</label>
                     <div class="col-lg-4 col-md-9 col-sm-12">
                         <div class="input-group">
-                            <input id="expenses" type="number" required name="expenses" min="0" value="{{$sale->expenses}}" step=".01" class="{{$errors->has('expenses') ? 'is-invalid': ''}} form-control" aria-label="Amount (to the nearest SAR)">
+                            <input type="number" required name="work_in_process" min="0" value="{{$inventory->work_in_process}}" step=".01" class="form-control" aria-label="Amount (to the nearest SAR)">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">SAR</span>
                             </div>
-                            @if($errors->has('expenses'))
-                                <div class="invalid-feedback">{{$errors->first('expenses')}}</div>
+                            @if($errors->has('work_in_process'))
+                                <div class="invalid-feedback">{{$errors->first('work_in_process')}}</div>
                             @endif
                         </div>
                     </div>
                 </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label text-left col-lg-3 col-sm-12">Raw Materials</label>
+                    <div class="col-lg-4 col-md-9 col-sm-12">
+                        <div class="input-group">
+                            <input type="number" required name="raw_materials" min="0" value="{{$inventory->raw_materials}}" step=".01" class="form-control" aria-label="Amount (to the nearest SAR)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">SAR</span>
+                            </div>
+                            @if($errors->has('raw_materials'))
+                                <div class="invalid-feedback">{{$errors->first('raw_materials')}}</div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label text-left col-lg-3 col-sm-12">Spare Parts & Others</label>
+                    <div class="col-lg-4 col-md-9 col-sm-12">
+                        <div class="input-group">
+                            <input type="number" required name="spare_parts_and_others" min="0" value="{{$inventory->spare_parts_and_others}}" step=".01" class="form-control" aria-label="Amount (to the nearest SAR)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">SAR</span>
+                            </div>
+                            @if($errors->has('spare_parts_and_others'))
+                                <div class="invalid-feedback">{{$errors->first('spare_parts_and_others')}}</div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label text-left col-lg-3 col-sm-12">Inventory Provision</label>
+                    <div class="col-lg-4 col-md-9 col-sm-12">
+                        <div class="input-group">
+                            <input type="number" required name="inventory_provision" min="0" value="{{$inventory->inventory_provision}}" step=".01" class="form-control" aria-label="Amount (to the nearest SAR)">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">SAR</span>
+                            </div>
+                            @if($errors->has('inventory_provision'))
+                                <div class="invalid-feedback">{{$errors->first('inventory_provision')}}</div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-
-
             <div class="card-footer">
                 <div class="row">
                     <div class="col-lg-9 ml-lg-auto">
                         <button type="submit" class="btn btn-primary mr-2">Update</button>
-                        <a href="{{route('sales.index')}}" class="btn btn-secondary">Back</a>
+                        <a href="{{route('inventory.index')}}" class="btn btn-secondary">Back</a>
                     </div>
                 </div>
             </div>
@@ -178,41 +159,8 @@
     <script src="{{ asset('js/pages/widgets.js') }}" type="text/javascript"></script>
 
     <script>
-        const numberRegex = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
-
-        let total =Number( "{{$sale->total}}");
-        let cash =Number( "{{$sale->cash}}");
-        let credit = Number("{{$sale->credit}}");
-        let returns = Number("{{$sale->returns}}");
-        let net = Number("{{$sale->net_sales}}");
-
-        $("#cash").on('input', function(e){
-            cash = Number($(this).val());
-            total = cash + credit;
-            net = total;
-            $("#total").val(total);
-            $("#net").val(net);
-
-        });
-
-        $("#credit").on('input', function(e){
-            credit = Number($(this).val());
-            total = cash + credit;
-            net = total;
-            $("#total").val(total);
-            $("#net").val(net);
-
-        });
-
-        $("#returns").on('input', function(e){
-            returns = Number($(this).val());
-            net = total - returns;
-            $("#net").val(net);
-        });
 
         jQuery(document).ready(function() {
-            const saleDate = "{{$sale->year}}/{{$sale->month}}";
-            console.log(saleDate);
             $('#kt_datepicker_1').datepicker({
                 orientation: "bottom left",
                 format: "mm-yyyy",
@@ -222,19 +170,19 @@
                 // endDate: new Date(),
                 autoclose: true,
 
-
             });
 
 
-            $('#kt_datepicker_1').datepicker('setDate', new Date(saleDate));
 
         });
     </script>
+
     @if(session()->has('success'))
         <script>
             Swal.fire("Success!", "{!! session()->get('success') !!}", "success");
 
         </script>
+
     @endif
     @if(session()->has('error'))
         <script>
@@ -243,5 +191,4 @@
         </script>
 
     @endif
-
 @endsection

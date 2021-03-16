@@ -128,7 +128,7 @@
                 let _sales_analysis = function () {
                     const apexChart = "#sales-analysis";
                     var options = {
-                        series:[ {!! json_encode($currentYearSales->sum('cash')) !!}, {!! json_encode($currentYearSales->sum('credit')) !!}, {!! json_encode($currentYearSales->sum('total')) !!},{!! json_encode($currentYearSales->sum('returns')) !!},{!! json_encode($currentYearSales->sum('net')) !!}],
+                        series:[ {!! json_encode($currentYearSales->sum('cash')) !!}, {!! json_encode($currentYearSales->sum('credit')) !!}, {!! json_encode($currentYearSales->sum('total')) !!},{!! json_encode($currentYearSales->sum('returns')) !!},{!! json_encode($currentYearSales->sum('net_sales')) !!}],
                         chart: {
                             width: 380,
                             type: 'pie',
@@ -156,13 +156,13 @@
                     var options = {
                         series: [{
                             name: 'Net',
-                            data: {!! json_encode($currentYearSales->pluck('net')) !!}
+                            data: {!! json_encode($currentYearSales->pluck('net_sales')) !!}
                         }, {
                             name: 'Gross Profit',
                             data:{!! json_encode($currentYearSales->pluck('net_profit')) !!}
                         }, {
                             name: 'Net Profit',
-                            data: {!! json_encode($currentYearSales->pluck('g_profit')) !!}
+                            data: {!! json_encode($currentYearSales->pluck('gross_profit')) !!}
                         }],
                         chart: {
                             type: 'bar',
@@ -184,7 +184,7 @@
                             colors: ['transparent']
                         },
                         xaxis: {
-                            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                            categories: {!! json_encode($currentYearSalesMonths) !!},
                         },
                         yaxis: {
                             title: {

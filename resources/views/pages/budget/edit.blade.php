@@ -113,13 +113,13 @@
 
                     <div class="col-lg-4 col-md-9 col-sm-12">
                         <div class="input-group">
-                            <input type="text" required value="{{$budget->net}}" readonly name="net" id="net" class="form-control {{$errors->has('net') ? 'is-invalid': ''}}" aria-label="Amount (to the nearest SAR)">
+                            <input type="text" required value="{{$budget->net_sales}}" readonly name="net_sales" id="net" class="form-control {{$errors->has('net_sales') ? 'is-invalid': ''}}" aria-label="Amount (to the nearest SAR)">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">SAR</span>
 
                             </div>
-                            @if($errors->has('net'))
-                                <div class="invalid-feedback">{{$errors->first('net')}}</div>
+                            @if($errors->has('net_sales'))
+                                <div class="invalid-feedback">{{$errors->first('net_sales')}}</div>
                             @endif
                         </div>
                     </div>

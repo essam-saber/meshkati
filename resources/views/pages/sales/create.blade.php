@@ -111,7 +111,7 @@
                     <label class="col-form-label text-left col-lg-3 col-sm-12">Net</label>
                     <div class="col-lg-4 col-md-9 col-sm-12">
                      <div class="input-group">
-                         <input type="text" required readonly name="net" id="net" class="form-control {{$errors->has('total') ? 'is-invalid': ''}}" aria-label="Amount (to the nearest SAR)">
+                         <input type="text" required readonly name="net_sales" id="net" class="form-control {{$errors->has('total') ? 'is-invalid': ''}}" aria-label="Amount (to the nearest SAR)">
                          <div class="input-group-prepend">
                              <span class="input-group-text">SAR</span>
 

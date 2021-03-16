@@ -17,10 +17,10 @@ class CreateAgingOfDebitsTable extends Migration
             $table->id();
             $table->string('year');
             $table->string('month');
-            $table->string('key');
+            $table->unsignedBigInteger('attribute_id');
             $table->decimal('value');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('company_id');
+            $table->unsignedBigInteger('company_id')->nullable();
             $table->timestamps();
         });
     }
