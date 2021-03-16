@@ -48,10 +48,6 @@ return [
                     'title' => 'Inventory',
                     'page' => '/inventory'
                 ],
-                [
-                    'title' => 'Summary Report',
-                    'page' => '#'
-                ],
             ],
         ],
         [
