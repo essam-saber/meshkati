@@ -39,31 +39,312 @@
                 </div>
             </form>
 
-
+            @if(!$showReport)
+                <div class="row">
+                    <p class="offset-4 text-center alert alert-primary">
+                        Please choose a date and press search button to get the summary report
+                    </p>
+                </div>
+            @endif
             <!-- begin: Invoice body-->
             <div class="row p-5">
+            @if($showReport)
+                   <table id="tableToExport">
+                       <table class="table table-borderless" id="companyInfoTable">
+                           <thead>
+                           <tr>
+                               <th colspan="2">Company Name:</th>
+                               <th colspan="2">Meshkati Trading Co.</th>
+                           </tr>
+                           <tr>
+                               <th colspan="2">Monthly Update Report:</th>
+                               <th colspan="2">Date: {{\Carbon\Carbon::now()->toDateString()}}</th>
+                           </tr>
 
+                           </thead>
+                           <tbody>
+
+
+                           </tbody>
+                       </table>
+                       <hr>
+                       <table class="table table-bordered table-vertical-center text-center" id="salesResultTable">
+                           <thead>
+                           <tr>
+                               <th colspan="8">
+                                Monthly Results Compared With Budget & Previous Year
+                               </th>
+                           </tr>
+                           <tr bgcolor="#d3d3d3">
+                               <th rowspan="2">Description</th>
+                               <th colspan="2">Actual - This Month</th>
+                               <th colspan="2">Budget - This Month</th>
+                               <th colspan="2">Actual - Comparative Month</th>
+                           </tr>
+                           <tr bgcolor="#d3d3d3">
+                               <th>SR</th>
+                               <th>%</th>
+                               <th>SR</th>
+                               <th>%</th>
+                               <th>SR</th>
+                               <th>%</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           <tr>
+                               <td >Sales (net)</td>
+                               <td>{{$actualSalesForCurrentMonth->net_sales}}</td>
+                               <td></td>
+                               <td>{{$budgetSalesForCurrentMonth->net_sales}}</td>
+                               <td></td>
+                               <td>{{$actualSalesForCurrentMonthPrevYear->net_sales}}</td>
+                               <td></td>
+                           </tr>
+                           <tr>
+                               <td >Gross Margin</td>
+                               <td>{{$actualSalesForCurrentMonth->gross_profit}}</td>
+                               <td>{{$actualSalesForCurrentMonth->rounded_gross_profit_percentage}}%</td>
+                               <td>{{$budgetSalesForCurrentMonth->gross_profit}}</td>
+                               <td>{{$budgetSalesForCurrentMonth->rounded_gross_profit_percentage}}%</td>
+                               <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit}}</td>
+                               <td>{{$actualSalesForCurrentMonthPrevYear->rounded_gross_profit_percentage}}%</td>
+                           </tr>
+                           <tr>
+                               <td >Net Profit</td>
+                               <td>{{$actualSalesForCurrentMonth->net_profit}}</td>
+                               <td>{{$actualSalesForCurrentMonth->rounded_net_profit_percentage}}%</td>
+                               <td>{{$budgetSalesForCurrentMonth->net_profit}}</td>
+                               <td>{{$budgetSalesForCurrentMonth->rounded_net_profit_percentage}}%</td>
+                               <td>{{$actualSalesForCurrentMonthPrevYear->net_profit}}</td>
+                               <td>{{$actualSalesForCurrentMonthPrevYear->rounded_net_profit_percentage}}%</td>
+                           </tr>
+                           </tbody>
+                       </table>
+                       <hr>
+                       <table class="table table-bordered table-vertical-center text-center" id="cumResultTable">
+                           <thead>
+                           <tr>
+                               <th colspan="6">
+                                   Cumulative Results Compared With Budget & Previous Year
+                               </th>
+                           </tr>
+                           <tr bgcolor="#d3d3d3">
+                               <th rowspan="2">Description</th>
+                               <th colspan="2">Actual - Cumulative</th>
+                               <th colspan="2">Budget - Cumulative</th>
+                               <th colspan="2">Actual - Comparative Cumulative</th>
+                           </tr>
+                           <tr bgcolor="#d3d3d3">
+                               <th>SR</th>
+                               <th>%</th>
+                               <th>SR</th>
+                               <th>%</th>
+                               <th>SR</th>
+                               <th>%</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           <tr>
+                               <td >Sales (net)</td>
+                               <td>{{$actualSalesForCurrentMonth->net_sales_cum}}</td>
+                               <td></td>
+                               <td>{{$budgetSalesForCurrentMonth->net_sales_cum}}</td>
+                               <td></td>
+                               <td>{{$actualSalesForCurrentMonthPrevYear->net_sales_cum}}</td>
+                               <td></td>
+                           </tr>
+                           <tr>
+                               <td >Gross Margin</td>
+                               <td>{{$actualSalesForCurrentMonth->gross_profit_cum}}</td>
+                               <td>{{$actualSalesForCurrentMonth->rounded_gross_profit_cum_percentage}}%</td>
+                               <td>{{$budgetSalesForCurrentMonth->gross_profit_cum}}</td>
+                               <td>{{$budgetSalesForCurrentMonth->rounded_gross_profit_cum_percentage}}%</td>
+                               <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit_cum}}</td>
+                               <td>{{$actualSalesForCurrentMonthPrevYear->rounded_gross_profit_cum_percentage}}%</td>
+                           </tr>
+                           <tr>
+                               <td >Net Profit</td>
+                               <td>{{$actualSalesForCurrentMonth->net_profit_cum}}</td>
+                               <td>{{$actualSalesForCurrentMonth->rounded_net_profit_cum_percentage}}%</td>
+                               <td>{{$budgetSalesForCurrentMonth->net_profit_cum}}</td>
+                               <td>{{$budgetSalesForCurrentMonth->rounded_net_profit_cum_percentage}}%</td>
+                               <td>{{$actualSalesForCurrentMonthPrevYear->net_profit_cum}}</td>
+                               <td>{{$actualSalesForCurrentMonthPrevYear->rounded_net_profit_cum_percentage}}%</td>
+                           </tr>
+                           </tbody>
+                       </table>
+                       <hr>
+                       <table class="table table-bordered table-vertical-center text-center" id="debitTable">
+                           <thead>
+                           <tr>
+                               <th colspan="6">
+                                   Showing of Debit Trade Accounts Receivable
+                               </th>
+                           </tr>
+                           <tr bgcolor="#d3d3d3">
+                               <th rowspan="2">Description</th>
+                              @foreach($agingOfDebit as $age )
+                                   @if($age->attribute->slug !== 'less-credit' && $age->attribute->slug !== 'ar-provision')
+                                       <th>{{$age->attribute->name}}</th>
+                                 @endif
+                              @endforeach
+                           </tr>
+                           <tr bgcolor="#d3d3d3">
+                               <th>SR</th>
+                               <th>SR</th>
+                               <th>SR</th>
+                               <th>SR</th>
+                               <th>SR</th>
+                               <th>SR</th>
+                           </tr>
+                           </thead>
+                            <tbody>
+                            <tr>
+                                <td >Aging</td>
+                                @foreach($agingOfDebit as $age)
+                                    @if($age->attribute->slug !== 'less-credit' && $age->attribute->slug !== 'ar-provision')
+                                        <td>{{$age->value}}</td>
+                                    @endif
+                                @endforeach
+                            </tr>
+                            @php
+                            $ageOfDebitSum = $agingOfDebit->sum('value');
+                            @endphp
+                            <tr>
+                                <td>% Represent From Balance</td>
+                                @foreach($agingOfDebit as $age)
+                                    @if($age->attribute->slug !== 'less-credit' && $age->attribute->slug !== 'ar-provision')
+                                        <td>{{round($age->value / $ageOfDebitSum * 100,0) }}%</td>
+                                    @endif
+                                @endforeach
+                            </tr>
+                            <tr>
+                                <td>Total Debit A/R</td>
+                                <td bgcolor="#e5e3e3" colspan="6">{{$ageOfDebitSum}}</td>
+                            </tr>
+                            <tr>
+                                <td>Less Credit A/R</td>
+                                <td colspan="6">
+                                @foreach($agingOfDebit as $age)
+                                    @if($age->attribute->slug == 'less-credit')
+                                        {{$age->value}}
+                                    @endif
+                                @endforeach
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Net A/R Balances</td>
+                                <td bgcolor="#e5e3e3" colspan="6">
+                                    @foreach($agingOfDebit as $age)
+                                        @if($age->attribute->slug == 'less-credit')
+                                            {{$age->value + $ageOfDebitSum}}
+                                        @endif
+                                    @endforeach
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>A/R Provision</td>
+                                <td bgcolor="#e5e3e3" colspan="6">
+                                    @foreach($agingOfDebit as $age)
+                                        @if($age->attribute->slug == 'ar-provision')
+                                            {{$age->value }}
+                                        @endif
+                                    @endforeach
+                                </td>
+                            </tr>
+                            </tbody>
+                       </table>
+                       <hr>
+                       <table class="table table-bordered table-vertical-center text-center" id="inventory">
+                           <thead>
+                           <tr>
+                               <th colspan="6">
+                                   Inventory
+                               </th>
+                           </tr>
+                           <tr bgcolor="#d3d3d3">
+                               <th rowspan="2">Description</th>
+                               <th>Goods Ready For Sale</th>
+                               <th>Finished Products</th>
+                               <th>Semi-Finished Products</th>
+                               <th>Work In Process</th>
+                               <th>Raw Materials</th>
+                               <th>Spare Parts & Others</th>
+                           </tr>
+                           <tr bgcolor="#d3d3d3">
+                               <th>SR</th>
+                               <th>SR</th>
+                               <th>SR</th>
+                               <th>SR</th>
+                               <th>SR</th>
+                               <th>SR</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                           <tr>
+                               <td>Inventory Category</td>
+                               <td>{{$inventory->goods_ready_for_sale}}</td>
+                               <td>{{$inventory->finished_products}}</td>
+                               <td>{{$inventory->semi_finished_products}}</td>
+                               <td>{{$inventory->work_in_process}}</td>
+                               <td>{{$inventory->raw_materials}}</td>
+                               <td>{{$inventory->spare_parts_and_others}}</td>
+                           </tr>
+                           <tr>
+                               <td>% of Balance</td>
+                               <td>{{round($inventory->goods_ready_for_sale / $inventory->total * 100,0)}}%</td>
+                               <td>{{round($inventory->finished_products / $inventory->total * 100,0)}}%</td>
+                               <td>{{round($inventory->semi_finished_products / $inventory->total * 100,0)}}%</td>
+                               <td>{{round($inventory->work_in_process / $inventory->total * 100,0)}}%</td>
+                               <td>{{round($inventory->raw_materials / $inventory->total * 100,0)}}%</td>
+                               <td>{{round($inventory->spare_parts_and_others / $inventory->total * 100,0)}}%</td>
+                           </tr>
+                           <tr>
+                               <td>Total</td>
+                               <td  bgcolor="#d3d3d3" colspan="6"">{{$inventory->total}}</td>
+                           </tr>
+                           <tr>
+                               <td>Inventory Provision</td>
+                               <td colspan="6"">{{$inventory->inventory_provision}}</td>
+                           </tr>
+                           <tr>
+                               <td>Net Realizable Value</td>
+                               <td  bgcolor="#d3d3d3" colspan="6"">{{$inventory->inventory_provision + $inventory->total}}</td>
+                           </tr>
+                           </tbody>
+                       </table>
+
+                   </table>
+            @endif
 
             </div>
 
-            <div class="row justify-content-center py-8 px-8 py-md-10 px-md-0">
-                <div class="col-md-9">
-                    <div class="d-flex justify-content-between">
-                        <button type="button" class="btn btn-light-primary font-weight-bold" onclick="window.print();">
-                            Download Report
-                        </button>
-                        <button type="button" class="btn btn-primary font-weight-bold" onclick="window.print();">Print
-                            Report
-                        </button>
+            @if($showReport)
+                <div class="row justify-content-center py-8 px-8 py-md-10 px-md-0">
+                    <div class="col-md-9">
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-light-success font-weight-bold" id="exportToExcelBtn">
+                                Export To Excel
+                            </button>
+                            <button type="button" class="btn btn-primary font-weight-bold"  onclick="window.print();">Print
+                                Report
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
             <!-- end: Invoice action-->
             <!-- end: Invoice-->
         </div>
     </div>
 @endsection
 
+@section('styles')
+    <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+    <style>
+
+    </style>
+@endsection
 {{-- Scripts Section --}}
 @section('scripts')
     <script>
@@ -80,9 +361,61 @@
             });
 
 
+            $("#exportToExcelBtn").on("click", function(e){
+                e.preventDefault();
+                // let table = document.getElementById("companyInfoTable");
+                // TableToExcel.convert(table, { // html code may contain multiple tables so here we are refering to 1st table tag
+                //     name: `summary-${(new Date()).toDateString()}.xlsx`, // fileName you could use any name
+                //     sheet: {
+                //         name: 'Sheet 1' // sheetName
+                //     }
+                // });
+                // window.open('data:application/vnd.ms-excel,' +  encodeURIComponent($('#tableToExport').html()));
+                toExcel();
+            })
+
+
 
 
         });
 
+
+        function toExcel() {
+            const mainTable = document.getElementById("tableToExport").outerHTML;
+            const companyInfoTable = document.getElementById("companyInfoTable").outerHTML;
+            const salesResultTable = document.getElementById("salesResultTable").outerHTML;
+            const cumResultTable = document.getElementById("cumResultTable").outerHTML;
+            const debitTable = document.getElementById("debitTable").outerHTML;
+            const inventory = document.getElementById("inventory").outerHTML;
+
+            let tab_text = mainTable+companyInfoTable+salesResultTable+cumResultTable+debitTable+inventory;
+            let textRange;
+            let j = 0;
+            let sa;
+
+            let ua = window.navigator.userAgent;
+            let msie = ua.indexOf("MSIE ");
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+            {
+                let txt = document.getElementById('txtArea1').contentWindow;
+
+                txt.document.open("txt/html", "replace");
+                txt.document.write(tab_text);
+                txt.document.close();
+                txt.focus();
+                sa = txt.document.execCommand("SaveAs", true, "Say Thanks to Sumit.xls");
+            }
+            else {
+                let a = document.createElement('a');
+                let data_type = 'data:application/vnd.ms-excel';
+                a.href = data_type+','+encodeURIComponent(tab_text);
+                // sa = window.open('data:application/vnd.ms-excel;,' + encodeURIComponent(tab_text)+';filename=summary-report-'+(new Date()).toDateString());
+                a.download = `summary-report-${(new Date()).toDateString()}`;
+                //triggering the function
+                a.click();
+            }
+        }
     </script>
+
+
 @endsection

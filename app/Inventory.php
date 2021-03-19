@@ -20,4 +20,8 @@ class Inventory extends Model
     {
         $query->orderBy('year')->orderBy('month');
     }
+
+    public function getTotalAttribute() {
+        return $this->goods_ready_for_sale + $this->finished_products + $this->semi_finished_products + $this->work_in_process + $this->raw_material + $this->spare_parts_and_others;
+    }
 }

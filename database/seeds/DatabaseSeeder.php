@@ -8,6 +8,7 @@ use App\Sale;
 use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,9 +20,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-//        $user = User::factory()->create(['email' => 'admin@meshkay.com']);
-//        \App\Sale::factory()->count(20)->create(['user_id' => $user->id]);
-//            $this->seedInventoryAttributes();
+            $this->seedInventoryAttributes();
             $this->createAdminAccount();
     }
 
@@ -31,7 +30,7 @@ class DatabaseSeeder extends Seeder
          * inventory_provision
          * inventory_provision
          */
-        DB::table('inventory_attributes')->truncate();
+        DB::table('aging_attributes')->truncate();
         $agingAttributes = [
             '0-90 Days',
             '91-180 Days',
@@ -39,10 +38,11 @@ class DatabaseSeeder extends Seeder
             '12-18 Months',
             '18-24 Months',
             'More Than 24 Months',
-            'Less Credit'
+            'Less Credit',
+            'A/R Provision'
         ];
         foreach($agingAttributes as $attribute) {
-            AgingAttribute::create(['name' => $attribute]);
+            AgingAttribute::create(['name' => $attribute, 'slug' => Str::slug($attribute)]);
         }
     }
 

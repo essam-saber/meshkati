@@ -128,12 +128,17 @@
                 let _sales_analysis = function () {
                     const apexChart = "#sales-analysis";
                     var options = {
-                        series:[ {!! json_encode($currentYearSales->sum('cash')) !!}, {!! json_encode($currentYearSales->sum('credit')) !!}, {!! json_encode($currentYearSales->sum('total')) !!},{!! json_encode($currentYearSales->sum('returns')) !!},{!! json_encode($currentYearSales->sum('net_sales')) !!}],
+                        series:[ {!! json_encode($currentYearSales->sum('cash')) !!}, {!! json_encode($currentYearSales->sum('credit')) !!}, {!! json_encode($currentYearSales->sum('returns')) !!}],
                         chart: {
                             width: 380,
                             type: 'pie',
                         },
-                        labels: ['Cash', 'Credit', 'Total','Returns','Net Sales'],
+                        labels: ['Cash', 'Credit','Returns'],
+                        dataLabels: {
+                            formatter: function (val, opts) {
+                                return opts.w.config.series[opts.seriesIndex] + " SAR"
+                            },
+                        },
                         responsive: [{
                             breakpoint: 480,
                             options: {
@@ -188,7 +193,7 @@
                         },
                         yaxis: {
                             title: {
-                                text: 'RAS (thousands)'
+                                text: 'SAR (thousands)'
                             }
                         },
                         fill: {
@@ -197,7 +202,7 @@
                         tooltip: {
                             y: {
                                 formatter: function (val) {
-                                    return "RAS " + val + " thousands"
+                                    return "SAR " + val + " thousands"
                                 }
                             }
                         },
@@ -210,33 +215,56 @@
                 let _sales_target = function () {
                     const apexChart = "#total-sales-target";
                     var options = {
-                        series: [{!! json_encode($currentYearSales->sum('total')) !!}],
                         chart: {
-                            height: 255,
-                            type: 'radialBar',
+                            height: 280,
+                            type: "radialBar",
                         },
+
+                        series: [{!! round($currentYearSales->sum('total') / $budgets->sum('total') * 100,0) !!}],
+                        colors: ["#20E647"],
                         plotOptions: {
                             radialBar: {
+                                hollow: {
+                                    margin: 0,
+                                    size: "70%",
+                                    background: "#293450"
+                                },
+                                track: {
+                                    dropShadow: {
+                                        enabled: true,
+                                        top: 2,
+                                        left: 0,
+                                        blur: 4,
+                                        opacity: 0.15
+                                    }
+                                },
                                 dataLabels: {
                                     name: {
-                                        fontSize: '22px',
+                                        offsetY: -10,
+                                        color: "#fff",
+                                        fontSize: "13px"
                                     },
                                     value: {
-                                        fontSize: '16px',
-                                    },
-                                    total: {
-                                        show: true,
-                                        label: 'Total',
-                                        formatter: function (w) {
-                                            // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                                            return {!! json_encode($budgets->sum('total')) !!}
-                                        }
+                                        color: "#fff",
+                                        fontSize: "30px",
+                                        show: true
                                     }
                                 }
                             }
                         },
-                        labels: ['Total'],
-                        colors: [success]
+                        fill: {
+                            type: "gradient",
+                            gradient: {
+                                shade: "dark",
+                                type: "vertical",
+                                gradientToColors: ["#87D4F9"],
+                                stops: [0, 100]
+                            }
+                        },
+                        stroke: {
+                            lineCap: "round"
+                        },
+                        labels: ["Progress"]
                     };
 
                     var chart = new ApexCharts(document.querySelector(apexChart), options);
