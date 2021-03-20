@@ -42,10 +42,9 @@ class SalesController extends Controller
         }
 
         $data = $request->except('_token');
-
-
+        $lastInsertedMonth = Sale::latest()->first();
         $netSales = $data['net_sales'];
-        $netSalesCum = isset($lastInsertedMonth) ? $lastInsertedMonth->net_sales + $lastInsertedMonth->net_sales_cum : $netSales;
+        $netSalesCum = isset($lastInsertedMonth) ? $netSales + $lastInsertedMonth->net_sales_cum : $netSales;
         $grossProfit = $netSales - $data['cost_of_sales'];
         $grossProfitCum = isset($lastInsertedMonth) ? $lastInsertedMonth->gross_profit_cum + $grossProfit : $grossProfit;
         $grossProfitPercentage = $grossProfit / $netSales * 100;
@@ -70,9 +69,10 @@ class SalesController extends Controller
         $sale->update($data);
 
         if(Sale::count() > 1) {
-            $data = [];
+
             $sales = Sale::where('year', $year)->ascOrder()->get();
             foreach($sales as $key => $sale) {
+                $data = [];
                 $netSalesCum = $key !== 0 ? $sale->net_sales + $sales[$key-1]->net_sales_cum : $sale->net_sales;
                 $grossProfit = $sale->net_sales - $sale->cost_of_sales;
                 $grossProfitCum = $key !== 0 ? $sales[$key-1]->gross_profit_cum + $grossProfit : $grossProfit;
@@ -118,7 +118,7 @@ class SalesController extends Controller
         $lastInsertedMonth = Sale::latest()->first();
         $data = $request->except('_token');
         $netSales = $data['net_sales'];
-        $netSalesCum = isset($lastInsertedMonth) ? $lastInsertedMonth->net_sales + $lastInsertedMonth->net_sales_cum : $netSales;
+        $netSalesCum = isset($lastInsertedMonth) ? $netSales + $lastInsertedMonth->net_sales_cum : $netSales;
         $grossProfit = $netSales - $data['cost_of_sales'];
         $grossProfitCum = isset($lastInsertedMonth) ? $lastInsertedMonth->gross_profit_cum + $grossProfit : $grossProfit;
         $grossProfitPercentage = $grossProfit / $netSales * 100;

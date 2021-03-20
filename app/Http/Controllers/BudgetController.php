@@ -40,7 +40,7 @@ class BudgetController extends Controller
 
 
         $netSales = $data['net_sales'];
-        $netSalesCum = isset($lastInsertedMonth) ? $lastInsertedMonth->net_sales + $lastInsertedMonth->net_sales_cum : $netSales;
+        $netSalesCum = isset($lastInsertedMonth) ? $netSales + $lastInsertedMonth->net_sales_cum : $netSales;
         $grossProfit = $netSales - $data['cost_of_sales'];
         $grossProfitCum = isset($lastInsertedMonth) ? $lastInsertedMonth->gross_profit_cum + $grossProfit : $grossProfit;
         $grossProfitPercentage = $grossProfit / $netSales * 100;
@@ -65,9 +65,9 @@ class BudgetController extends Controller
         $sale->update($data);
 
         if(Budget::count() > 1) {
-            $data = [];
             $budgets = Budget::where('year', $year)->ascOrder()->get();
             foreach($budgets as $key => $sale) {
+                $data = [];
                 $netSalesCum = $key !== 0 ? $sale->net_sales + $budgets[$key-1]->net_sales_cum : $sale->net_sales;
                 $grossProfit = $sale->net_sales - $sale->cost_of_sales;
                 $grossProfitCum = $key !== 0 ? $budgets[$key-1]->gross_profit_cum + $grossProfit : $grossProfit;
@@ -113,7 +113,7 @@ class BudgetController extends Controller
         $lastInsertedMonth = Budget::latest()->first();
         $data = $request->except('_token');
         $netSales = $data['net_sales'];
-        $netSalesCum = isset($lastInsertedMonth) ? $lastInsertedMonth->net_sales + $lastInsertedMonth->net_sales_cum : $netSales;
+        $netSalesCum = isset($lastInsertedMonth) ? $netSales + $lastInsertedMonth->net_sales_cum : $netSales;
         $grossProfit = $netSales - $data['cost_of_sales'];
         $grossProfitCum = isset($lastInsertedMonth) ? $lastInsertedMonth->gross_profit_cum + $grossProfit : $grossProfit;
         $grossProfitPercentage = $grossProfit / $netSales * 100;
