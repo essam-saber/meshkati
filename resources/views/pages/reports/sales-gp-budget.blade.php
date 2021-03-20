@@ -96,8 +96,8 @@
                             <th colspan="2">Sales</th>
                             <th colspan="2">G.Profit</th>
                             <th colspan="2">% G.P</th>
-                            <th colspan="2">N.Profit</th>
-                            <th colspan="2">% N.P</th>
+                            <th colspan="1">N.Profit</th>
+                            <th colspan="1">% N.P</th>
                         </tr>
                         <tr bgcolor="#d3d3d3" class="text-center">
                             <th></th>
@@ -107,10 +107,8 @@
                             <th>Cumm</th>
                             <th>Monthly</th>
                             <th>Cumm</th>
-                            <th>Monthly</th>
                             <th>Cumm</th>
-                            <th>Monthly</th>
-                            <th>Cumm</th>
+                           <th>Cumm</th>
                         </thead>
                         <tbody>
                         <tbody>
@@ -123,9 +121,7 @@
                                 <td>{{$sale->gross_profit_cum}}</td>
                                 <td>{{$sale->rounded_gross_profit_percentage}}%</td>
                                 <td>{{$sale->rounded_gross_profit_cum_percentage}}%</td>
-                                <td>{{$sale->net_profit}}</td>
                                 <td>{{$sale->net_profit_cum}}</td>
-                                <td>{{$sale->rounded_net_profit_percentage}}%</td>
                                 <td>{{$sale->rounded_net_profit_cum_percentage}}%</td>
                             </tr>
                         @endforeach
@@ -139,9 +135,7 @@
                             <td>
                                 <strong>{{round($actualSales->sum('gross_profit') / $actualSales->sum('net_sales') * 100,0)}}
                                     %</strong></td>
-                            <td></td>
                             <td><strong>{{$actualSales->sum('net_profit')}}</strong></td>
-                            <td></td>
                             <td><strong>{{round($actualSales->sum('net_profit') / $actualSales->sum('net_sales') * 100,0)}}%</strong></td>
                         </tr>
                         </tbody>
@@ -155,8 +149,8 @@
                             <th colspan="2">Sales</th>
                             <th colspan="2">G.Profit</th>
                             <th colspan="2">% G.P</th>
-                            <th colspan="2">N.Profit</th>
-                            <th colspan="2">% N.P</th>
+                            <th colspan="1">N.Profit</th>
+                            <th colspan="1">% N.P</th>
                         </tr>
                         <tr bgcolor="#d3d3d3" class="text-center">
                             <th></th>
@@ -166,9 +160,7 @@
                             <th>Cumm</th>
                             <th>Monthly</th>
                             <th>Cumm</th>
-                            <th>Monthly</th>
                             <th>Cumm</th>
-                            <th>Monthly</th>
                             <th>Cumm</th>
                         </thead>
                         <tbody>
@@ -182,9 +174,7 @@
                                 <td>{{$sale->gross_profit_cum}}</td>
                                 <td>{{$sale->rounded_gross_profit_percentage}}%</td>
                                 <td>{{$sale->rounded_gross_profit_cum_percentage}}%</td>
-                                <td>{{$sale->net_profit}}</td>
                                 <td>{{$sale->net_profit_cum}}</td>
-                                <td>{{$sale->rounded_net_profit_percentage}}%</td>
                                 <td>{{$sale->rounded_net_profit_cum_percentage}}%</td>
                             </tr>
                         @endforeach
@@ -198,9 +188,7 @@
                             <td>
                                 <strong>{{round($budgetSales->sum('gross_profit') / $budgetSales->sum('net_sales') * 100,0)}}
                                     %</strong></td>
-                            <td></td>
                             <td><strong>{{$budgetSales->sum('net_profit')}}</strong></td>
-                            <td></td>
                             <td><strong>{{round($budgetSales->sum('net_profit') / $budgetSales->sum('net_sales') * 100,0)}}%</strong></td>
                         </tr>
                         </tbody>

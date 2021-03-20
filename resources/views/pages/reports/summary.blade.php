@@ -124,7 +124,7 @@
                        <table class="table table-bordered table-vertical-center text-center" id="cumResultTable">
                            <thead>
                            <tr>
-                               <th colspan="6">
+                               <th colspan="8">
                                    Cumulative Results Compared With Budget & Previous Year
                                </th>
                            </tr>
@@ -177,7 +177,7 @@
                        <table class="table table-bordered table-vertical-center text-center" id="debitTable">
                            <thead>
                            <tr>
-                               <th colspan="6">
+                               <th colspan="8">
                                    Showing of Debit Trade Accounts Receivable
                                </th>
                            </tr>
@@ -258,7 +258,7 @@
                        <table class="table table-bordered table-vertical-center text-center" id="inventory">
                            <thead>
                            <tr>
-                               <th colspan="6">
+                               <th colspan="8">
                                    Inventory
                                </th>
                            </tr>

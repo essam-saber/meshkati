@@ -18,7 +18,6 @@ class PagesController extends Controller
         $page_title = 'Dashboard';
         $page_description = 'Some description for the page';
         $budgets = Budget::where('year', Carbon::now()->year)->ascOrder()->get();
-
         $months = $this->getMonthsNames();
         $sales = Sale::where('year', Carbon::now()->year)->orWhere('year', $lastYear)->ascOrder()->get()->groupBy(function($sale){
             return $sale->year;

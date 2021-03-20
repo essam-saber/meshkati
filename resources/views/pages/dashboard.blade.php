@@ -164,10 +164,10 @@
                             data: {!! json_encode($currentYearSales->pluck('net_sales')) !!}
                         }, {
                             name: 'Gross Profit',
-                            data:{!! json_encode($currentYearSales->pluck('net_profit')) !!}
+                            data:{!! json_encode($currentYearSales->pluck('gross_profit')) !!}
                         }, {
                             name: 'Net Profit',
-                            data: {!! json_encode($currentYearSales->pluck('gross_profit')) !!}
+                            data: {!! json_encode($currentYearSales->pluck('net_profit')) !!}
                         }],
                         chart: {
                             type: 'bar',
@@ -220,7 +220,7 @@
                             type: "radialBar",
                         },
 
-                        series: [{!! round($currentYearSales->sum('total') / $budgets->sum('total') * 100,0) !!}],
+                        series: [{!! sizeof($budgets) > 0 ?  round($currentYearSales->sum('total') / $budgets->sum('total') * 100,0) : 0 !!}],
                         colors: ["#20E647"],
                         plotOptions: {
                             radialBar: {
