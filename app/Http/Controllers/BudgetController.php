@@ -39,56 +39,27 @@ class BudgetController extends Controller
         $data = $request->except('_token');
 
 
-        $netSales = $data['net_sales'];
-        $netSalesCum = isset($lastInsertedMonth) ? $netSales + $lastInsertedMonth->net_sales_cum : $netSales;
-        $grossProfit = $netSales - $data['cost_of_sales'];
-        $grossProfitCum = isset($lastInsertedMonth) ? $lastInsertedMonth->gross_profit_cum + $grossProfit : $grossProfit;
-        $grossProfitPercentage = $grossProfit / $netSales * 100;
-        $grossProfitCumPercentage = $grossProfitCum / $netSalesCum * 100;
-        $netProfit =  $grossProfit - $data['expenses'];
-        $netProfitPercentage = $netProfit / $netSales * 100;
-        $netProfitCum =  isset($lastInsertedMonth) ? $lastInsertedMonth->net_profit_cum + $netProfit : $netProfit;
-        $netProfitCumPercentage = $netProfitCum / $netSalesCum * 100;
 
         $sale = Budget::where('id', $id)->firstOrFail();
         $data['year'] = $year;
         $data['month'] = $month;
-        $data['net_sales_cum'] = $netSalesCum;
-        $data['gross_profit'] = $grossProfit;
-        $data['gross_profit_cum'] = $grossProfitCum;
-        $data['gross_profit_percentage'] = $grossProfitPercentage;
-        $data['gross_profit_cum_percentage'] = $grossProfitCumPercentage;
-        $data['net_profit'] = $netProfit;
-        $data['net_profit_cum'] = $netProfitCum;
-        $data['net_profit_percentage'] = $netProfitPercentage;
-        $data['net_profit_cum_percentage'] = $netProfitCumPercentage;
         $sale->update($data);
 
-        if(Budget::count() > 1) {
-            $budgets = Budget::where('year', $year)->ascOrder()->get();
-            foreach($budgets as $key => $sale) {
-                $data = [];
-                $netSalesCum = $key !== 0 ? $sale->net_sales + $budgets[$key-1]->net_sales_cum : $sale->net_sales;
-                $grossProfit = $sale->net_sales - $sale->cost_of_sales;
-                $grossProfitCum = $key !== 0 ? $budgets[$key-1]->gross_profit_cum + $grossProfit : $grossProfit;
-                $grossProfitPercentage = $grossProfit / $sale->net_sales * 100;
-                $grossProfitCumPercentage = $grossProfitCum / $netSalesCum * 100;
-                $netProfit =  $grossProfit - $sale->expenses;
-                $netProfitPercentage = $netProfit / $sale->net_sales * 100;
-                $netProfitCum =  $key !== 0 ? $budgets[$key-1]->net_profit_cum + $netProfit : $netProfit;
-                $netProfitCumPercentage = $netProfitCum / $netSalesCum * 100;
+        $sales = Budget::where('year', $year)->ascOrder()->get();
 
-                $data['net_sales_cum'] = $netSalesCum;
-                $data['gross_profit'] = $grossProfit;
-                $data['gross_profit_cum'] = $grossProfitCum;
-                $data['gross_profit_percentage'] = $grossProfitPercentage;
-                $data['gross_profit_cum_percentage'] = $grossProfitCumPercentage;
-                $data['net_profit'] = $netProfit;
-                $data['net_profit_cum'] = $netProfitCum;
-                $data['net_profit_percentage'] = $netProfitPercentage;
-                $data['net_profit_cum_percentage'] = $netProfitCumPercentage;
-                $sale->update($data);
-            }
+        foreach($sales as $key => $sale) {
+            $prevKey = $key - 1;
+            $sales[$key]->net_sales = ($sales[$key]->cash + $sales[$key]->credit) - $sales[$key]->returns;
+            $sales[$key]->net_sales_cum = $key === 0 ? $sales[$key]->net_sales : $sales[$prevKey]->net_sales_cum + $sales[$key]->net_sales;
+            $sales[$key]->gross_profit = $sales[$key]->net_sales - $sales[$key]->cost_of_sales;
+            $sales[$key]->gross_profit_cum = $key === 0 ? $sales[$key]->gross_profit : $sales[$prevKey]->gross_profit_cum + $sales[$key]->gross_profit;
+            $sales[$key]->gross_profit_percentage = round($sales[$key]->gross_profit / $sales[$key]->net_sales * 100,0);
+            $sales[$key]->gross_profit_cum_percentage = round($sales[$key]->gross_profit_cum / $sales[$key]->net_sales_cum * 100, 0);
+            $sales[$key]->net_profit = $sales[$key]->gross_profit - $sales[$key]->expenses;
+            $sales[$key]->net_profit_cum = $key === 0 ? $sales[$key]->net_profit : $sales[$prevKey]->net_profit_cum + $sales[$key]->net_profit;
+            $sales[$key]->net_profit_percentage = round($sales[$key]->net_profit / $sales[$key]->net_sales * 100, 0);
+            $sales[$key]->net_profit_cum_percentage = round($sales[$key]->net_profit_cum / $sales[$key]->net_sales_cum * 100, 0);
+            $sales[$key]->save();
         }
 
         return back()->with(['success' => 'Budget has been updated successfully']);
@@ -110,31 +81,21 @@ class BudgetController extends Controller
         if($monthInsertedBefore > 0) {
             return back()->with(['error' => 'The sales for this month has been inserted before!, go to sales page if you want to edit']);
         }
-        $lastInsertedMonth = Budget::latest()->first();
+        $lastInsertedMonth = Budget::where('year', $year)->descOrder()->first();
         $data = $request->except('_token');
-        $netSales = $data['net_sales'];
-        $netSalesCum = isset($lastInsertedMonth) ? $netSales + $lastInsertedMonth->net_sales_cum : $netSales;
-        $grossProfit = $netSales - $data['cost_of_sales'];
-        $grossProfitCum = isset($lastInsertedMonth) ? $lastInsertedMonth->gross_profit_cum + $grossProfit : $grossProfit;
-        $grossProfitPercentage = $grossProfit / $netSales * 100;
-        $grossProfitCumPercentage = $grossProfitCum / $netSalesCum * 100;
-        $netProfit =  $grossProfit - $data['expenses'];
-        $netProfitPercentage = $netProfit / $netSales * 100;
-        $netProfitCum =  isset($lastInsertedMonth) ? $lastInsertedMonth->net_profit_cum + $netProfit : $netProfit;
-        $netProfitCumPercentage = $netProfitCum / $netSalesCum * 100;
-
         $data['year'] = $year;
         $data['month'] = $month;
         $data['user_id'] = auth()->id() ?? 1;
-        $data['net_sales_cum'] = $netSalesCum;
-        $data['gross_profit'] = $grossProfit;
-        $data['gross_profit_cum'] = $grossProfitCum;
-        $data['gross_profit_percentage'] = $grossProfitPercentage;
-        $data['gross_profit_cum_percentage'] = $grossProfitCumPercentage;
-        $data['net_profit'] = $netProfit;
-        $data['net_profit_cum'] = $netProfitCum;
-        $data['net_profit_percentage'] = $netProfitPercentage;
-        $data['net_profit_cum_percentage'] = $netProfitCumPercentage;
+        $data['net_sales'] = ($data['cash'] + $data['credit']) - $data['returns'];
+        $data['net_sales_cum'] = isset($lastInsertedMonth) ? $lastInsertedMonth->net_sales_cum + $data['net_sales'] : $data['net_sales'];
+        $data['gross_profit'] = $data['net_sales'] - $data['cost_of_sales'];
+        $data['gross_profit_cum'] = isset($lastInsertedMonth) ? $lastInsertedMonth->gross_profit_cum + $data['gross_profit'] : $data['gross_profit'];
+        $data['gross_profit_percentage'] = round($data['gross_profit'] / $data['net_sales'] * 100, 0);
+        $data['gross_profit_cum_percentage'] = round($data['gross_profit_cum'] / $data['net_sales_cum'] * 100,0);
+        $data['net_profit'] = $data['gross_profit'] - $data['expenses'];
+        $data['net_profit_cum'] = isset($lastInsertedMonth) ? $lastInsertedMonth->net_profit_cum + $data['net_profit'] : $data['net_profit'];
+        $data['net_profit_percentage'] = round($data['net_profit'] / $data['net_sales'] * 100,0);
+        $data['net_profit_cum_percentage'] = round($data['net_profit_cum'] / $data['net_sales_cum'] * 100, 0);
 
         Budget::create($data);
         session()->flash('success', 'Monthly budget Has Been Created Successfully !');

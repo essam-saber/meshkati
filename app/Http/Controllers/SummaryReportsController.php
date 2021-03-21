@@ -24,9 +24,7 @@ class SummaryReportsController extends Controller
             $actualSalesForCurrentMonth = Sale::where('year', $year)->where('month', $month)->first();
             $budgetSalesForCurrentMonth = Budget::where('year', $year)->where('month', $month)->first();
             $actualSalesForCurrentMonthPrevYear = Sale::where('year', $prevYear)->where('month', $month)->first();
-            if(!$actualSalesForCurrentMonthPrevYear) {
-                $actualSalesForCurrentMonthPrevYear = Sale::where('year', $year)->where('month', $month)->first();
-            }
+
             $agingOfDebits = AgingOfDebit::with(['attribute'])->where('year', $year)->where('month', $month)->get();
             $inventory = Inventory::where('year', $year)->where('month', $month)->first();
 

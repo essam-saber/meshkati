@@ -29,23 +29,32 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-4">
+                        <div class="col-md-1">
                             <button class="btn btn-xs btn-default pl-5">
                                 <i class="fa fa-search fa-1x text-info"></i>
                             </button>
                         </div>
+                        <div class="col-md-7">
+                            <div class="alert alert-custom alert-notice alert-light-primary fade show" role="alert">
+                                <div class="alert-icon"><i class="flaticon-warning"></i></div>
+                                <div class="alert-text">
+                                    <p>Please choose a date and press search button to get the summary report</p>
+                                    <p>If there is many zero values, it means that there is no available data for the selected month !.</p>
+                                </div>
+                                <div class="alert-close">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="ki ki-close"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </form>
 
-            @if(!$showReport)
-                <div class="row">
-                    <p class="offset-4 text-center alert alert-primary">
-                        Please choose a date and press search button to get the summary report
-                    </p>
-                </div>
-            @endif
+
+
             <!-- begin: Invoice body-->
             <div class="row p-5">
             @if($showReport)
@@ -91,33 +100,40 @@
                            </tr>
                            </thead>
                            <tbody>
-                           <tr>
-                               <td >Sales (net)</td>
-                               <td>{{$actualSalesForCurrentMonth->net_sales}}</td>
-                               <td></td>
-                               <td>{{$budgetSalesForCurrentMonth->net_sales}}</td>
-                               <td></td>
-                               <td>{{$actualSalesForCurrentMonthPrevYear->net_sales}}</td>
-                               <td></td>
-                           </tr>
-                           <tr>
-                               <td >Gross Margin</td>
-                               <td>{{$actualSalesForCurrentMonth->gross_profit}}</td>
-                               <td>{{$actualSalesForCurrentMonth->rounded_gross_profit_percentage}}%</td>
-                               <td>{{$budgetSalesForCurrentMonth->gross_profit}}</td>
-                               <td>{{$budgetSalesForCurrentMonth->rounded_gross_profit_percentage}}%</td>
-                               <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit}}</td>
-                               <td>{{$actualSalesForCurrentMonthPrevYear->rounded_gross_profit_percentage}}%</td>
-                           </tr>
-                           <tr>
-                               <td >Net Profit</td>
-                               <td>{{$actualSalesForCurrentMonth->net_profit}}</td>
-                               <td>{{$actualSalesForCurrentMonth->rounded_net_profit_percentage}}%</td>
-                               <td>{{$budgetSalesForCurrentMonth->net_profit}}</td>
-                               <td>{{$budgetSalesForCurrentMonth->rounded_net_profit_percentage}}%</td>
-                               <td>{{$actualSalesForCurrentMonthPrevYear->net_profit}}</td>
-                               <td>{{$actualSalesForCurrentMonthPrevYear->rounded_net_profit_percentage}}%</td>
-                           </tr>
+                           @if(!is_null($actualSalesForCurrentMonth))
+                               <tr>
+                                   <td >Sales (net)</td>
+                                   <td>{{$actualSalesForCurrentMonth->net_sales??0 }}</td>
+                                   <td></td>
+                                   <td>{{$budgetSalesForCurrentMonth->net_sales??0 }}</td>
+                                   <td> 
+                                   <td>{{$actualSalesForCurrentMonthPrevYear->net_sales??0 }}</td>
+                                   <td></td>
+                               </tr>
+                               <tr>
+                                   <td >Gross Margin</td>
+                                   <td>{{$actualSalesForCurrentMonth->gross_profit??0}}</td>
+                                   <td>{{$actualSalesForCurrentMonth->gross_profit_percentage??0}}%</td>
+                                   <td>{{$budgetSalesForCurrentMonth->gross_profit??0}}</td>
+                                   <td>{{$budgetSalesForCurrentMonth->gross_profit_percentage??0}}%</td>
+                                   <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit??0}}</td>
+                                   <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit_percentage??0}}%</td>
+                               </tr>
+                               <tr>
+                                   <td >Net Profit</td>
+                                   <td>{{$actualSalesForCurrentMonth->net_profit??0}}</td>
+                                   <td>{{$actualSalesForCurrentMonth->net_profit_percentage??0}}%</td>
+                                   <td>{{$budgetSalesForCurrentMonth->net_profit??0}}</td>
+                                   <td>{{$budgetSalesForCurrentMonth->net_profit_percentage??0}}%</td>
+                                   <td>{{$actualSalesForCurrentMonthPrevYear->net_profit??0}}</td>
+                                   <td>{{$actualSalesForCurrentMonthPrevYear->net_profit_percentage??0}}%</td>
+                               </tr>
+                           @else
+                               <tr>
+                                   <td colspan="7">No available data</td>
+                               </tr>
+                           @endif
+
                            </tbody>
                        </table>
                        <hr>
@@ -144,33 +160,39 @@
                            </tr>
                            </thead>
                            <tbody>
-                           <tr>
-                               <td >Sales (net)</td>
-                               <td>{{$actualSalesForCurrentMonth->net_sales_cum}}</td>
-                               <td></td>
-                               <td>{{$budgetSalesForCurrentMonth->net_sales_cum}}</td>
-                               <td></td>
-                               <td>{{$actualSalesForCurrentMonthPrevYear->net_sales_cum}}</td>
-                               <td></td>
-                           </tr>
-                           <tr>
-                               <td >Gross Margin</td>
-                               <td>{{$actualSalesForCurrentMonth->gross_profit_cum}}</td>
-                               <td>{{$actualSalesForCurrentMonth->rounded_gross_profit_cum_percentage}}%</td>
-                               <td>{{$budgetSalesForCurrentMonth->gross_profit_cum}}</td>
-                               <td>{{$budgetSalesForCurrentMonth->rounded_gross_profit_cum_percentage}}%</td>
-                               <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit_cum}}</td>
-                               <td>{{$actualSalesForCurrentMonthPrevYear->rounded_gross_profit_cum_percentage}}%</td>
-                           </tr>
-                           <tr>
-                               <td >Net Profit</td>
-                               <td>{{$actualSalesForCurrentMonth->net_profit_cum}}</td>
-                               <td>{{$actualSalesForCurrentMonth->rounded_net_profit_cum_percentage}}%</td>
-                               <td>{{$budgetSalesForCurrentMonth->net_profit_cum}}</td>
-                               <td>{{$budgetSalesForCurrentMonth->rounded_net_profit_cum_percentage}}%</td>
-                               <td>{{$actualSalesForCurrentMonthPrevYear->net_profit_cum}}</td>
-                               <td>{{$actualSalesForCurrentMonthPrevYear->rounded_net_profit_cum_percentage}}%</td>
-                           </tr>
+                            @if(!is_null($actualSalesForCurrentMonth))
+                                <tr>
+                                    <td >Sales (net)</td>
+                                    <td>{{$actualSalesForCurrentMonth->net_sales_cum??0}}</td>
+                                    <td></td>
+                                    <td>{{$budgetSalesForCurrentMonth->net_sales_cum??0}}</td>
+                                    <td></td>
+                                    <td>{{$actualSalesForCurrentMonthPrevYear->net_sales_cum??0}}</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td >Gross Margin</td>
+                                    <td>{{$actualSalesForCurrentMonth->gross_profit_cum??0}}</td>
+                                    <td>{{$actualSalesForCurrentMonth->gross_profit_cum_percentage??0}}%</td>
+                                    <td>{{$budgetSalesForCurrentMonth->gross_profit_cum??0}}</td>
+                                    <td>{{$budgetSalesForCurrentMonth->gross_profit_cum_percentage??0}}%</td>
+                                    <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit_cum??0}}</td>
+                                    <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit_cum_percentage??0}}%</td>
+                                </tr>
+                                <tr>
+                                    <td >Net Profit</td>
+                                    <td>{{$actualSalesForCurrentMonth->net_profit_cum??0}}</td>
+                                    <td>{{$actualSalesForCurrentMonth->net_profit_cum_percentage??0}}%</td>
+                                    <td>{{$budgetSalesForCurrentMonth->net_profit_cum??0}}</td>
+                                    <td>{{$budgetSalesForCurrentMonth->net_profit_cum_percentage??0}}%</td>
+                                    <td>{{$actualSalesForCurrentMonthPrevYear->net_profit_cum??0}}</td>
+                                    <td>{{$actualSalesForCurrentMonthPrevYear->net_profit_cum_percentage??0}}%</td>
+                                </tr>
+                            @else
+                                <tr>
+                                    <td colspan="7">No available data</td>
+                                </tr>
+                           @endif
                            </tbody>
                        </table>
                        <hr>
@@ -281,36 +303,42 @@
                            </tr>
                            </thead>
                            <tbody>
+                            @if(!is_null($inventory))
+                                <tr>
+                                    <td>Inventory Category</td>
+                                    <td>{{$inventory->goods_ready_for_sale}}</td>
+                                    <td>{{$inventory->finished_products}}</td>
+                                    <td>{{$inventory->semi_finished_products}}</td>
+                                    <td>{{$inventory->work_in_process}}</td>
+                                    <td>{{$inventory->raw_materials}}</td>
+                                    <td>{{$inventory->spare_parts_and_others}}</td>
+                                </tr>
+                                <tr>
+                                    <td>% of Balance</td>
+                                    <td>{{round($inventory->goods_ready_for_sale / $inventory->total * 100,0)}}%</td>
+                                    <td>{{round($inventory->finished_products / $inventory->total * 100,0)}}%</td>
+                                    <td>{{round($inventory->semi_finished_products / $inventory->total * 100,0)}}%</td>
+                                    <td>{{round($inventory->work_in_process / $inventory->total * 100,0)}}%</td>
+                                    <td>{{round($inventory->raw_materials / $inventory->total * 100,0)}}%</td>
+                                    <td>{{round($inventory->spare_parts_and_others / $inventory->total * 100,0)}}%</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td  bgcolor="#d3d3d3" colspan="6"">{{$inventory->total}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Inventory Provision</td>
+                                    <td colspan="6"">{{$inventory->inventory_provision}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Net Realizable Value</td>
+                                    <td  bgcolor="#d3d3d3" colspan="6"">{{$inventory->inventory_provision + $inventory->total}}</td>
+                                </tr>
+                            @else
                            <tr>
-                               <td>Inventory Category</td>
-                               <td>{{$inventory->goods_ready_for_sale}}</td>
-                               <td>{{$inventory->finished_products}}</td>
-                               <td>{{$inventory->semi_finished_products}}</td>
-                               <td>{{$inventory->work_in_process}}</td>
-                               <td>{{$inventory->raw_materials}}</td>
-                               <td>{{$inventory->spare_parts_and_others}}</td>
+                               <td colspan="7">No available data</td>
                            </tr>
-                           <tr>
-                               <td>% of Balance</td>
-                               <td>{{round($inventory->goods_ready_for_sale / $inventory->total * 100,0)}}%</td>
-                               <td>{{round($inventory->finished_products / $inventory->total * 100,0)}}%</td>
-                               <td>{{round($inventory->semi_finished_products / $inventory->total * 100,0)}}%</td>
-                               <td>{{round($inventory->work_in_process / $inventory->total * 100,0)}}%</td>
-                               <td>{{round($inventory->raw_materials / $inventory->total * 100,0)}}%</td>
-                               <td>{{round($inventory->spare_parts_and_others / $inventory->total * 100,0)}}%</td>
-                           </tr>
-                           <tr>
-                               <td>Total</td>
-                               <td  bgcolor="#d3d3d3" colspan="6"">{{$inventory->total}}</td>
-                           </tr>
-                           <tr>
-                               <td>Inventory Provision</td>
-                               <td colspan="6"">{{$inventory->inventory_provision}}</td>
-                           </tr>
-                           <tr>
-                               <td>Net Realizable Value</td>
-                               <td  bgcolor="#d3d3d3" colspan="6"">{{$inventory->inventory_provision + $inventory->total}}</td>
-                           </tr>
+                            @endif
                            </tbody>
                        </table>
 

@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77990233-3551-4163-a3f2-c11466b16bba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BudgetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BudgetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SummaryReportsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SummaryReportsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,47 +32,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12064">
-              <caret line="416" column="9" selection-start-line="382" selection-start-column="8" selection-end-line="416" selection-end-column="9" />
+            <state relative-caret-position="404">
+              <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+              <folding>
+                <element signature="e#398#1552#0#HTML" />
+                <element signature="e#17271#17448#0#HTML" />
+                <element signature="e#17476#17662#0#HTML" />
+                <element signature="e#17690#17916#0#HTML" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SalesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7511">
-              <caret line="259" column="13" selection-start-line="222" selection-end-line="259" selection-end-column="13" />
+            <state relative-caret-position="145">
+              <caret line="66" column="9" selection-start-line="51" selection-start-column="3" selection-end-line="66" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BudgetController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="151" column="42" selection-start-line="151" selection-start-column="42" selection-end-line="151" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/dashboard.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="228" column="45" selection-start-line="228" selection-start-column="45" selection-end-line="228" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PagesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+            <state relative-caret-position="81">
+              <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+              <folding>
+                <element signature="e#40#55#0#PHP" expanded="true" />
+                <element signature="e#4604#6672#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,17 +72,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SalesReportsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="29">
+              <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SummaryReportsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="84">
+              <caret line="25" column="73" selection-start-line="25" selection-start-column="73" selection-end-line="25" selection-end-column="73" />
               <folding>
                 <element signature="e#40#61#0#PHP" expanded="true" />
               </folding>
@@ -110,9 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tableto</find>
-      <find>exportToExcel</find>
-      <find>tables</find>
       <find>img</find>
       <find>singin</find>
       <find>sean</find>
@@ -140,6 +128,9 @@
       <find>total-sales-target</find>
       <find>chart_3</find>
       <find>100%</find>
+      <find>$inve</find>
+      <find>net_sales_cum</find>
+      <find>first()()</find>
     </findStrings>
     <replaceStrings>
       <replace>budget</replace>
@@ -150,6 +141,7 @@
       <replace>gross_profit</replace>
       <replace>SAR</replace>
       <replace>var</replace>
+      <replace>first()</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -201,14 +193,14 @@
         <option value="$PROJECT_DIR$/database/migrations/2021_03_19_022419_add_slug_column_to_aging_attributes_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/app/Inventory.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BudgetController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SalesController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BudgetController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SummaryReportsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php" />
       </list>
     </option>
   </component>
@@ -343,29 +335,6 @@
             <path>
               <item name="meshkaty" type="b2602c69:ProjectViewProjectNode" />
               <item name="meshkaty" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="meshkaty" type="b2602c69:ProjectViewProjectNode" />
-              <item name="meshkaty" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="meshkaty" type="b2602c69:ProjectViewProjectNode" />
-              <item name="meshkaty" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="meshkaty" type="b2602c69:ProjectViewProjectNode" />
-              <item name="meshkaty" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-              <item name="logos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="meshkaty" type="b2602c69:ProjectViewProjectNode" />
-              <item name="meshkaty" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -476,11 +445,12 @@
       <workItem from="1615923497373" duration="5114000" />
       <workItem from="1616114195734" duration="23444000" />
       <workItem from="1616266028817" duration="2787000" />
+      <workItem from="1616287695755" duration="8701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167142000" />
+    <option name="totallyTimeSpent" value="175843000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,7 +465,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27046978" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.27449664" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -813,27 +783,6 @@
     <entry file="file://$PROJECT_DIR$/.editorconfig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SalesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="95" column="13" lean-forward="true" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BudgetController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="93" column="16" lean-forward="true" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12064">
-          <caret line="416" column="9" selection-start-line="382" selection-start-column="8" selection-end-line="416" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7511">
@@ -841,40 +790,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PagesController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        <state relative-caret-position="4379">
+          <caret line="151" column="42" selection-start-line="151" selection-start-column="42" selection-end-line="151" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
+        <state relative-caret-position="6612">
           <caret line="228" column="45" selection-start-line="228" selection-start-column="45" selection-end-line="228" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="151" column="42" selection-start-line="151" selection-start-column="42" selection-end-line="151" selection-end-column="42" />
+        <state relative-caret-position="522">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SalesReportsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="29">
+          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BudgetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+            <element signature="e#4604#6672#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SalesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="66" column="9" selection-start-line="51" selection-start-column="3" selection-end-line="66" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SummaryReportsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="84">
+          <caret line="25" column="73" selection-start-line="25" selection-start-column="73" selection-end-line="25" selection-end-column="73" />
           <folding>
             <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+          <folding>
+            <element signature="e#398#1552#0#HTML" />
+            <element signature="e#17271#17448#0#HTML" />
+            <element signature="e#17476#17662#0#HTML" />
+            <element signature="e#17690#17916#0#HTML" />
           </folding>
         </state>
       </provider>
