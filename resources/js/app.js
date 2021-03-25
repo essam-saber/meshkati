@@ -1,6 +1,6 @@
 require('./bootstrap');
 window.Vue = require('vue');
-Vue.component('sales-record', require('./components/SalesRecord.vue'));
+//Vue.component('sales-record', require('./components/SalesRecord.vue'));
 
 
 const app = new Vue({
