@@ -13,6 +13,8 @@ $ git clone https://github.com/essam-saber/meshkati.git
 $ cd meshkati
 # install project dependencies and the third party packages
 $ composer install
+# install npm dependencies
+$ npm run install
 # create database schema
 $ php artisan migrate
 # seed the required database data such as (credentials, pre defined values ...etc)
