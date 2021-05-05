@@ -13,6 +13,8 @@ class SummaryReportsController extends Controller
 {
     public function index(Request $request)
     {
+        if(!auth()->user()->hasPermissionTo('read_reports')) abort(403);
+
         $year = Carbon::now()->year;
         $month = Carbon::now()->month;
         $showReport = false;

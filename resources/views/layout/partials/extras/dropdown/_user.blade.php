@@ -106,6 +106,6 @@
             @method('post')
             <button  type="submit" class="btn btn-light-primary font-weight-bold">Sign Out</button>
         </form>
-{{--        <a href="#" target="_blank" class="btn btn-clean font-weight-bold">Upgrade Plan</a>--}}
+        <a href="{{url('profile')}}" class="btn btn-clean font-weight-bold">Edit Profile</a>
     </div>
 </div>

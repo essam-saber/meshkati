@@ -16,6 +16,8 @@ class SalesReportsController extends Controller
 
     public function salesAnalysisAndComparative(Request $request)
     {
+        if(!auth()->user()->hasPermissionTo('read_reports')) abort(403);
+
         $firstYear = $request->first_date??Carbon::now()->year;
         $secondYear = $request->second_date??Carbon::now()->subYear()->year;
         $sales = Sale::where('year', $firstYear)
@@ -38,6 +40,8 @@ class SalesReportsController extends Controller
 
     public function salesAndGPBudget(Request $request)
     {
+        if(!auth()->user()->hasPermissionTo('read_reports')) abort(403);
+
         $firstDate = $request->first_date ?? Carbon::now()->year;
         $lastDate = $request->second_date??Carbon::now()->year;
         $actualSales = Sale::where('year', $firstDate)->ascOrder()->get();
@@ -57,6 +61,8 @@ class SalesReportsController extends Controller
 
     public function currentAndPriorYearSales(Request $request)
     {
+        if(!auth()->user()->hasPermissionTo('read_reports')) abort(403);
+
         $currentYear = Carbon::now()->year;
         $priorYear = Carbon::now()->subYear()->year;
 

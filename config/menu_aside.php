@@ -73,7 +73,38 @@ return [
                 ],
             ]
         ],
+        [
+            'section' => 'employees',
+        ],
+        [
+            'title' => 'Employees',
+            'icon' => 'media/svg/icons/General/User.svg',
+            'root' => true,
+            'bullet' => 'dot',
+            'submenu' => [
+                [
+                    'title' => 'All Employees',
+                    'page' => 'employees'
+                ],
 
+            ]
+        ],
+        [
+            'section' => 'roles',
+        ],
+        [
+            'title' => 'Roles',
+            'icon' => 'media/svg/icons/General/Visible.svg',
+            'root' => true,
+            'bullet' => 'dot',
+            'submenu' => [
+                [
+                    'title' => 'All Roles',
+                    'page' => 'roles'
+                ],
+
+            ]
+        ],
     ]
 
 ];

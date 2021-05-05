@@ -10,6 +10,8 @@ class BudgetController extends Controller
 {
     public function index()
     {
+        if(!auth()->user()->hasPermissionTo('read_budget_sales')) abort(403);
+
         return view('pages.budget.index')->with([
             'page_title' => 'budget',
             'page_description' => 'Show all budget',
@@ -19,6 +21,8 @@ class BudgetController extends Controller
 
     public function edit($id)
     {
+        if(!auth()->user()->hasPermissionTo('edit_budget_sales')) abort(403);
+
         $budget = Budget::where('id', $id)->firstOrFail();
         return view('pages.budget.edit')->with([
             'page_title' => 'Edit Budget',
@@ -29,6 +33,8 @@ class BudgetController extends Controller
 
     public function update(StoreActualSalesRequest $request, $id)
     {
+        if(!auth()->user()->hasPermissionTo('edit_budget_sales')) abort(403);
+
         [$month, $year] = explode('-',$request->month);
         $monthInsertedBefore = Budget::where('year', $year)->where('month', $month)->count();
 
@@ -67,6 +73,8 @@ class BudgetController extends Controller
 
     public function create()
     {
+        if(!auth()->user()->hasPermissionTo('create_budget_sales')) abort(403);
+
         return view('pages.budget.create')->with([
             'page_title' => 'Create Monthly budget',
             'page_description' => 'Add new budget record for a particular month',
@@ -75,6 +83,8 @@ class BudgetController extends Controller
 
     public function store(StoreActualSalesRequest $request)
     {
+        if(!auth()->user()->hasPermissionTo('create_budget_sales')) abort(403);
+
         [$month, $year] = explode('-',$request->month);
 
         $monthInsertedBefore = Budget::where('year', $year)->where('month', $month)->count();
@@ -104,6 +114,8 @@ class BudgetController extends Controller
 
     public function destroy($id)
     {
+        if(!auth()->user()->hasPermissionTo('delete_budget_sales')) abort(403);
+
         $Budget = Budget::where('id', $id)->firstOrFail();
         $Budget->delete();
         return back()->with('success', 'Budget report has been delete successfully!');

@@ -11,6 +11,8 @@ class AgingDebitController extends Controller
 {
     public function index()
     {
+        if(!auth()->user()->hasPermissionTo('read_aging')) abort(403);
+
         $agingAttributes = AgingAttribute::all();
         $agings = AgingOfDebit::ascOrder()->with(['attribute'])->get()->groupBy(function($item, $key){
             return $item['year'].'-'.$item['month'];
@@ -25,6 +27,8 @@ class AgingDebitController extends Controller
 
     public function create()
     {
+        if(!auth()->user()->hasPermissionTo('create_aging')) abort(403);
+
         $agingAttributes = AgingAttribute::all();
         return view('pages.aging.create')->with([
             'page_title' => 'Create new aging of debit',
@@ -34,6 +38,8 @@ class AgingDebitController extends Controller
 
     public function store(Request $request)
     {
+        if(!auth()->user()->hasPermissionTo('create_aging')) abort(403);
+
         [$month, $year] = explode('-', $request->month);
         $data = $request->only('attributes');
         $attributeValues =  $data['attributes'];
@@ -55,6 +61,8 @@ class AgingDebitController extends Controller
     }
 
     public function edit($year, $month){
+        if(!auth()->user()->hasPermissionTo('edit_aging')) abort(403);
+
         $agings = AgingOfDebit::where('year', $year)->where('month', $month)->get()->groupBy(function($ag){
             return $ag->attribute_id;
         });
@@ -69,6 +77,8 @@ class AgingDebitController extends Controller
     }
     public function update(Request $request, $year, $month)
     {
+        if(!auth()->user()->hasPermissionTo('edit_aging')) abort(403);
+
         AgingOfDebit::where('year', $year)->where('month', $month)->delete();
         $data = $request->only('attributes');
         $attributeValues =  $data['attributes'];
@@ -89,6 +99,8 @@ class AgingDebitController extends Controller
     }
     public function destroy($year, $month)
     {
+        if(!auth()->user()->hasPermissionTo('delete_aging')) abort(403);
+
         AgingOfDebit::where('year', $year)->where('month', $month)->delete();
         return back()->with(['success' => 'Data has been deleted successfully']);
 //        $inventory = Inventory::where('id', $id)->firstOrFail();

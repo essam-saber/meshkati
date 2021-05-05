@@ -8,7 +8,10 @@ use App\Sale;
 use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,7 +23,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-            $this->seedInventoryAttributes();
+        $this->createModulesPermissions();
+
+        $this->seedInventoryAttributes();
             $this->createAdminAccount();
     }
 
@@ -49,7 +54,42 @@ class DatabaseSeeder extends Seeder
     private function createAdminAccount()
     {
         DB::table('users')->truncate();
-        $user = User::factory()->create(['email' => 'admin@meshkati.com', 'password' => bcrypt('123456')]);
+        $user = User::factory()->create(['email' => 'admin@meshkati.com', 'password' =>Hash::make(123456)]);
+        $user->assignRole('super_admin');
+    }
 
+    private function createModulesPermissions()
+    {
+        $modules = config('modules');
+        $permissionsCollection  = [];
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+        DB::table('roles')->truncate();
+        DB::table('model_has_permissions')->truncate();
+        DB::table('permissions')->truncate();
+
+        foreach($modules as $key => $permissions) {
+           foreach($permissions as $permission) {
+               $permissionsCollection[] = ['name' =>  $permission.'_'.$key, 'guard_name' => 'web'];
+           }
+        }
+        $role = Role::create(['name' => 'super_admin', 'guard_name' => 'web']);
+        DB::table('permissions')->insert($permissionsCollection);
+        $permissions = Permission::all();
+        $role->syncPermissions($permissions);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
+    }
+
+    private function mergeModulesPermissions($permissions, &$permissionsCollection)
+    {
+        foreach($permissions as $key => $value) {
+           if(is_array($value)) {
+               $this->mergeModulesPermissions($value, $permissionsCollection);
+           } else {
+               $permissionsCollection[] = strtolower( "{$value} {$key}");
+           }
+        }
     }
 }

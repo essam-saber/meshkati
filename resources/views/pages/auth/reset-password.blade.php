@@ -5,7 +5,7 @@
 <!--begin::Head-->
 <head><base href="../../../../">
     <meta charset="utf-8" />
-    <title>Login | Meshkati</title>
+    <title>Reset Password | Meshkati</title>
     <meta name="description" content="Login page " />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="canonical" href="https://keenthemes.com/metronic" />
@@ -47,11 +47,9 @@
                 <!--begin::Login Sign in form-->
                 <div class="login-signin">
                     <div class="mb-20">
-                        <h3 class="opacity-40 font-weight-normal">Sign In To Admin</h3>
-                        <p class="opacity-40">Enter your details to login to your account:</p>
-
+                        <h3 class="opacity-40 font-weight-normal">Reset Password</h3>
                     </div>
-                    <form class="form" id="" method="POST" action="{{route('postLogin')}}">
+                    <form class="form" id="" method="POST" action="{{route('password.update')}}">
                         @csrf
                         @method('post')
                         @if(session()->has('success'))
@@ -59,21 +57,21 @@
                                 <div class="alert alert-success">{{session()->get('success')}}</div>
                             </div>
                         @endif
+                        <input type="hidden" name="token" value="{{$token}}">
                         <div class="form-group">
                             <input required class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Email" name="email" autocomplete="off" />
                         </div>
                         <div class="form-group">
-                            <input required class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="password" placeholder="Password" name="password" />
+                            <input required class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="password" placeholder="Password" name="password" autocomplete="off" />
+                        </div>
+                        <div class="form-group">
+                            <input required class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="password" placeholder="Password Confirmation" name="password_confirmation" autocomplete="off" />
                         </div>
                         <div class="form-group text-center mt-10">
-                            <button id="" type="submit" class="btn btn-pill btn-primary opacity-90 px-15 py-3">Sign In</button>
-                            <a href="{{route('password.request')}}" class="pl-5">Forgot your password?</a>
+                            <button id="" type="submit" class="btn btn-pill btn-primary opacity-90 px-15 py-3">Submit</button>
                         </div>
-                        @if(session()->has('invalid'))
-                            <div class="form-group text-center mt-10">
-                                <div class="alert alert-danger">{{session()->get('invalid')}}</div>
-                            </div>
-                        @endif
+
+
 
                     </form>
                 </div>
@@ -98,6 +96,7 @@
 <!--end::Global Theme Bundle-->
 <!--begin::Page Scripts(used by this page)-->
 <script src="{{asset('js/pages/custom/login/login-general.js')}}"></script>
+
 <!--end::Page Scripts-->
 </body>
 <!--end::Body-->

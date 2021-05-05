@@ -13,6 +13,7 @@ class PagesController extends Controller
 {
     public function index()
     {
+        if(!auth()->user()->hasPermissionTo('read_dashboard')) abort(403);
         $currentYear = Carbon::now()->year;
         $lastYear = Carbon::now()->subYear()->year;
         $page_title = 'Dashboard';

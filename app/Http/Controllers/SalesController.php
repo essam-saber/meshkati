@@ -13,6 +13,8 @@ class SalesController extends Controller
 {
     public function index()
     {
+        if(!auth()->user()->hasPermissionTo('read_actual_sales')) abort(403);
+
         $sales = Sale::orderBy('year', 'desc')->orderBy('month', 'desc')->get();
 
         return view('pages.sales.index')->with([
@@ -24,6 +26,8 @@ class SalesController extends Controller
 
     public function edit($id)
     {
+        if(!auth()->user()->hasPermissionTo('edit_actual_sales')) abort(403);
+
         $sale = Sale::where('id', $id)->firstOrFail();
         return view('pages.sales.edit')->with([
             'page_title' => 'Edit Sale',
@@ -34,7 +38,7 @@ class SalesController extends Controller
 
     public function update(StoreActualSalesRequest $request, $id)
     {
-
+        if(!auth()->user()->hasPermissionTo('edit_actual_sales')) abort(403);
         [$month, $year] = explode('-',$request->month);
         $monthInsertedBefore = Sale::where('year', $year)->where('month', $month)->count();
 
@@ -71,6 +75,8 @@ class SalesController extends Controller
 
     public function create()
     {
+        if(!auth()->user()->hasPermissionTo('create_actual_sales')) abort(403);
+
         return view('pages.sales.create')->with([
             'page_title' => 'Create Monthly Sales',
             'page_description' => 'Add new sales record for a particular month',
@@ -79,6 +85,8 @@ class SalesController extends Controller
 
     public function store(StoreActualSalesRequest $request)
     {
+        if(!auth()->user()->hasPermissionTo('create_actual_sales')) abort(403);
+
         [$month, $year] = explode('-',$request->month);
         $monthInsertedBefore = Sale::where('year', $year)->where('month', $month)->count();
         if($monthInsertedBefore > 0) {
@@ -110,6 +118,8 @@ class SalesController extends Controller
 
     public function destroy($id)
     {
+        if(!auth()->user()->hasPermissionTo('delete_actual_sales')) abort(403);
+
         $sale = Sale::where('id', $id)->firstOrFail();
         $sale->delete();
         return back()->with('success', 'Sale report has been delete successfully!');

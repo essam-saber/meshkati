@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,5 +84,59 @@ Route::group(['middleware' => 'auth'], function(){
     Route::put('/aging-of-debit/{year}/{month}', [\App\Http\Controllers\AgingDebitController::class, 'update'])->name('aging-of-debit.update');
     Route::delete('/aging-of-debit/{year}/{month}', [\App\Http\Controllers\AgingDebitController::class, 'destroy'])->name('aging-of-debit.destroy');
 
+    // Employees
+    Route::resource('employees', EmployeeController::class );
+    Route::resource('roles', RolesController::class );
+
+    // Profile
+    Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'getProfile']);
+    Route::post('profile', [\App\Http\Controllers\ProfileController::class, 'updateProfile']);
 
 });
+
+Route::get('/forgot-password', function () {
+    return view('pages.auth.forgot-password');
+})->middleware('guest')->name('password.request');
+
+Route::post('/forgot-password', function (\Illuminate\Http\Request $request) {
+    $request->validate(['email' => 'required|email']);
+
+    $status = Password::sendResetLink(
+        $request->only('email')
+    );
+
+    return $status === Password::RESET_LINK_SENT
+        ? back()->with(['status' => __($status), 'success' => 'Reset password link has been sent, please check your email'])
+        : back()->withErrors(['email' => __($status)]);
+})->middleware('guest')->name('password.email');
+
+
+Route::get('/reset-password/{token}', function ($token) {
+    return view('pages.auth.reset-password', ['token' => $token]);
+})->middleware('guest')->name('password.reset');
+
+
+Route::post('/reset-password', function (Request $request) {
+    $request->validate([
+        'token' => 'required',
+        'email' => 'required|email',
+        'password' => 'required|min:8|confirmed',
+    ]);
+
+    $status = Password::reset(
+        $request->only('email', 'password', 'password_confirmation', 'token'),
+        function ($user, $password) use ($request) {
+            $user->forceFill([
+                'password' => Hash::make($password)
+            ])->setRememberToken(Str::random(60));
+
+            $user->save();
+
+            event(new PasswordReset($user));
+        }
+    );
+
+    return $status == Password::PASSWORD_RESET
+        ? redirect()->route('login')->with(['status' => __($status), 'success' => 'Your password has been updated, please login !'])
+        : back()->withErrors(['email' => [__($status)]]);
+})->middleware('guest')->name('password.update');

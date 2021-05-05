@@ -11,6 +11,8 @@ class InventoryController extends Controller
 {
     public function index()
     {
+        if(!auth()->user()->hasPermissionTo('read_inventory')) abort(403);
+
         $inventories = Inventory::ascOrder()->get();
         return view('pages.inventory.index')->with([
             'page_title' => 'Browse Inventory',
@@ -20,6 +22,8 @@ class InventoryController extends Controller
 
     public function create()
     {
+        if(!auth()->user()->hasPermissionTo('create_inventory')) abort(403);
+
         return view('pages.inventory.create')->with([
             'page_title' => 'Create new record'
         ]);
@@ -27,6 +31,8 @@ class InventoryController extends Controller
 
     public function store(StoreInventoryRequest $request)
     {
+        if(!auth()->user()->hasPermissionTo('create_inventory')) abort(403);
+
         [$month, $year] = explode('-', $request->month);
         $data = $request->except('_token', 'month');
         $data['month'] = $month;
@@ -40,12 +46,16 @@ class InventoryController extends Controller
     }
 
     public function edit($id){
+        if(!auth()->user()->hasPermissionTo('edit_inventory')) abort(403);
+
         $inventory = Inventory::where('id', $id)->firstOrFail();
         return view('pages.inventory.edit', compact('inventory'))
             ->with(['page_title' => 'edit inventory record ']);
     }
     public function update(StoreInventoryRequest $request, $id)
     {
+        if(!auth()->user()->hasPermissionTo('inventory_inventory')) abort(403);
+
         [$month, $year] = explode('-', $request->month);
         $data = $request->except('_token', 'month');
         $data['month'] = $month;
@@ -60,6 +70,8 @@ class InventoryController extends Controller
     }
     public function destroy($id)
     {
+        if(!auth()->user()->hasPermissionTo('delete_inventory')) abort(403);
+
         $inventory = Inventory::where('id', $id)->firstOrFail();
         $inventory->delete();
         return redirect()->route('inventory.index')->with(['success' => 'Inventory record has been deleted successfully']);

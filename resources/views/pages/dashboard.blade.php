@@ -4,75 +4,78 @@
 {{-- Content --}}
 @section('content')
 
-    <div class="row">
-        <div class="col-lg-6">
-            <!--begin::Card-->
-            <div class="card card-custom gutter-b">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h3 class="card-label">Profit Analysis - {{$currentYear}}</h3>
+    @can('read_dashboard')
+        <div class="row">
+            <div class="col-lg-6">
+                <!--begin::Card-->
+                <div class="card card-custom gutter-b">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="card-label">Profit Analysis - {{$currentYear}}</h3>
+                        </div>
+                    </div>
+                    <div class="card-body" >
+                        <!--begin::Chart-->
+                        <div id="chart_3" class="d-flex justify-content-center"></div>
+                        <!--end::Chart-->
                     </div>
                 </div>
-                <div class="card-body" >
-                    <!--begin::Chart-->
-                    <div id="chart_3" class="d-flex justify-content-center"></div>
-                    <!--end::Chart-->
-                </div>
+                <!--end::Card-->
             </div>
-            <!--end::Card-->
-        </div>
-        <div class="col-lg-6">
-            <!--begin::Card-->
-            <div class="card card-custom gutter-b ">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h3 class="card-label">Sales & Comparison  {{ $currentYear }}</h3>
+            <div class="col-lg-6">
+                <!--begin::Card-->
+                <div class="card card-custom gutter-b ">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="card-label">Sales & Comparison  {{ $currentYear }}</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!--begin::Chart-->
+                        <div id="sales-comparison"></div>
+                        <!--end::Chart-->
                     </div>
                 </div>
-                <div class="card-body">
-                    <!--begin::Chart-->
-                    <div id="sales-comparison"></div>
-                    <!--end::Chart-->
-                </div>
+                <!--end::Card-->
             </div>
-            <!--end::Card-->
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6">
-            <!--begin::Card-->
-            <div class="card card-custom gutter-b">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h3 class="card-label">Sales Analysis - {{$currentYear}}</h3>
+        <div class="row">
+            <div class="col-lg-6">
+                <!--begin::Card-->
+                <div class="card card-custom gutter-b">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="card-label">Sales Analysis - {{$currentYear}}</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!--begin::Chart-->
+                        <div id="sales-analysis" class="d-flex justify-content-center"></div>
+                        <!--end::Chart-->
                     </div>
                 </div>
-                <div class="card-body">
-                    <!--begin::Chart-->
-                    <div id="sales-analysis" class="d-flex justify-content-center"></div>
-                    <!--end::Chart-->
-                </div>
+                <!--end::Card-->
             </div>
-            <!--end::Card-->
-        </div>
-        <div class="col-lg-6">
-            <!--begin::Card-->
-            <div class="card card-custom gutter-b">
-                <div class="card-header">
-                    <div class="card-title">
-                        <h3 class="card-label">Total Sales Target - {{$currentYear}}</h3>
+            <div class="col-lg-6">
+                <!--begin::Card-->
+                <div class="card card-custom gutter-b">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3 class="card-label">Total Sales Target - {{$currentYear}}</h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!--begin::Chart-->
+                        <div id="total-sales-target"></div>
+                        <!--end::Chart-->
                     </div>
                 </div>
-                <div class="card-body">
-                    <!--begin::Chart-->
-                    <div id="total-sales-target"></div>
-                    <!--end::Chart-->
-                </div>
+                <!--end::Card-->
             </div>
-            <!--end::Card-->
         </div>
-    </div>
-    <div class="row">
+        <div class="row">
+    @endcan
+
 
 
     @endsection
