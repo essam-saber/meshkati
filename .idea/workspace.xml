@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77990233-3551-4163-a3f2-c11466b16bba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/employees/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/employees/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/employees/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/employees/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/roles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/roles/index.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="77990233-3551-4163-a3f2-c11466b16bba" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/pages/roles/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="166">
-              <caret line="33" column="71" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
+              <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -496,12 +490,12 @@
       <workItem from="1619379284992" duration="8165000" />
       <workItem from="1619922000430" duration="22818000" />
       <workItem from="1620172126416" duration="1743000" />
-      <workItem from="1620215739358" duration="991000" />
+      <workItem from="1620215739358" duration="1610000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210334000" />
+    <option name="totallyTimeSpent" value="210953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -962,7 +956,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/pages/roles/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
-          <caret line="33" column="71" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
+          <caret line="33" column="23" lean-forward="true" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
         </state>
       </provider>
     </entry>
