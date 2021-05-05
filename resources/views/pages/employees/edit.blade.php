@@ -27,7 +27,7 @@
                             <label>Employee Role:</label>
                             <select name="role" id="" class="form-control">
                                 @foreach($roles as $role)
-                                    <option {{$employee->getRoleNames()->contains($role->name) ? 'selected': ''}} value="{{$role->id}}">{{$role->display_name}}</option>
+                                    <option {{$employee->getRoleNames()->contains($role->name) ? 'selected': ''}} value="{{$role->id}}">{{ucwords(str_replace('_',' ', $role->name))}}</option>
                                 @endforeach
                             </select>
                         </div>
