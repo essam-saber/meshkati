@@ -9,7 +9,7 @@
             <!--begin::Card-->
             <div class="card card-custom gutter-b example example-compact">
                 <div class="card-header">
-                    <h3 class="card-title">Insert a new role</h3>
+                    <h3 class="card-title">Create new employee</h3>
 
                 </div>
                 <form class="form" method="post" action="{{route('employees.store')}}">

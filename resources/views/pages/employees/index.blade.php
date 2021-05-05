@@ -35,7 +35,7 @@
                     <tr>
                         <td>{{$employee->name}}</td>
                         <td>{{$employee->email}}</td>
-                        <td>Role</td>
+                        <td>{{ucwords(str_replace('_', ' ', optional($employee->roles)[0]->name))}}</td>
 
                         <td>
                             @if(auth()->id() !== $employee->id)

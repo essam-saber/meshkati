@@ -31,7 +31,7 @@
                 <tbody>
                 @foreach($roles as $role)
                     <tr>
-                        <td>{{$role->display_name}}</td>
+                        <td>{{ucwords(str_replace('_',' ', $role->name))}}</td>
 
                         <td>
                             <a href="{{route('roles.edit', $role->id)}}" class="btn btn-xs btn-info  p-2 pl-3"><i class="fa fa-pen"></i></a>

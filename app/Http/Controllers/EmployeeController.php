@@ -16,6 +16,7 @@ class EmployeeController extends Controller
         if(!auth()->user()->hasPermissionTo('read_employees')) abort(403);
 
         $users = User::latest()->paginate(10);
+
         return view('pages.employees.index')->with([
             'employees' => $users,
             'page_title' => 'Employees'
