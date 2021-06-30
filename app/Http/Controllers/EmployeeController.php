@@ -87,9 +87,12 @@ class EmployeeController extends Controller
         }
     }
 
-    public function destroy()
+    public function destroy(Request $request, $employeeId)
     {
         if(!auth()->user()->hasPermissionTo('delete_employees')) abort(403);
-
+        if(auth()->id() === $employeeId) abort(403);
+        $user = User::where('id', $employeeId)->firstOrFail();
+        $user->delete();
+        return back()->with(['success' => 'The employee has been delete successfully!']);
     }
 }

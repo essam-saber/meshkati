@@ -28,22 +28,22 @@ class Budget extends Model
 
     public function getRoundedGrossProfitPercentageAttribute()
     {
-        return round($this->gross_profit_percentage, 0);
+        return (float)round($this->gross_profit_percentage, 0);
     }
 
     public function getRoundedGrossProfitCumPercentageAttribute()
     {
-        return round($this->gross_profit_cum_percentage, 0);
+        return (float)round($this->gross_profit_cum_percentage, 0);
     }
 
     public function getRoundedNetProfitPercentageAttribute()
     {
-        return round($this->net_profit_percentage, 0);
+        return (float)round($this->net_profit_percentage, 0);
 
     }
 
     public function getRoundedNetProfitCumPercentageAttribute()
     {
-        return round($this->net_profit_cum_percentage, 0);
+        return (float)round($this->net_profit_cum_percentage, 0);
     }
 }

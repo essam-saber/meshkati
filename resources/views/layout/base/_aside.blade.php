@@ -16,7 +16,7 @@
     <div class="brand flex-column-auto {{ Metronic::printClasses('brand', false) }}" id="kt_brand">
         <div class="brand-logo">
             <a href="{{ url('/') }}">
-                <img class="img-thumbnail" alt="{{ config('app.name') }}" src="{{ asset('media/logos/meshkati.jpg') }}"/>
+                <img class="img-thumbnail" alt="{{ config('app.name') }}" src="{{ asset('media/logos/meshkati.png') }}"/>
             </a>
         </div>
 

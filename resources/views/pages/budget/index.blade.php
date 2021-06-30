@@ -39,11 +39,11 @@
                     <tr>
                         <td>{{$sale->year}}</td>
                         <td>{{$sale->monthName}}</td>
-                        <td>{{$sale->credit}}</td>
-                        <td>{{$sale->cash}}</td>
-                        <td>{{$sale->total}}</td>
-                        <td>{{$sale->returns}}</td>
-                        <td>{{$sale->net_sales}}</td>
+                        <td>{{moneyFormat($sale->credit)}}</td>
+                        <td>{{moneyFormat($sale->cash)}}</td>
+                        <td>{{moneyFormat($sale->total)}}</td>
+                        <td>{{moneyFormat($sale->returns)}}</td>
+                        <td>{{moneyFormat($sale->net_sales)}}</td>
                         <td>
                             <a href="{{route('budget.edit', $sale->id)}}" class="btn btn-xs btn-info  p-2 pl-3"><i class="fa fa-pen"></i></a>
                             <a  href="#" data-sale-id="{{$sale->id}}" class="delete-sale btn btn-xs btn-danger  p-2 pl-3"><i class="fa fa-trash"></i></a>

@@ -115,28 +115,28 @@
                         @foreach($actualSales as $key => $sale)
                             <tr>
                                 <td>{{$sale->monthName}}</td>
-                                <td>{{$sale->net_sales}}</td>
-                                <td>{{$sale->net_sales_cum}}</td>
-                                <td>{{$sale->gross_profit}}</td>
-                                <td>{{$sale->gross_profit_cum}}</td>
+                                <td>{{moneyFormat($sale->net_sales)}}</td>
+                                <td>{{moneyFormat($sale->net_sales_cum)}}</td>
+                                <td>{{moneyFormat($sale->gross_profit)}}</td>
+                                <td>{{moneyFormat($sale->gross_profit_cum)}}</td>
                                 <td>{{$sale->rounded_gross_profit_percentage}}%</td>
                                 <td>{{$sale->rounded_gross_profit_cum_percentage}}%</td>
-                                <td>{{$sale->net_profit_cum}}</td>
+                                <td>{{moneyFormat($sale->net_profit_cum)}}</td>
                                 <td>{{$sale->rounded_net_profit_cum_percentage}}%</td>
                             </tr>
                         @endforeach
                         <tr bgcolor="#d3d3d3">
                             <td><strong>Total</strong></td>
-                            <td><strong>{{$actualSales->sum('net_sales')}}</strong></td>
+                            <td><strong>{{moneyFormat($actualSales->sum('net_sales'))}}</strong></td>
                             <td></td>
-                            <td><strong>{{$actualSales->sum('gross_profit')}}</strong></td>
+                            <td><strong>{{moneyFormat($actualSales->sum('gross_profit'))}}</strong></td>
                             <td></td>
                             <td></td>
                             <td>
-                                <strong>{{round($actualSales->sum('gross_profit') / $actualSales->sum('net_sales') * 100,0)}}
+                                <strong>{{percentage($actualSales->sum('gross_profit'), $actualSales->sum('net_sales'))}}
                                     %</strong></td>
-                            <td><strong>{{$actualSales->sum('net_profit')}}</strong></td>
-                            <td><strong>{{round($actualSales->sum('net_profit') / $actualSales->sum('net_sales') * 100,0)}}%</strong></td>
+                            <td><strong>{{moneyFormat($actualSales->sum('net_profit'))}}</strong></td>
+                            <td><strong>{{percentage($actualSales->sum('net_profit'), $actualSales->sum('net_sales'))}}%</strong></td>
                         </tr>
                         </tbody>
                     </table>
@@ -168,28 +168,28 @@
                         @foreach($budgetSales as $key => $sale)
                             <tr>
                                 <td>{{$sale->monthName}}</td>
-                                <td>{{$sale->net_sales}}</td>
-                                <td>{{$sale->net_sales_cum}}</td>
-                                <td>{{$sale->gross_profit}}</td>
-                                <td>{{$sale->gross_profit_cum}}</td>
+                                <td>{{moneyFormat($sale->net_sales)}}</td>
+                                <td>{{moneyFormat($sale->net_sales_cum)}}</td>
+                                <td>{{moneyFormat($sale->gross_profit)}}</td>
+                                <td>{{moneyFormat($sale->gross_profit_cum)}}</td>
                                 <td>{{$sale->rounded_gross_profit_percentage}}%</td>
                                 <td>{{$sale->rounded_gross_profit_cum_percentage}}%</td>
-                                <td>{{$sale->net_profit_cum}}</td>
+                                <td>{{moneyFormat($sale->net_profit_cum)}}</td>
                                 <td>{{$sale->rounded_net_profit_cum_percentage}}%</td>
                             </tr>
                         @endforeach
                         <tr bgcolor="#d3d3d3">
                             <td><strong>Total</strong></td>
-                            <td><strong>{{$budgetSales->sum('net_sales')}}</strong></td>
+                            <td><strong>{{moneyFormat($budgetSales->sum('net_sales'))}}</strong></td>
                             <td></td>
-                            <td><strong>{{$budgetSales->sum('gross_profit')}}</strong></td>
+                            <td><strong>{{moneyFormat($budgetSales->sum('gross_profit'))}}</strong></td>
                             <td></td>
                             <td></td>
                             <td>
-                                <strong>{{round($budgetSales->sum('gross_profit') / $budgetSales->sum('net_sales') * 100,0)}}
+                                <strong>{{percentage($budgetSales->sum('gross_profit'), $budgetSales->sum('net_sales'))}}
                                     %</strong></td>
-                            <td><strong>{{$budgetSales->sum('net_profit')}}</strong></td>
-                            <td><strong>{{round($budgetSales->sum('net_profit') / $budgetSales->sum('net_sales') * 100,0)}}%</strong></td>
+                            <td><strong>{{moneyFormat($budgetSales->sum('net_profit'))}}</strong></td>
+                            <td><strong>{{percentage($budgetSales->sum('net_profit'), $budgetSales->sum('net_sales'))}}%</strong></td>
                         </tr>
                         </tbody>
                     </table>

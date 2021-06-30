@@ -95,27 +95,27 @@
                             @foreach($firstYearSales as $sale)
                                 <tr>
                                     <td>{{$sale->monthName}}</td>
-                                    <td>{{$sale->cash}}</td>
-                                    <td>{{$sale->credit}}</td>
-                                    <td>{{$sale->total}}</td>
-                                    <td class="text-danger">{{$sale->returns}}</td>
-                                    <td>{{$sale->net_sales}}</td>
+                                    <td>{{moneyFormat($sale->cash)}}</td>
+                                    <td>{{moneyFormat($sale->credit)}}</td>
+                                    <td>{{moneyFormat($sale->total)}}</td>
+                                    <td class="text-danger">{{moneyFormat($sale->returns)}}</td>
+                                    <td>{{moneyFormat($sale->net_sales)}}</td>
                                 </tr>
                             @endforeach
                             <tr bgcolor="#d3d3d3" class="text">
                                 <th>TOTAL</th>
-                                <th>{{$firstYearSales->sum('cash')}}</th>
-                                <th>{{$firstYearSales->sum('credit')}}</th>
-                                <th>{{$firstYearSales->sum('total')}}</th>
-                                <th class="text-danger">({{$firstYearSales->sum('returns')}})</th>
-                                <th>{{$firstYearSales->sum('net_sales')}}</th>
+                                <th>{{moneyFormat($firstYearSales->sum('cash'))}}</th>
+                                <th>{{moneyFormat($firstYearSales->sum('credit'))}}</th>
+                                <th>{{moneyFormat($firstYearSales->sum('total'))}}</th>
+                                <th class="text-danger">({{moneyFormat($firstYearSales->sum('returns'))}})</th>
+                                <th>{{moneyFormat($firstYearSales->sum('net_sales'))}}</th>
                             </tr>
                             <tr bgcolor="#d3d3d3" class="text-danger">
                                 <th>%</th>
-                                <th>{{round($firstYearSales->sum('cash') /$firstYearSales->sum('total') * 100,0)}}%</th>
-                                <th>{{round($firstYearSales->sum('credit') /$firstYearSales->sum('total') * 100,0)}}%</th>
-                                <th>{{round($firstYearSales->sum('total') /$firstYearSales->sum('total') * 100,0)}}%</th>
-                                <th>-{{round($firstYearSales->sum('returns') /$firstYearSales->sum('total') * 100,0)}}%</th>
+                                <th>{{percentage($firstYearSales->sum('cash'), $firstYearSales->sum('total'))}}%</th>
+                                <th>{{percentage($firstYearSales->sum('credit'), $firstYearSales->sum('total'))}}%</th>
+                                <th>{{percentage($firstYearSales->sum('total'), $firstYearSales->sum('total') )}}%</th>
+                                <th>-{{percentage($firstYearSales->sum('returns'), $firstYearSales->sum('total'))}}%</th>
                                 <th></th>
                             </tr>
                             </tbody>
@@ -140,27 +140,27 @@
                             @foreach($secondYearSales as $sale)
                                 <tr>
                                     <td>{{$sale->monthName}}</td>
-                                    <td>{{$sale->cash}}</td>
-                                    <td>{{$sale->credit}}</td>
-                                    <td>{{$sale->total}}</td>
-                                    <td class="text-danger">{{$sale->returns}}</td>
-                                    <td>{{$sale->net_sales}}</td>
+                                    <td>{{moneyFormat($sale->cash)}}</td>
+                                    <td>{{moneyFormat($sale->credit)}}</td>
+                                    <td>{{moneyFormat($sale->total)}}</td>
+                                    <td class="text-danger">{{moneyFormat($sale->returns)}}</td>
+                                    <td>{{moneyFormat($sale->net_sales)}}</td>
                                 </tr>
                             @endforeach
                             <tr bgcolor="#d3d3d3" class="text">
                                 <th>TOTAL</th>
-                                <th>{{$secondYearSales->sum('cash')}}</th>
-                                <th>{{$secondYearSales->sum('credit')}}</th>
-                                <th>{{$secondYearSales->sum('total')}}</th>
-                                <th class="text-danger">({{$secondYearSales->sum('returns')}})</th>
-                                <th>{{$secondYearSales->sum('net_sales')}}</th>
+                                <th>{{moneyFormat($secondYearSales->sum('cash'))}}</th>
+                                <th>{{moneyFormat($secondYearSales->sum('credit'))}}</th>
+                                <th>{{moneyFormat($secondYearSales->sum('total'))}}</th>
+                                <th class="text-danger">({{moneyFormat($secondYearSales->sum('returns'))}})</th>
+                                <th>{{moneyFormat($secondYearSales->sum('net_sales'))}}</th>
                             </tr>
                             <tr bgcolor="#d3d3d3" class="text-danger">
                                 <th>%</th>
-                                <th>{{round($secondYearSales->sum('cash') /$secondYearSales->sum('total') * 100,0)}}%</th>
-                                <th>{{round($secondYearSales->sum('credit') /$secondYearSales->sum('total') * 100,0)}}%</th>
-                                <th>{{round($secondYearSales->sum('total') /$secondYearSales->sum('total') * 100,0)}}%</th>
-                                <th>-{{round($secondYearSales->sum('returns') /$secondYearSales->sum('total') * 100,0)}}%</th>
+                                <th>{{percentage($secondYearSales->sum('cash'), $secondYearSales->sum('total'))}}%</th>
+                                <th>{{percentage($secondYearSales->sum('credit'), $secondYearSales->sum('total'))}}%</th>
+                                <th>{{percentage($secondYearSales->sum('total'), $secondYearSales->sum('total') )}}%</th>
+                                <th>-{{percentage($secondYearSales->sum('returns'), $secondYearSales->sum('total'))}}%</th>
                                 <th></th>
                             </tr>
                             </tbody>

@@ -59,7 +59,7 @@
             <div class="row p-5">
             @if($showReport)
                    <table id="tableToExport">
-                       <table class="table table-borderless" id="companyInfoTable">
+                       <table class="table table-bordered" id="companyInfoTable">
                            <thead>
                            <tr>
                                <th colspan="2">Company Name:</th>
@@ -67,7 +67,8 @@
                            </tr>
                            <tr>
                                <th colspan="2">Monthly Update Report:</th>
-                               <th colspan="2">Date: {{\Carbon\Carbon::now()->toDateString()}}</th>
+
+                               <th colspan="2">Date: {{getFormatSummaryReportDate(request('date'))}}</th>
                            </tr>
 
                            </thead>
@@ -103,29 +104,29 @@
                            @if(!is_null($actualSalesForCurrentMonth))
                                <tr>
                                    <td >Sales (net)</td>
-                                   <td>{{$actualSalesForCurrentMonth->net_sales??0 }}</td>
+                                   <td>{{moneyFormat($actualSalesForCurrentMonth->net_sales??0) }}</td>
                                    <td></td>
-                                   <td>{{$budgetSalesForCurrentMonth->net_sales??0 }}</td>
+                                   <td>{{moneyFormat($budgetSalesForCurrentMonth->net_sales??0) }}</td>
                                    <td> 
-                                   <td>{{$actualSalesForCurrentMonthPrevYear->net_sales??0 }}</td>
+                                   <td>{{moneyFormat($actualSalesForCurrentMonthPrevYear->net_sales??0) }}</td>
                                    <td></td>
                                </tr>
                                <tr>
                                    <td >Gross Margin</td>
-                                   <td>{{$actualSalesForCurrentMonth->gross_profit??0}}</td>
+                                   <td>{{moneyFormat($actualSalesForCurrentMonth->gross_profit??0)}}</td>
                                    <td>{{$actualSalesForCurrentMonth->gross_profit_percentage??0}}%</td>
-                                   <td>{{$budgetSalesForCurrentMonth->gross_profit??0}}</td>
+                                   <td>{{moneyFormat($budgetSalesForCurrentMonth->gross_profit??0)}}</td>
                                    <td>{{$budgetSalesForCurrentMonth->gross_profit_percentage??0}}%</td>
-                                   <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit??0}}</td>
+                                   <td>{{moneyFormat($actualSalesForCurrentMonthPrevYear->gross_profit??0)}}</td>
                                    <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit_percentage??0}}%</td>
                                </tr>
                                <tr>
                                    <td >Net Profit</td>
-                                   <td>{{$actualSalesForCurrentMonth->net_profit??0}}</td>
+                                   <td>{{moneyFormat($actualSalesForCurrentMonth->net_profit??0)}}</td>
                                    <td>{{$actualSalesForCurrentMonth->net_profit_percentage??0}}%</td>
-                                   <td>{{$budgetSalesForCurrentMonth->net_profit??0}}</td>
+                                   <td>{{moneyFormat($budgetSalesForCurrentMonth->net_profit??0)}}</td>
                                    <td>{{$budgetSalesForCurrentMonth->net_profit_percentage??0}}%</td>
-                                   <td>{{$actualSalesForCurrentMonthPrevYear->net_profit??0}}</td>
+                                   <td>{{moneyFormat($actualSalesForCurrentMonthPrevYear->net_profit??0)}}</td>
                                    <td>{{$actualSalesForCurrentMonthPrevYear->net_profit_percentage??0}}%</td>
                                </tr>
                            @else
@@ -163,29 +164,29 @@
                             @if(!is_null($actualSalesForCurrentMonth))
                                 <tr>
                                     <td >Sales (net)</td>
-                                    <td>{{$actualSalesForCurrentMonth->net_sales_cum??0}}</td>
+                                    <td>{{moneyFormat($actualSalesForCurrentMonth->net_sales_cum??0)}}</td>
                                     <td></td>
-                                    <td>{{$budgetSalesForCurrentMonth->net_sales_cum??0}}</td>
+                                    <td>{{moneyFormat($budgetSalesForCurrentMonth->net_sales_cum??0)}}</td>
                                     <td></td>
-                                    <td>{{$actualSalesForCurrentMonthPrevYear->net_sales_cum??0}}</td>
+                                    <td>{{moneyFormat($actualSalesForCurrentMonthPrevYear->net_sales_cum??0)}}</td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td >Gross Margin</td>
-                                    <td>{{$actualSalesForCurrentMonth->gross_profit_cum??0}}</td>
+                                    <td>{{moneyFormat($actualSalesForCurrentMonth->gross_profit_cum??0)}}</td>
                                     <td>{{$actualSalesForCurrentMonth->gross_profit_cum_percentage??0}}%</td>
-                                    <td>{{$budgetSalesForCurrentMonth->gross_profit_cum??0}}</td>
+                                    <td>{{moneyFormat($budgetSalesForCurrentMonth->gross_profit_cum??0)}}</td>
                                     <td>{{$budgetSalesForCurrentMonth->gross_profit_cum_percentage??0}}%</td>
-                                    <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit_cum??0}}</td>
+                                    <td>{{moneyFormat($actualSalesForCurrentMonthPrevYear->gross_profit_cum??0)}}</td>
                                     <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit_cum_percentage??0}}%</td>
                                 </tr>
                                 <tr>
                                     <td >Net Profit</td>
-                                    <td>{{$actualSalesForCurrentMonth->net_profit_cum??0}}</td>
+                                    <td>{{moneyFormat($actualSalesForCurrentMonth->net_profit_cum??0)}}</td>
                                     <td>{{$actualSalesForCurrentMonth->net_profit_cum_percentage??0}}%</td>
-                                    <td>{{$budgetSalesForCurrentMonth->net_profit_cum??0}}</td>
+                                    <td>{{moneyFormat($budgetSalesForCurrentMonth->net_profit_cum??0)}}</td>
                                     <td>{{$budgetSalesForCurrentMonth->net_profit_cum_percentage??0}}%</td>
-                                    <td>{{$actualSalesForCurrentMonthPrevYear->net_profit_cum??0}}</td>
+                                    <td>{{moneyFormat($actualSalesForCurrentMonthPrevYear->net_profit_cum??0)}}</td>
                                     <td>{{$actualSalesForCurrentMonthPrevYear->net_profit_cum_percentage??0}}%</td>
                                 </tr>
                             @else
@@ -223,33 +224,36 @@
                             <tbody>
                             <tr>
                                 <td >Aging</td>
+                                @php
+                                    $ageOfDebitSum = 0;;
+                                @endphp
                                 @foreach($agingOfDebit as $age)
                                     @if($age->attribute->slug !== 'less-credit' && $age->attribute->slug !== 'ar-provision')
-                                        <td>{{$age->value}}</td>
+                                        <td>{{moneyFormat($age->value)}}</td>
+                                        @php
+                                            $ageOfDebitSum += $age->value;
+                                        @endphp
                                     @endif
                                 @endforeach
                             </tr>
-                            @php
-                            $ageOfDebitSum = $agingOfDebit->sum('value');
-                            @endphp
                             <tr>
                                 <td>% Represent From Balance</td>
                                 @foreach($agingOfDebit as $age)
                                     @if($age->attribute->slug !== 'less-credit' && $age->attribute->slug !== 'ar-provision')
-                                        <td>{{round($age->value / $ageOfDebitSum * 100,0) }}%</td>
+                                        <td>{{percentage($age->value, $ageOfDebitSum)}}%</td>
                                     @endif
                                 @endforeach
                             </tr>
                             <tr>
                                 <td>Total Debit A/R</td>
-                                <td bgcolor="#e5e3e3" colspan="6">{{$ageOfDebitSum}}</td>
+                                <td bgcolor="#e5e3e3" colspan="6">{{moneyFormat($ageOfDebitSum)}}</td>
                             </tr>
                             <tr>
                                 <td>Less Credit A/R</td>
                                 <td colspan="6">
                                 @foreach($agingOfDebit as $age)
                                     @if($age->attribute->slug == 'less-credit')
-                                        {{$age->value}}
+                                            <span class="text-danger">({{moneyFormat($age->value)}})</span>
                                     @endif
                                 @endforeach
                                 </td>
@@ -259,7 +263,7 @@
                                 <td bgcolor="#e5e3e3" colspan="6">
                                     @foreach($agingOfDebit as $age)
                                         @if($age->attribute->slug == 'less-credit')
-                                            {{$age->value + $ageOfDebitSum}}
+                                            {{moneyFormat($ageOfDebitSum - $age->value)}}
                                         @endif
                                     @endforeach
                                 </td>
@@ -269,7 +273,9 @@
                                 <td bgcolor="#e5e3e3" colspan="6">
                                     @foreach($agingOfDebit as $age)
                                         @if($age->attribute->slug == 'ar-provision')
-                                            {{$age->value }}
+                                            <span class="text-danger">
+                                                {{moneyFormat($age->value) }}
+                                            </span>
                                         @endif
                                     @endforeach
                                 </td>
@@ -277,7 +283,7 @@
                             </tbody>
                        </table>
                        <hr>
-                       <table class="table table-bordered table-vertical-center text-center" id="inventory">
+                       <table align="center" class="table table-bordered table-vertical-center text-center" id="inventory">
                            <thead>
                            <tr>
                                <th colspan="8">
@@ -306,33 +312,33 @@
                             @if(!is_null($inventory))
                                 <tr>
                                     <td>Inventory Category</td>
-                                    <td>{{$inventory->goods_ready_for_sale}}</td>
-                                    <td>{{$inventory->finished_products}}</td>
-                                    <td>{{$inventory->semi_finished_products}}</td>
-                                    <td>{{$inventory->work_in_process}}</td>
-                                    <td>{{$inventory->raw_materials}}</td>
-                                    <td>{{$inventory->spare_parts_and_others}}</td>
+                                    <td>{{moneyFormat($inventory->goods_ready_for_sale)}}</td>
+                                    <td>{{moneyFormat($inventory->finished_products)}}</td>
+                                    <td>{{moneyFormat($inventory->semi_finished_products)}}</td>
+                                    <td>{{moneyFormat($inventory->work_in_process)}}</td>
+                                    <td>{{moneyFormat($inventory->raw_materials)}}</td>
+                                    <td>{{moneyFormat($inventory->spare_parts_and_others)}}</td>
                                 </tr>
                                 <tr>
                                     <td>% of Balance</td>
-                                    <td>{{round($inventory->goods_ready_for_sale / $inventory->total * 100,0)}}%</td>
-                                    <td>{{round($inventory->finished_products / $inventory->total * 100,0)}}%</td>
-                                    <td>{{round($inventory->semi_finished_products / $inventory->total * 100,0)}}%</td>
-                                    <td>{{round($inventory->work_in_process / $inventory->total * 100,0)}}%</td>
-                                    <td>{{round($inventory->raw_materials / $inventory->total * 100,0)}}%</td>
-                                    <td>{{round($inventory->spare_parts_and_others / $inventory->total * 100,0)}}%</td>
+                                    <td>{{percentage($inventory->goods_ready_for_sale , $inventory->total)}}%</td>
+                                    <td>{{percentage($inventory->finished_products , $inventory->total)}}%</td>
+                                    <td>{{percentage($inventory->semi_finished_products , $inventory->total)}}%</td>
+                                    <td>{{percentage($inventory->work_in_process , $inventory->total)}}%</td>
+                                    <td>{{percentage($inventory->raw_materials , $inventory->total)}}%</td>
+                                    <td>{{percentage($inventory->spare_parts_and_others , $inventory->tota)}}%</td>
                                 </tr>
                                 <tr>
                                     <td>Total</td>
-                                    <td  bgcolor="#d3d3d3" colspan="6"">{{$inventory->total}}</td>
+                                    <td  bgcolor="#d3d3d3" colspan="6">{{moneyFormat($inventory->total)}}</td>
                                 </tr>
                                 <tr>
                                     <td>Inventory Provision</td>
-                                    <td colspan="6"">{{$inventory->inventory_provision}}</td>
+                                    <td colspan="6"><span class="text-danger">({{moneyFormat($inventory->inventory_provision)}})</span></td>
                                 </tr>
                                 <tr>
                                     <td>Net Realizable Value</td>
-                                    <td  bgcolor="#d3d3d3" colspan="6"">{{$inventory->inventory_provision + $inventory->total}}</td>
+                                    <td  bgcolor="#d3d3d3" colspan="6">{{moneyFormat($inventory->inventory_provision + $inventory->total)}}</td>
                                 </tr>
                             @else
                            <tr>
@@ -410,11 +416,11 @@
 
         function toExcel() {
             const mainTable = document.getElementById("tableToExport").outerHTML;
-            const companyInfoTable = document.getElementById("companyInfoTable").outerHTML;
-            const salesResultTable = document.getElementById("salesResultTable").outerHTML;
-            const cumResultTable = document.getElementById("cumResultTable").outerHTML;
-            const debitTable = document.getElementById("debitTable").outerHTML;
-            const inventory = document.getElementById("inventory").outerHTML;
+            const companyInfoTable = document.getElementById("companyInfoTable").outerHTML + "<br /><br />";
+            const salesResultTable = document.getElementById("salesResultTable").outerHTML+ "<br /><br />";
+            const cumResultTable = document.getElementById("cumResultTable").outerHTML+ "<br /><br />";
+            const debitTable = document.getElementById("debitTable").outerHTML+ "<br /><br />";
+            const inventory = document.getElementById("inventory").outerHTML+ "<br /><br />";
 
             let tab_text = mainTable+companyInfoTable+salesResultTable+cumResultTable+debitTable+inventory;
             let textRange;
@@ -438,7 +444,7 @@
                 let data_type = 'data:application/vnd.ms-excel';
                 a.href = data_type+','+encodeURIComponent(tab_text);
                 // sa = window.open('data:application/vnd.ms-excel;,' + encodeURIComponent(tab_text)+';filename=summary-report-'+(new Date()).toDateString());
-                a.download = `summary-report-${(new Date()).toDateString()}`;
+                a.download = `summary-report-{{getFormatSummaryReportDate(request('date'))}}`;
                 //triggering the function
                 a.click();
             }

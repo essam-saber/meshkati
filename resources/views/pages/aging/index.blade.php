@@ -41,7 +41,7 @@
                         <td>{{$year}}</td>
                         <td>{{$month}}</td>
                         @foreach($values as $value)
-                            <td>{{ $value->value }}</td>
+                            <td>{{ moneyFormat($value->value) }}</td>
                         @endforeach
                         <td>
                             <a href="{{route('aging-of-debit.edit', [$year, $month])}}" class="btn btn-xs btn-info p-2 pl-3"><i class="fa fa-pen"></i></a>

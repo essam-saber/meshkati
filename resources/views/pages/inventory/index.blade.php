@@ -40,12 +40,12 @@
                     <tr>
                         <td>{{$inventory->year}}</td>
                         <td>{{$inventory->monthName}}</td>
-                        <td>{{$inventory->goods_ready_for_sale}}</td>
-                        <td>{{$inventory->finished_products}}</td>
-                        <td>{{$inventory->semi_finished_products}}</td>
-                        <td>{{$inventory->work_in_process}}</td>
-                        <td>{{$inventory->raw_materials}}</td>
-                        <td>{{$inventory->spare_parts_and_others}}</td>
+                        <td>{{moneyFormat($inventory->goods_ready_for_sale)}}</td>
+                        <td>{{moneyFormat($inventory->finished_products)}}</td>
+                        <td>{{moneyFormat($inventory->semi_finished_products)}}</td>
+                        <td>{{moneyFormat($inventory->work_in_process)}}</td>
+                        <td>{{moneyFormat($inventory->raw_materials)}}</td>
+                        <td>{{moneyFormat($inventory->spare_parts_and_others)}}</td>
                         <td>
                             <a href="{{route('inventory.edit', $inventory->id)}}" class="btn btn-xs btn-info  p-2 pl-3"><i class="fa fa-pen"></i></a>
                             <a  href="#" data-sale-id="{{$inventory->id}}" class="delete-sale btn btn-xs btn-danger  p-2 pl-3"><i class="fa fa-trash"></i></a>
