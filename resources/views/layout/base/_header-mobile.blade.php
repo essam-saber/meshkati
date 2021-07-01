@@ -4,23 +4,23 @@
         <a href="{{ url('/') }}">
 
             @php
-                $kt_logo_image = 'meshkati.png'
+                $kt_logo_image = 'meshkati-logo-mobile.png'
             @endphp
 
             @if (config('layout.aside.self.display') == false)
 
                 @if (config('layout.header.self.theme') === 'light')
-                    @php $kt_logo_image = 'meshkati.png' @endphp
+                    @php $kt_logo_image = 'meshkati-logo-mobile.png' @endphp
                 @elseif (config('layout.header.self.theme') === 'dark')
-                    @php $kt_logo_image = 'meshkati.png' @endphp
+                    @php $kt_logo_image = 'meshkati-logo-mobile.png' @endphp
                 @endif
 
             @else
 
                 @if (config('layout.brand.self.theme') === 'light')
-                    @php $kt_logo_image = 'meshkati.png' @endphp
+                    @php   $kt_logo_image = 'meshkati-logo-mobile.png' @endphp
                 @elseif (config('layout.brand.self.theme') === 'dark')
-                    @php $kt_logo_image = 'meshkati.png' @endphp
+                    @php   $kt_logo_image = 'meshkati-logo-mobile.png' @endphp
                 @endif
 
             @endif

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77990233-3551-4163-a3f2-c11466b16bba" name="Default Changelist" comment="" />
+    <list default="true" id="77990233-3551-4163-a3f2-c11466b16bba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/media/logos/meshkati-logo.mobile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/base/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/base/_aside.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/base/_header-mobile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/base/_header-mobile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/base/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/base/_header.blade.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,168 +34,70 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/employees/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="46" column="43" lean-forward="true" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/inventory/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="47" column="76" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="253" column="85" selection-start-line="253" selection-start-column="85" selection-end-line="253" selection-end-column="85" />
-              <folding>
-                <element signature="e#4277#4303#0#HTML" expanded="true" />
-                <element signature="e#4477#4503#0#HTML" expanded="true" />
-                <element signature="e#5044#5070#0#HTML" expanded="true" />
-                <element signature="e#5423#5441#0#HTML" expanded="true" />
-                <element signature="e#5668#5694#0#HTML" expanded="true" />
-                <element signature="e#6094#6112#0#HTML" expanded="true" />
-                <element signature="e#6365#6403#0#HTML" expanded="true" />
-                <element signature="e#7389#7415#0#HTML" expanded="true" />
-                <element signature="e#7590#7616#0#HTML" expanded="true" />
-                <element signature="e#8159#8185#0#HTML" expanded="true" />
-                <element signature="e#8518#8536#0#HTML" expanded="true" />
-                <element signature="e#8783#8809#0#HTML" expanded="true" />
-                <element signature="e#9212#9232#0#HTML" expanded="true" />
-                <element signature="e#9449#9488#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="270" column="36" selection-start-line="270" selection-start-column="36" selection-end-line="270" selection-end-column="36" />
-              <folding>
-                <element signature="e#4249#4919#0#HTML" />
-                <element signature="e#4982#8065#0#HTML" />
-                <element signature="e#5161#5187#0#HTML" expanded="true" />
-                <element signature="e#5618#5644#0#HTML" expanded="true" />
-                <element signature="e#6259#6285#0#HTML" expanded="true" />
-                <element signature="e#7102#7128#0#HTML" expanded="true" />
-                <element signature="e#8160#11277#0#HTML" />
-                <element signature="e#8371#8397#0#HTML" expanded="true" />
-                <element signature="e#8829#8855#0#HTML" expanded="true" />
-                <element signature="e#9471#9497#0#HTML" expanded="true" />
-                <element signature="e#10314#10340#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-              <folding>
-                <element signature="e#33#71#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2523" />
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="11" column="20" selection-end-line="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env.example">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="4" column="63" lean-forward="true" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/media/logos/logo-dark.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layout/base/_header-mobile.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="261">
-              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <caret line="27" column="92" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="92" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layout/base/_aside.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="18" column="118" selection-start-line="18" selection-start-column="118" selection-end-line="18" selection-end-column="118" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
-              <folding>
-                <element signature="e#40#84#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/resources/metronic/media/logos/logo-dark.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="61" column="91" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="91" />
-              <folding>
-                <element signature="e#3124#3761#0#HTML" />
-                <element signature="e#3813#7640#0#HTML" />
-                <element signature="e#3990#4016#0#HTML" expanded="true" />
-                <element signature="e#4252#4278#0#HTML" expanded="true" />
-                <element signature="e#4649#4675#0#HTML" expanded="true" />
-                <element signature="e#5159#5185#0#HTML" expanded="true" />
-                <element signature="e#5766#5792#0#HTML" expanded="true" />
-                <element signature="e#6573#6599#0#HTML" expanded="true" />
-                <element signature="e#7399#7425#0#HTML" expanded="true" />
-                <element signature="e#7692#11621#0#HTML" />
-                <element signature="e#7867#7893#0#HTML" expanded="true" />
-                <element signature="e#8135#8161#0#HTML" expanded="true" />
-                <element signature="e#8537#8563#0#HTML" expanded="true" />
-                <element signature="e#9049#9075#0#HTML" expanded="true" />
-                <element signature="e#9679#9705#0#HTML" expanded="true" />
-                <element signature="e#10519#10545#0#HTML" expanded="true" />
-                <element signature="e#11379#11405#0#HTML" expanded="true" />
-                <element signature="e#11673#16612#0#HTML" />
-                <element signature="e#11844#11870#0#HTML" expanded="true" />
-                <element signature="e#12099#12125#0#HTML" expanded="true" />
-                <element signature="e#12616#12642#0#HTML" expanded="true" />
-                <element signature="e#13057#13083#0#HTML" expanded="true" />
-                <element signature="e#13855#13881#0#HTML" expanded="true" />
-                <element signature="e#14385#14411#0#HTML" expanded="true" />
-                <element signature="e#14639#14665#0#HTML" expanded="true" />
-                <element signature="e#14772#14790#0#HTML" expanded="true" />
-                <element signature="e#15260#15286#0#HTML" expanded="true" />
-                <element signature="e#15854#15880#0#HTML" expanded="true" />
-                <element signature="e#16003#16021#0#HTML" expanded="true" />
-                <element signature="e#16664#20810#0#HTML" />
-                <element signature="e#16834#16860#0#HTML" expanded="true" />
-                <element signature="e#17056#17082#0#HTML" expanded="true" />
-                <element signature="e#17583#17609#0#HTML" expanded="true" />
-                <element signature="e#18081#18107#0#HTML" expanded="true" />
-                <element signature="e#18806#18832#0#HTML" expanded="true" />
-                <element signature="e#19644#19670#0#HTML" expanded="true" />
-                <element signature="e#19908#19934#0#HTML" expanded="true" />
-                <element signature="e#20053#20071#0#HTML" expanded="true" />
-                <element signature="e#20235#20261#0#HTML" expanded="true" />
-                <element signature="e#20577#20603#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helper.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/public/media/logos/meshkati.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -203,9 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>secre</find>
-      <find>key</find>
-      <find>sign out</find>
       <find>password.upd</find>
       <find>hasPerm</find>
       <find>getAll</find>
@@ -228,11 +133,14 @@
       <find>table-responsive</find>
       <find>inventory pro</find>
       <find>padding</find>
-      <find>style=&quot;border: 1px solid saddlebrown&quot;</find>
       <find>1px solid black</find>
       <find>style=&quot;border: 1px solid silver&quot;</find>
       <find>{{asset('media/logos/meshkati.png')}}</find>
       <find>meshkati.png</find>
+      <find>style=&quot;border: 1px solid saddlebrown&quot;</find>
+      <find>logo-light.png</find>
+      <find>logo-dark.png</find>
+      <find>mobile-logo</find>
     </findStrings>
     <replaceStrings>
       <replace>budget</replace>
@@ -248,6 +156,7 @@
       <replace>silver</replace>
       <replace>1px dotted black</replace>
       <replace>https://meshkati.sa/pub/media/logo/stores/3/logo_2.png</replace>
+      <replace>meshkati.png</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -256,13 +165,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Requests/CreateRoleRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/UpdateRoleRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/roles/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/roles/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/welcome-mail.blade.php" />
         <option value="$PROJECT_DIR$/app/Mail/WelcomeEmail.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateEmployeeRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/UpdateEmployeeRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/employees/edit.blade.php" />
@@ -306,6 +212,9 @@
         <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/.env.example" />
+        <option value="$PROJECT_DIR$/resources/views/layout/base/_header-mobile.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layout/base/_aside.blade.php" />
       </list>
     </option>
@@ -453,6 +362,13 @@
             <path>
               <item name="meshkati" type="b2602c69:ProjectViewProjectNode" />
               <item name="meshkati" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="logos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meshkati" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meshkati" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -494,7 +410,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/media/logos" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -502,11 +418,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\meshkati\public\media\logos" />
+      <recent name="C:\laragon\www\meshkati" />
       <recent name="C:\laragon\www\meshkati\resources\views\pages\auth" />
       <recent name="C:\laragon\www\meshkati\resources\views\pages" />
       <recent name="C:\laragon\www\meshkaty\public\media\logos" />
-      <recent name="C:\laragon\www\meshkaty\resources\views\pages" />
-      <recent name="C:\laragon\www\meshkaty\database\factories" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\meshkati\app" />
@@ -556,12 +472,12 @@
       <workItem from="1619922000430" duration="22818000" />
       <workItem from="1620172126416" duration="1743000" />
       <workItem from="1620215739358" duration="1610000" />
-      <workItem from="1624666226699" duration="27280000" />
+      <workItem from="1624666226699" duration="28619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238233000" />
+    <option name="totallyTimeSpent" value="239572000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -573,7 +489,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1716418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -654,68 +570,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/employees/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="29" column="55" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/menu_aside.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
-          <folding>
-            <element signature="e#1455#2108#1#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/roles/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="55" column="38" selection-start-line="53" selection-start-column="27" selection-end-line="55" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/UpdateProfileRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="56" column="104" selection-start-line="56" selection-start-column="104" selection-end-line="56" selection-end-column="104" />
-          <folding>
-            <element signature="e#36#59#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/partials/extras/dropdown/_user.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="108" column="31" selection-start-line="108" selection-start-column="31" selection-end-line="108" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/spatie/laravel-permission/src/Traits/HasPermissions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="165" column="30" selection-start-line="165" selection-start-column="24" selection-end-line="165" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -970,7 +824,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
-          <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
           <folding>
             <element signature="e#40#84#0#PHP" expanded="true" />
           </folding>
@@ -1086,7 +940,7 @@
     <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
           <folding>
             <element signature="e#33#71#0#PHP" expanded="true" />
           </folding>
@@ -1100,8 +954,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="20" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.example">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="63" lean-forward="true" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/media/logos/meshkati.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/metronic/media/logos/logo-dark.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/media/logos/logo-dark.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/base/_header-mobile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="27" column="92" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/media/logos/meshkati-logo-mobile.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/base/_aside.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="18" column="118" selection-start-line="18" selection-start-column="118" selection-end-line="18" selection-end-column="118" />
         </state>
       </provider>
     </entry>

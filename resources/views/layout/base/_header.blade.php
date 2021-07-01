@@ -10,7 +10,7 @@
             @endphp
 
             @if (config('layout.header.self.theme') === 'light')
-                @php $kt_logo_image = 'meshkati.png' @endphp
+                @php $kt_logo_image = 'logo-dark.png' @endphp
             @elseif (config('layout.header.self.theme') === 'dark')
                 @php $kt_logo_image = 'meshkati.png' @endphp
             @endif
