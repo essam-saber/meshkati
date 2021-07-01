@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77990233-3551-4163-a3f2-c11466b16bba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="77990233-3551-4163-a3f2-c11466b16bba" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,37 +45,36 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="79" column="144" selection-start-line="79" selection-start-column="144" selection-end-line="79" selection-end-column="144" />
-              <caret line="124" column="145" selection-start-line="124" selection-start-column="145" selection-end-line="124" selection-end-column="145" />
+            <state relative-caret-position="464">
+              <caret line="253" column="85" selection-start-line="253" selection-start-column="85" selection-end-line="253" selection-end-column="85" />
               <folding>
-                <element signature="e#4187#4213#0#HTML" expanded="true" />
-                <element signature="e#4387#4413#0#HTML" expanded="true" />
-                <element signature="e#4954#4980#0#HTML" expanded="true" />
-                <element signature="e#5333#5351#0#HTML" expanded="true" />
-                <element signature="e#5578#5604#0#HTML" expanded="true" />
-                <element signature="e#6004#6022#0#HTML" expanded="true" />
-                <element signature="e#6275#6313#0#HTML" expanded="true" />
-                <element signature="e#7170#7196#0#HTML" expanded="true" />
-                <element signature="e#7371#7397#0#HTML" expanded="true" />
-                <element signature="e#7940#7966#0#HTML" expanded="true" />
-                <element signature="e#8033#8051#0#HTML" expanded="true" />
-                <element signature="e#8564#8590#0#HTML" expanded="true" />
-                <element signature="e#8681#8701#0#HTML" expanded="true" />
-                <element signature="e#9230#9267#0#HTML" expanded="true" />
+                <element signature="e#4277#4303#0#HTML" expanded="true" />
+                <element signature="e#4477#4503#0#HTML" expanded="true" />
+                <element signature="e#5044#5070#0#HTML" expanded="true" />
+                <element signature="e#5423#5441#0#HTML" expanded="true" />
+                <element signature="e#5668#5694#0#HTML" expanded="true" />
+                <element signature="e#6094#6112#0#HTML" expanded="true" />
+                <element signature="e#6365#6403#0#HTML" expanded="true" />
+                <element signature="e#7389#7415#0#HTML" expanded="true" />
+                <element signature="e#7590#7616#0#HTML" expanded="true" />
+                <element signature="e#8159#8185#0#HTML" expanded="true" />
+                <element signature="e#8518#8536#0#HTML" expanded="true" />
+                <element signature="e#8783#8809#0#HTML" expanded="true" />
+                <element signature="e#9212#9232#0#HTML" expanded="true" />
+                <element signature="e#9449#9488#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="79" column="81" selection-start-line="79" selection-start-column="81" selection-end-line="79" selection-end-column="81" />
+            <state relative-caret-position="330">
+              <caret line="265" column="20" selection-start-line="265" selection-start-column="20" selection-end-line="265" selection-end-column="20" />
               <folding>
                 <element signature="e#4249#4919#0#HTML" />
                 <element signature="e#4982#8065#0#HTML" />
@@ -209,9 +202,9 @@
       <find>table-responsive</find>
       <find>inventory pro</find>
       <find>padding</find>
-      <find>1px solid black</find>
       <find>style=&quot;border: 1px solid saddlebrown&quot;</find>
       <find>style=&quot;border: 1px solid silver&quot;</find>
+      <find>1px solid black</find>
     </findStrings>
     <replaceStrings>
       <replace>budget</replace>
@@ -283,8 +276,8 @@
         <option value="$PROJECT_DIR$/resources/views/layout/base/_aside.blade.php" />
         <option value="$PROJECT_DIR$/app/helper.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" />
       </list>
     </option>
   </component>
@@ -523,12 +516,12 @@
       <workItem from="1619922000430" duration="22818000" />
       <workItem from="1620172126416" duration="1743000" />
       <workItem from="1620215739358" duration="1610000" />
-      <workItem from="1624666226699" duration="24695000" />
+      <workItem from="1624666226699" duration="25539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235648000" />
+    <option name="totallyTimeSpent" value="236492000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -600,7 +593,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php</url>
-          <line>5</line>
+          <line>9</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -1027,10 +1020,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="253" column="85" selection-start-line="253" selection-start-column="85" selection-end-line="253" selection-end-column="85" />
+          <folding>
+            <element signature="e#4277#4303#0#HTML" expanded="true" />
+            <element signature="e#4477#4503#0#HTML" expanded="true" />
+            <element signature="e#5044#5070#0#HTML" expanded="true" />
+            <element signature="e#5423#5441#0#HTML" expanded="true" />
+            <element signature="e#5668#5694#0#HTML" expanded="true" />
+            <element signature="e#6094#6112#0#HTML" expanded="true" />
+            <element signature="e#6365#6403#0#HTML" expanded="true" />
+            <element signature="e#7389#7415#0#HTML" expanded="true" />
+            <element signature="e#7590#7616#0#HTML" expanded="true" />
+            <element signature="e#8159#8185#0#HTML" expanded="true" />
+            <element signature="e#8518#8536#0#HTML" expanded="true" />
+            <element signature="e#8783#8809#0#HTML" expanded="true" />
+            <element signature="e#9212#9232#0#HTML" expanded="true" />
+            <element signature="e#9449#9488#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="79" column="81" selection-start-line="79" selection-start-column="81" selection-end-line="79" selection-end-column="81" />
+        <state relative-caret-position="330">
+          <caret line="265" column="20" selection-start-line="265" selection-start-column="20" selection-end-line="265" selection-end-column="20" />
           <folding>
             <element signature="e#4249#4919#0#HTML" />
             <element signature="e#4982#8065#0#HTML" />
@@ -1043,30 +1059,6 @@
             <element signature="e#8829#8855#0#HTML" expanded="true" />
             <element signature="e#9471#9497#0#HTML" expanded="true" />
             <element signature="e#10314#10340#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="79" column="144" selection-start-line="79" selection-start-column="144" selection-end-line="79" selection-end-column="144" />
-          <caret line="124" column="145" selection-start-line="124" selection-start-column="145" selection-end-line="124" selection-end-column="145" />
-          <folding>
-            <element signature="e#4187#4213#0#HTML" expanded="true" />
-            <element signature="e#4387#4413#0#HTML" expanded="true" />
-            <element signature="e#4954#4980#0#HTML" expanded="true" />
-            <element signature="e#5333#5351#0#HTML" expanded="true" />
-            <element signature="e#5578#5604#0#HTML" expanded="true" />
-            <element signature="e#6004#6022#0#HTML" expanded="true" />
-            <element signature="e#6275#6313#0#HTML" expanded="true" />
-            <element signature="e#7170#7196#0#HTML" expanded="true" />
-            <element signature="e#7371#7397#0#HTML" expanded="true" />
-            <element signature="e#7940#7966#0#HTML" expanded="true" />
-            <element signature="e#8033#8051#0#HTML" expanded="true" />
-            <element signature="e#8564#8590#0#HTML" expanded="true" />
-            <element signature="e#8681#8701#0#HTML" expanded="true" />
-            <element signature="e#9230#9267#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
