@@ -40,7 +40,7 @@
                 <!--begin::Login Header-->
                 <div class="d-flex flex-center mb-15">
                     <a href="#">
-                        <img src="{{asset('media/logos/meshkati.png')}}" class="max-h-75px" alt="" />
+                        <img src="https://meshkati.sa/pub/media/logo/stores/3/logo_2.png" class="max-h-75px" alt="" />
                     </a>
                 </div>
                 <!--end::Login Header-->

@@ -104,10 +104,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2523" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -212,7 +221,6 @@
       <find>rounded_</find>
       <find>Showing of Debit Trade Accounts Receivable</find>
       <find>meshkati.jpg</find>
-      <find>meshkati.png</find>
       <find>tableToExport</find>
       <find>table</find>
       <find>companyInfoTable</find>
@@ -224,6 +232,7 @@
       <find>style=&quot;border: 1px solid saddlebrown&quot;</find>
       <find>1px solid black</find>
       <find>style=&quot;border: 1px solid silver&quot;</find>
+      <find>meshkati.png</find>
     </findStrings>
     <replaceStrings>
       <replace>budget</replace>
@@ -246,7 +255,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/spatie/laravel-permission/src/Models/Role.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateRoleRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/UpdateRoleRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/roles/edit.blade.php" />
@@ -297,6 +305,7 @@
         <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -432,6 +441,24 @@
             <path>
               <item name="meshkati" type="b2602c69:ProjectViewProjectNode" />
               <item name="meshkati" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meshkati" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meshkati" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meshkati" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meshkati" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="logos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="meshkati" type="b2602c69:ProjectViewProjectNode" />
+              <item name="meshkati" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -535,12 +562,12 @@
       <workItem from="1619922000430" duration="22818000" />
       <workItem from="1620172126416" duration="1743000" />
       <workItem from="1620215739358" duration="1610000" />
-      <workItem from="1624666226699" duration="26322000" />
+      <workItem from="1624666226699" duration="26679000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237275000" />
+    <option name="totallyTimeSpent" value="237632000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -633,13 +660,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/spatie/laravel-permission/src/Traits/HasRoles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="156" column="29" selection-start-line="156" selection-start-column="20" selection-end-line="156" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/employees/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -1082,6 +1102,13 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2523" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
       </provider>
     </entry>
   </component>
