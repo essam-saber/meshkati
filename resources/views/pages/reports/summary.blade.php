@@ -56,42 +56,38 @@
 
 
             <!-- begin: Invoice body-->
-            <div class="row p-5">
+            <div class="row p-5 align-items-center">
             @if($showReport)
-                   <table id="tableToExport">
-                       <table class="table table-bordered" id="companyInfoTable">
+                   <table id="tableToExport" class="">
+                       <table style="" class="table table-responsive-sm table-responsive-md table-bordered table-vertical-center"  id="companyInfoTable">
                            <thead>
                            <tr>
-                               <th colspan="2">Company Name:</th>
-                               <th colspan="2">Meshkati Trading Co.</th>
+                               <th colspan="4">Company Name:</th>
+                               <th colspan="4">Meshkati Trading Co.</th>
                            </tr>
                            <tr>
-                               <th colspan="2">Monthly Update Report:</th>
+                               <th colspan="4">Monthly Update Report:</th>
 
-                               <th colspan="2">Date: {{getFormatSummaryReportDate(request('date'))}}</th>
+                               <th colspan="4">Date: {{getFormatSummaryReportDate(request('date'))}}</th>
                            </tr>
 
                            </thead>
-                           <tbody>
-
-
-                           </tbody>
                        </table>
                        <hr>
-                       <table class="table table-bordered table-vertical-center text-center" id="salesResultTable">
+                       <table style="" class="table table-responsive-sm table-responsive-md table-bordered table-vertical-center text-center" id="salesResultTable">
                            <thead>
-                           <tr>
+                           <tr style="text-align: center">
                                <th colspan="8">
                                 Monthly Results Compared With Budget & Previous Year
                                </th>
                            </tr>
-                           <tr bgcolor="#d3d3d3">
+                           <tr style="text-align: center" bgcolor="#d3d3d3">
                                <th rowspan="2">Description</th>
                                <th colspan="2">Actual - This Month</th>
                                <th colspan="2">Budget - This Month</th>
                                <th colspan="2">Actual - Comparative Month</th>
                            </tr>
-                           <tr bgcolor="#d3d3d3">
+                           <tr style="text-align: center" bgcolor="#d3d3d3">
                                <th>SR</th>
                                <th>%</th>
                                <th>SR</th>
@@ -102,16 +98,16 @@
                            </thead>
                            <tbody>
                            @if(!is_null($actualSalesForCurrentMonth))
-                               <tr>
+                               <tr style="text-align: center">
                                    <td >Sales (net)</td>
                                    <td>{{moneyFormat($actualSalesForCurrentMonth->net_sales??0) }}</td>
                                    <td></td>
                                    <td>{{moneyFormat($budgetSalesForCurrentMonth->net_sales??0) }}</td>
-                                   <td> 
+                                   <td>
                                    <td>{{moneyFormat($actualSalesForCurrentMonthPrevYear->net_sales??0) }}</td>
                                    <td></td>
                                </tr>
-                               <tr>
+                               <tr style="text-align: center">
                                    <td >Gross Margin</td>
                                    <td>{{moneyFormat($actualSalesForCurrentMonth->gross_profit??0)}}</td>
                                    <td>{{$actualSalesForCurrentMonth->gross_profit_percentage??0}}%</td>
@@ -120,7 +116,7 @@
                                    <td>{{moneyFormat($actualSalesForCurrentMonthPrevYear->gross_profit??0)}}</td>
                                    <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit_percentage??0}}%</td>
                                </tr>
-                               <tr>
+                               <tr style="text-align: center">
                                    <td >Net Profit</td>
                                    <td>{{moneyFormat($actualSalesForCurrentMonth->net_profit??0)}}</td>
                                    <td>{{$actualSalesForCurrentMonth->net_profit_percentage??0}}%</td>
@@ -130,7 +126,7 @@
                                    <td>{{$actualSalesForCurrentMonthPrevYear->net_profit_percentage??0}}%</td>
                                </tr>
                            @else
-                               <tr>
+                               <tr style="text-align: center">
                                    <td colspan="7">No available data</td>
                                </tr>
                            @endif
@@ -138,20 +134,20 @@
                            </tbody>
                        </table>
                        <hr>
-                       <table class="table table-bordered table-vertical-center text-center" id="cumResultTable">
+                       <table style="" class="table table-responsive-sm table-responsive-md table-bordered table-vertical-center text-center" id="cumResultTable">
                            <thead>
-                           <tr>
+                           <tr style="text-align: center">
                                <th colspan="8">
                                    Cumulative Results Compared With Budget & Previous Year
                                </th>
                            </tr>
-                           <tr bgcolor="#d3d3d3">
+                           <tr style="text-align: center" bgcolor="#d3d3d3">
                                <th rowspan="2">Description</th>
                                <th colspan="2">Actual - Cumulative</th>
                                <th colspan="2">Budget - Cumulative</th>
                                <th colspan="2">Actual - Comparative Cumulative</th>
                            </tr>
-                           <tr bgcolor="#d3d3d3">
+                           <tr style="text-align: center" bgcolor="#d3d3d3">
                                <th>SR</th>
                                <th>%</th>
                                <th>SR</th>
@@ -162,7 +158,7 @@
                            </thead>
                            <tbody>
                             @if(!is_null($actualSalesForCurrentMonth))
-                                <tr>
+                                <tr style="text-align: center">
                                     <td >Sales (net)</td>
                                     <td>{{moneyFormat($actualSalesForCurrentMonth->net_sales_cum??0)}}</td>
                                     <td></td>
@@ -171,7 +167,7 @@
                                     <td>{{moneyFormat($actualSalesForCurrentMonthPrevYear->net_sales_cum??0)}}</td>
                                     <td></td>
                                 </tr>
-                                <tr>
+                                <tr style="text-align: center">
                                     <td >Gross Margin</td>
                                     <td>{{moneyFormat($actualSalesForCurrentMonth->gross_profit_cum??0)}}</td>
                                     <td>{{$actualSalesForCurrentMonth->gross_profit_cum_percentage??0}}%</td>
@@ -180,7 +176,7 @@
                                     <td>{{moneyFormat($actualSalesForCurrentMonthPrevYear->gross_profit_cum??0)}}</td>
                                     <td>{{$actualSalesForCurrentMonthPrevYear->gross_profit_cum_percentage??0}}%</td>
                                 </tr>
-                                <tr>
+                                <tr style="text-align: center">
                                     <td >Net Profit</td>
                                     <td>{{moneyFormat($actualSalesForCurrentMonth->net_profit_cum??0)}}</td>
                                     <td>{{$actualSalesForCurrentMonth->net_profit_cum_percentage??0}}%</td>
@@ -190,21 +186,21 @@
                                     <td>{{$actualSalesForCurrentMonthPrevYear->net_profit_cum_percentage??0}}%</td>
                                 </tr>
                             @else
-                                <tr>
+                                <tr style="text-align: center">
                                     <td colspan="7">No available data</td>
                                 </tr>
                            @endif
                            </tbody>
                        </table>
                        <hr>
-                       <table class="table table-bordered table-vertical-center text-center" id="debitTable">
+                       <table style="" class="table table-responsive-sm table-responsive-md table-bordered table-vertical-center text-center" id="debitTable">
                            <thead>
-                           <tr>
+                           <tr style="text-align: center">
                                <th colspan="8">
                                    Showing of Debit Trade Accounts Receivable
                                </th>
                            </tr>
-                           <tr bgcolor="#d3d3d3">
+                           <tr style="text-align: center" bgcolor="#d3d3d3">
                                <th rowspan="2">Description</th>
                               @foreach($agingOfDebit as $age )
                                    @if($age->attribute->slug !== 'less-credit' && $age->attribute->slug !== 'ar-provision')
@@ -212,7 +208,7 @@
                                  @endif
                               @endforeach
                            </tr>
-                           <tr bgcolor="#d3d3d3">
+                           <tr style="text-align: center" bgcolor="#d3d3d3">
                                <th>SR</th>
                                <th>SR</th>
                                <th>SR</th>
@@ -222,7 +218,7 @@
                            </tr>
                            </thead>
                             <tbody>
-                            <tr>
+                            <tr style="text-align: center">
                                 <td >Aging</td>
                                 @php
                                     $ageOfDebitSum = 0;;
@@ -236,7 +232,7 @@
                                     @endif
                                 @endforeach
                             </tr>
-                            <tr>
+                            <tr style="text-align: center">
                                 <td>% Represent From Balance</td>
                                 @foreach($agingOfDebit as $age)
                                     @if($age->attribute->slug !== 'less-credit' && $age->attribute->slug !== 'ar-provision')
@@ -244,21 +240,23 @@
                                     @endif
                                 @endforeach
                             </tr>
-                            <tr>
+                            <tr style="text-align: center">
                                 <td>Total Debit A/R</td>
                                 <td bgcolor="#e5e3e3" colspan="6">{{moneyFormat($ageOfDebitSum)}}</td>
                             </tr>
-                            <tr>
+                            <tr style="text-align: center">
                                 <td>Less Credit A/R</td>
-                                <td colspan="6">
-                                @foreach($agingOfDebit as $age)
-                                    @if($age->attribute->slug == 'less-credit')
-                                            <span class="text-danger">({{moneyFormat($age->value)}})</span>
-                                    @endif
-                                @endforeach
+                                <td colspan="6" style="color: red">
+
+                                    @foreach($agingOfDebit as $age)
+                                        @if($age->attribute->slug == 'less-credit')
+                                            <span class="text-danger">{{ '('.moneyFormat($age->value).')'}}</span>
+                                        @endif
+                                    @endforeach
+
                                 </td>
                             </tr>
-                            <tr>
+                            <tr style="text-align: center">
                                 <td>Net A/R Balances</td>
                                 <td bgcolor="#e5e3e3" colspan="6">
                                     @foreach($agingOfDebit as $age)
@@ -268,9 +266,9 @@
                                     @endforeach
                                 </td>
                             </tr>
-                            <tr>
+                            <tr style="text-align: center">
                                 <td>A/R Provision</td>
-                                <td bgcolor="#e5e3e3" colspan="6">
+                                <td bgcolor="#e5e3e3" colspan="6" style="color: red">
                                     @foreach($agingOfDebit as $age)
                                         @if($age->attribute->slug == 'ar-provision')
                                             <span class="text-danger">
@@ -283,14 +281,14 @@
                             </tbody>
                        </table>
                        <hr>
-                       <table align="center" class="table table-bordered table-vertical-center text-center" id="inventory">
+                       <table style="" class="table table-responsive-sm table-responsive-md table-bordered table-vertical-center text-center" id="inventory">
                            <thead>
-                           <tr>
+                           <tr style="text-align: center">
                                <th colspan="8">
                                    Inventory
                                </th>
                            </tr>
-                           <tr bgcolor="#d3d3d3">
+                           <tr style="text-align: center" bgcolor="#d3d3d3">
                                <th rowspan="2">Description</th>
                                <th>Goods Ready For Sale</th>
                                <th>Finished Products</th>
@@ -299,7 +297,7 @@
                                <th>Raw Materials</th>
                                <th>Spare Parts & Others</th>
                            </tr>
-                           <tr bgcolor="#d3d3d3">
+                           <tr style="text-align: center" bgcolor="#d3d3d3">
                                <th>SR</th>
                                <th>SR</th>
                                <th>SR</th>
@@ -310,7 +308,7 @@
                            </thead>
                            <tbody>
                             @if(!is_null($inventory))
-                                <tr>
+                                <tr style="text-align: center">
                                     <td>Inventory Category</td>
                                     <td>{{moneyFormat($inventory->goods_ready_for_sale)}}</td>
                                     <td>{{moneyFormat($inventory->finished_products)}}</td>
@@ -319,7 +317,7 @@
                                     <td>{{moneyFormat($inventory->raw_materials)}}</td>
                                     <td>{{moneyFormat($inventory->spare_parts_and_others)}}</td>
                                 </tr>
-                                <tr>
+                                <tr style="text-align: center">
                                     <td>% of Balance</td>
                                     <td>{{percentage($inventory->goods_ready_for_sale , $inventory->total)}}%</td>
                                     <td>{{percentage($inventory->finished_products , $inventory->total)}}%</td>
@@ -328,20 +326,20 @@
                                     <td>{{percentage($inventory->raw_materials , $inventory->total)}}%</td>
                                     <td>{{percentage($inventory->spare_parts_and_others , $inventory->tota)}}%</td>
                                 </tr>
-                                <tr>
+                                <tr style="text-align: center">
                                     <td>Total</td>
                                     <td  bgcolor="#d3d3d3" colspan="6">{{moneyFormat($inventory->total)}}</td>
                                 </tr>
-                                <tr>
+                                <tr style="text-align: center">
                                     <td>Inventory Provision</td>
-                                    <td colspan="6"><span class="text-danger">({{moneyFormat($inventory->inventory_provision)}})</span></td>
+                                    <td colspan="6" style="color: red"><span class="text-danger">({{moneyFormat($inventory->inventory_provision)}})</span></td>
                                 </tr>
-                                <tr>
+                                <tr style="text-align: center">
                                     <td>Net Realizable Value</td>
                                     <td  bgcolor="#d3d3d3" colspan="6">{{moneyFormat($inventory->inventory_provision + $inventory->total)}}</td>
                                 </tr>
                             @else
-                           <tr>
+                           <tr style="text-align: center">
                                <td colspan="7">No available data</td>
                            </tr>
                             @endif
@@ -376,6 +374,11 @@
 @section('styles')
     <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
     <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
 
     </style>
 @endsection
@@ -397,15 +400,8 @@
 
             $("#exportToExcelBtn").on("click", function(e){
                 e.preventDefault();
-                // let table = document.getElementById("companyInfoTable");
-                // TableToExcel.convert(table, { // html code may contain multiple tables so here we are refering to 1st table tag
-                //     name: `summary-${(new Date()).toDateString()}.xlsx`, // fileName you could use any name
-                //     sheet: {
-                //         name: 'Sheet 1' // sheetName
-                //     }
-                // });
-                // window.open('data:application/vnd.ms-excel,' +  encodeURIComponent($('#tableToExport').html()));
                 toExcel();
+
             })
 
 
@@ -414,41 +410,47 @@
         });
 
 
+
         function toExcel() {
-            const mainTable = document.getElementById("tableToExport").outerHTML;
-            const companyInfoTable = document.getElementById("companyInfoTable").outerHTML + "<br /><br />";
-            const salesResultTable = document.getElementById("salesResultTable").outerHTML+ "<br /><br />";
-            const cumResultTable = document.getElementById("cumResultTable").outerHTML+ "<br /><br />";
-            const debitTable = document.getElementById("debitTable").outerHTML+ "<br /><br />";
-            const inventory = document.getElementById("inventory").outerHTML+ "<br /><br />";
+            const mainTable = document.getElementById("tableToExport");
+            const companyInfoTable = document.getElementById("companyInfoTable");
+            const salesResultTable = document.getElementById("salesResultTable");
+            const cumResultTable = document.getElementById("cumResultTable");
+            const debitTable = document.getElementById("debitTable");
+            const inventory = document.getElementById("inventory");
 
-            let tab_text = mainTable+companyInfoTable+salesResultTable+cumResultTable+debitTable+inventory;
-            let textRange;
-            let j = 0;
-            let sa;
+            companyInfoTable.style.border = '1px solid black';
+            salesResultTable.style.border = '1px solid black';
+            cumResultTable.style.border = '1px solid black';
+            debitTable.style.border = '1px solid black';
+            inventory.style.border = '1px solid black';
 
-            let ua = window.navigator.userAgent;
-            let msie = ua.indexOf("MSIE ");
-            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
-            {
-                let txt = document.getElementById('txtArea1').contentWindow;
 
-                txt.document.open("txt/html", "replace");
-                txt.document.write(tab_text);
-                txt.document.close();
-                txt.focus();
-                sa = txt.document.execCommand("SaveAs", true, "Say Thanks to Sumit.xls");
-            }
-            else {
-                let a = document.createElement('a');
-                let data_type = 'data:application/vnd.ms-excel';
-                a.href = data_type+','+encodeURIComponent(tab_text);
-                // sa = window.open('data:application/vnd.ms-excel;,' + encodeURIComponent(tab_text)+';filename=summary-report-'+(new Date()).toDateString());
-                a.download = `summary-report-{{getFormatSummaryReportDate(request('date'))}}`;
-                //triggering the function
-                a.click();
-            }
+            const mainTableOuter = mainTable.outerHTML + '<br />';
+            const companyInfoTableOuter = companyInfoTable.outerHTML + '<br />';
+            const salesResultTableOuter = salesResultTable.outerHTML + '<br />';
+            const cumResultTableOuter = cumResultTable.outerHTML + '<br />';
+            const debitTableOuter = debitTable.outerHTML + '<br />';
+            const inventoryOuter = inventory.outerHTML + '<br />';
+
+            let tab_text = mainTableOuter+companyInfoTableOuter+salesResultTableOuter+cumResultTableOuter+debitTableOuter+inventoryOuter;
+
+
+            let a = document.createElement('a');
+            let data_type = 'data:application/vnd.ms-excel';
+            a.href = data_type+','+encodeURIComponent(tab_text);
+            // sa = window.open('data:application/vnd.ms-excel;,' + encodeURIComponent(tab_text)+';filename=summary-report-'+(new Date()).toDateString());
+            a.download = `summary-report-{{getFormatSummaryReportDate(request('date'))}}`;
+            //triggering the function
+            a.click();
+
+            companyInfoTable.style.border = '';
+            salesResultTable.style.border = '';
+            cumResultTable.style.border = '';
+            debitTable.style.border = '';
+            inventory.style.border = '';
         }
+
     </script>
 
 

@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77990233-3551-4163-a3f2-c11466b16bba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Budget.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Budget.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Sale.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meshkati" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/base/_aside.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/base/_aside.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/aging/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/aging/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/auth/forgot-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/auth/forgot-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/auth/reset-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/auth/reset-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/budget/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/budget/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/inventory/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/inventory/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/sales/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/sales/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/helper.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,11 +51,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-549">
-              <caret line="159" column="96" selection-start-line="159" selection-start-column="96" selection-end-line="159" selection-end-column="96" />
+            <state relative-caret-position="736">
+              <caret line="79" column="144" selection-start-line="79" selection-start-column="144" selection-end-line="79" selection-end-column="144" />
+              <caret line="124" column="145" selection-start-line="124" selection-start-column="145" selection-end-line="124" selection-end-column="145" />
+              <folding>
+                <element signature="e#4187#4213#0#HTML" expanded="true" />
+                <element signature="e#4387#4413#0#HTML" expanded="true" />
+                <element signature="e#4954#4980#0#HTML" expanded="true" />
+                <element signature="e#5333#5351#0#HTML" expanded="true" />
+                <element signature="e#5578#5604#0#HTML" expanded="true" />
+                <element signature="e#6004#6022#0#HTML" expanded="true" />
+                <element signature="e#6275#6313#0#HTML" expanded="true" />
+                <element signature="e#7170#7196#0#HTML" expanded="true" />
+                <element signature="e#7371#7397#0#HTML" expanded="true" />
+                <element signature="e#7940#7966#0#HTML" expanded="true" />
+                <element signature="e#8033#8051#0#HTML" expanded="true" />
+                <element signature="e#8564#8590#0#HTML" expanded="true" />
+                <element signature="e#8681#8701#0#HTML" expanded="true" />
+                <element signature="e#9230#9267#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,8 +80,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="121" column="84" lean-forward="true" selection-start-line="121" selection-start-column="84" selection-end-line="121" selection-end-column="84" />
+            <state relative-caret-position="185">
+              <caret line="79" column="81" selection-start-line="79" selection-start-column="81" selection-end-line="79" selection-end-column="81" />
+              <folding>
+                <element signature="e#4249#4919#0#HTML" />
+                <element signature="e#4982#8065#0#HTML" />
+                <element signature="e#5161#5187#0#HTML" expanded="true" />
+                <element signature="e#5618#5644#0#HTML" expanded="true" />
+                <element signature="e#6259#6285#0#HTML" expanded="true" />
+                <element signature="e#7102#7128#0#HTML" expanded="true" />
+                <element signature="e#8160#11277#0#HTML" />
+                <element signature="e#8371#8397#0#HTML" expanded="true" />
+                <element signature="e#8829#8855#0#HTML" expanded="true" />
+                <element signature="e#9471#9497#0#HTML" expanded="true" />
+                <element signature="e#10314#10340#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,11 +111,53 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="418" column="34" selection-start-line="418" selection-start-column="34" selection-end-line="418" selection-end-column="34" />
+            <state relative-caret-position="301">
+              <caret line="61" column="91" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="91" />
+              <folding>
+                <element signature="e#3124#3761#0#HTML" />
+                <element signature="e#3813#7640#0#HTML" />
+                <element signature="e#3990#4016#0#HTML" expanded="true" />
+                <element signature="e#4252#4278#0#HTML" expanded="true" />
+                <element signature="e#4649#4675#0#HTML" expanded="true" />
+                <element signature="e#5159#5185#0#HTML" expanded="true" />
+                <element signature="e#5766#5792#0#HTML" expanded="true" />
+                <element signature="e#6573#6599#0#HTML" expanded="true" />
+                <element signature="e#7399#7425#0#HTML" expanded="true" />
+                <element signature="e#7692#11621#0#HTML" />
+                <element signature="e#7867#7893#0#HTML" expanded="true" />
+                <element signature="e#8135#8161#0#HTML" expanded="true" />
+                <element signature="e#8537#8563#0#HTML" expanded="true" />
+                <element signature="e#9049#9075#0#HTML" expanded="true" />
+                <element signature="e#9679#9705#0#HTML" expanded="true" />
+                <element signature="e#10519#10545#0#HTML" expanded="true" />
+                <element signature="e#11379#11405#0#HTML" expanded="true" />
+                <element signature="e#11673#16612#0#HTML" />
+                <element signature="e#11844#11870#0#HTML" expanded="true" />
+                <element signature="e#12099#12125#0#HTML" expanded="true" />
+                <element signature="e#12616#12642#0#HTML" expanded="true" />
+                <element signature="e#13057#13083#0#HTML" expanded="true" />
+                <element signature="e#13855#13881#0#HTML" expanded="true" />
+                <element signature="e#14385#14411#0#HTML" expanded="true" />
+                <element signature="e#14639#14665#0#HTML" expanded="true" />
+                <element signature="e#14772#14790#0#HTML" expanded="true" />
+                <element signature="e#15260#15286#0#HTML" expanded="true" />
+                <element signature="e#15854#15880#0#HTML" expanded="true" />
+                <element signature="e#16003#16021#0#HTML" expanded="true" />
+                <element signature="e#16664#20810#0#HTML" />
+                <element signature="e#16834#16860#0#HTML" expanded="true" />
+                <element signature="e#17056#17082#0#HTML" expanded="true" />
+                <element signature="e#17583#17609#0#HTML" expanded="true" />
+                <element signature="e#18081#18107#0#HTML" expanded="true" />
+                <element signature="e#18806#18832#0#HTML" expanded="true" />
+                <element signature="e#19644#19670#0#HTML" expanded="true" />
+                <element signature="e#19908#19934#0#HTML" expanded="true" />
+                <element signature="e#20053#20071#0#HTML" expanded="true" />
+                <element signature="e#20235#20261#0#HTML" expanded="true" />
+                <element signature="e#20577#20603#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,8 +165,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+            <state relative-caret-position="428">
+              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -124,14 +182,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>total-sales-target</find>
-      <find>chart_3</find>
-      <find>100%</find>
-      <find>$inve</find>
-      <find>net_sales_cum</find>
-      <find>first()()</find>
-      <find>default</find>
-      <find>hasPer</find>
       <find>haspermission</find>
       <find>secre</find>
       <find>key</find>
@@ -154,6 +204,14 @@
       <find>tableToExport</find>
       <find>table</find>
       <find>companyInfoTable</find>
+      <find>$salesYear</find>
+      <find>p</find>
+      <find>table-responsive</find>
+      <find>inventory pro</find>
+      <find>padding</find>
+      <find>1px solid black</find>
+      <find>style=&quot;border: 1px solid saddlebrown&quot;</find>
+      <find>style=&quot;border: 1px solid silver&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>budget</replace>
@@ -165,6 +223,9 @@
       <replace>SAR</replace>
       <replace>var</replace>
       <replace>first()</replace>
+      <replace>1px dashed black</replace>
+      <replace>silver</replace>
+      <replace>1px dotted black</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -209,14 +270,12 @@
         <option value="$PROJECT_DIR$/resources/views/pages/roles/index.blade.php" />
         <option value="$PROJECT_DIR$/utilities/helper.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/aging/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/budget/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/inventory/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/sales/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Sale.php" />
         <option value="$PROJECT_DIR$/app/Budget.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/auth/reset-password.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/auth/forgot-password.blade.php" />
@@ -224,6 +283,8 @@
         <option value="$PROJECT_DIR$/resources/views/layout/base/_aside.blade.php" />
         <option value="$PROJECT_DIR$/app/helper.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php" />
       </list>
     </option>
   </component>
@@ -338,10 +399,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -462,12 +523,12 @@
       <workItem from="1619922000430" duration="22818000" />
       <workItem from="1620172126416" duration="1743000" />
       <workItem from="1620215739358" duration="1610000" />
-      <workItem from="1624666226699" duration="12060000" />
+      <workItem from="1624666226699" duration="24695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223013000" />
+    <option name="totallyTimeSpent" value="235648000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -479,10 +540,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.21610738" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1716418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -497,7 +558,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32941177" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32998884" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.22352941" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.29411766" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -849,13 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-549">
-          <caret line="159" column="96" selection-start-line="159" selection-start-column="96" selection-end-line="159" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/sales/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-986">
@@ -894,13 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="121" column="84" lean-forward="true" selection-start-line="121" selection-start-column="84" selection-end-line="121" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/media/logos/logo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -917,13 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1865">
@@ -931,10 +971,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="418" column="34" selection-start-line="418" selection-start-column="34" selection-end-line="418" selection-end-column="34" />
+        <state relative-caret-position="301">
+          <caret line="61" column="91" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="91" />
+          <folding>
+            <element signature="e#3124#3761#0#HTML" />
+            <element signature="e#3813#7640#0#HTML" />
+            <element signature="e#3990#4016#0#HTML" expanded="true" />
+            <element signature="e#4252#4278#0#HTML" expanded="true" />
+            <element signature="e#4649#4675#0#HTML" expanded="true" />
+            <element signature="e#5159#5185#0#HTML" expanded="true" />
+            <element signature="e#5766#5792#0#HTML" expanded="true" />
+            <element signature="e#6573#6599#0#HTML" expanded="true" />
+            <element signature="e#7399#7425#0#HTML" expanded="true" />
+            <element signature="e#7692#11621#0#HTML" />
+            <element signature="e#7867#7893#0#HTML" expanded="true" />
+            <element signature="e#8135#8161#0#HTML" expanded="true" />
+            <element signature="e#8537#8563#0#HTML" expanded="true" />
+            <element signature="e#9049#9075#0#HTML" expanded="true" />
+            <element signature="e#9679#9705#0#HTML" expanded="true" />
+            <element signature="e#10519#10545#0#HTML" expanded="true" />
+            <element signature="e#11379#11405#0#HTML" expanded="true" />
+            <element signature="e#11673#16612#0#HTML" />
+            <element signature="e#11844#11870#0#HTML" expanded="true" />
+            <element signature="e#12099#12125#0#HTML" expanded="true" />
+            <element signature="e#12616#12642#0#HTML" expanded="true" />
+            <element signature="e#13057#13083#0#HTML" expanded="true" />
+            <element signature="e#13855#13881#0#HTML" expanded="true" />
+            <element signature="e#14385#14411#0#HTML" expanded="true" />
+            <element signature="e#14639#14665#0#HTML" expanded="true" />
+            <element signature="e#14772#14790#0#HTML" expanded="true" />
+            <element signature="e#15260#15286#0#HTML" expanded="true" />
+            <element signature="e#15854#15880#0#HTML" expanded="true" />
+            <element signature="e#16003#16021#0#HTML" expanded="true" />
+            <element signature="e#16664#20810#0#HTML" />
+            <element signature="e#16834#16860#0#HTML" expanded="true" />
+            <element signature="e#17056#17082#0#HTML" expanded="true" />
+            <element signature="e#17583#17609#0#HTML" expanded="true" />
+            <element signature="e#18081#18107#0#HTML" expanded="true" />
+            <element signature="e#18806#18832#0#HTML" expanded="true" />
+            <element signature="e#19644#19670#0#HTML" expanded="true" />
+            <element signature="e#19908#19934#0#HTML" expanded="true" />
+            <element signature="e#20053#20071#0#HTML" expanded="true" />
+            <element signature="e#20235#20261#0#HTML" expanded="true" />
+            <element signature="e#20577#20603#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="79" column="81" selection-start-line="79" selection-start-column="81" selection-end-line="79" selection-end-column="81" />
+          <folding>
+            <element signature="e#4249#4919#0#HTML" />
+            <element signature="e#4982#8065#0#HTML" />
+            <element signature="e#5161#5187#0#HTML" expanded="true" />
+            <element signature="e#5618#5644#0#HTML" expanded="true" />
+            <element signature="e#6259#6285#0#HTML" expanded="true" />
+            <element signature="e#7102#7128#0#HTML" expanded="true" />
+            <element signature="e#8160#11277#0#HTML" />
+            <element signature="e#8371#8397#0#HTML" expanded="true" />
+            <element signature="e#8829#8855#0#HTML" expanded="true" />
+            <element signature="e#9471#9497#0#HTML" expanded="true" />
+            <element signature="e#10314#10340#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="79" column="144" selection-start-line="79" selection-start-column="144" selection-end-line="79" selection-end-column="144" />
+          <caret line="124" column="145" selection-start-line="124" selection-start-column="145" selection-end-line="124" selection-end-column="145" />
+          <folding>
+            <element signature="e#4187#4213#0#HTML" expanded="true" />
+            <element signature="e#4387#4413#0#HTML" expanded="true" />
+            <element signature="e#4954#4980#0#HTML" expanded="true" />
+            <element signature="e#5333#5351#0#HTML" expanded="true" />
+            <element signature="e#5578#5604#0#HTML" expanded="true" />
+            <element signature="e#6004#6022#0#HTML" expanded="true" />
+            <element signature="e#6275#6313#0#HTML" expanded="true" />
+            <element signature="e#7170#7196#0#HTML" expanded="true" />
+            <element signature="e#7371#7397#0#HTML" expanded="true" />
+            <element signature="e#7940#7966#0#HTML" expanded="true" />
+            <element signature="e#8033#8051#0#HTML" expanded="true" />
+            <element signature="e#8564#8590#0#HTML" expanded="true" />
+            <element signature="e#8681#8701#0#HTML" expanded="true" />
+            <element signature="e#9230#9267#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

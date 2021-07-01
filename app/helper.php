@@ -19,7 +19,7 @@ if(!function_exists('getFormatSummaryReportDate')){
             $date = explode('-', request('date'));
             return \Carbon\Carbon::parse($date[1].'-'.$date[0])->format('F Y');
         }
-        return \Carbon\Carbon::now()>format('F Y');
+        return \Carbon\Carbon::now()->format('F Y');
     }
 }
 

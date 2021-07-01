@@ -70,28 +70,31 @@
                 </div>
             </form>
 
-
+            @php
+            $firstDate = request('first_date');
+            $lastDate = request('last_date');
+            @endphp
 
             <div class="row p-5">
-                <table id="tableToExport" >
-                    <table class="table table-borderless" id="companyInfoTable">
+                <table id="tableToExport" class="">
+                    <table  class="table table-responsive-sm table-responsive-md " id="companyInfoTable">
                         <thead>
                         <tr>
-                            <th colspan="2">Company Name:</th>
-                            <th colspan="2">Meshkati Trading Co.</th>
+                            <th colspan="4">Company Name:</th>
+                            <th colspan="4">Meshkati Trading Co.</th>
                         </tr>
                         <tr>
-                            <th class="" colspan="2">Monthly Sales & Gross Margin</th>
-                            <th class="" colspan="2">({{$salesYear}} - {{$budgetYear}})  {{request('report_type') == 2 ? 'Actual With Budget' : ' Actual With Actual'}}</th>
+                            <th colspan="4">Monthly Sales & Gross Margin</th>
+                            <th colspan="4">({{$firstDate??$salesYear}} - {{$lastDate??$budgetYear}})  {{request('report_type') == 2 ? 'Actual With Budget' : ' Actual With Actual'}}</th>
                         </tr>
 
                         </thead>
                     </table>
-                </table>
+
                 @if(count($actualSales))
-                    <table class="col-md-6  table-responsive table table-bordered table-vertical-center text-center" id="firstYearTable">
+                    <table  class="col-md-6  table-responsive-sm table-responsive-md table-responsive table table-vertical-center text-center" id="firstYearTable">
                         <thead>
-                        <tr bgcolor="#d3d3d3" class="text-center">
+                        <tr style="text-align: center" bgcolor="#d3d3d3" class="text-center">
                             <th>{{$salesYear}}</th>
                             <th colspan="2">Sales</th>
                             <th colspan="2">G.Profit</th>
@@ -99,7 +102,7 @@
                             <th colspan="1">N.Profit</th>
                             <th colspan="1">% N.P</th>
                         </tr>
-                        <tr bgcolor="#d3d3d3" class="text-center">
+                        <tr style="text-align: center" bgcolor="#d3d3d3" class="text-center">
                             <th></th>
                             <th>Monthly</th>
                             <th>Cumm</th>
@@ -113,7 +116,7 @@
                         <tbody>
                         <tbody>
                         @foreach($actualSales as $key => $sale)
-                            <tr>
+                            <tr style="text-align: center">
                                 <td>{{$sale->monthName}}</td>
                                 <td>{{moneyFormat($sale->net_sales)}}</td>
                                 <td>{{moneyFormat($sale->net_sales_cum)}}</td>
@@ -125,7 +128,7 @@
                                 <td>{{$sale->rounded_net_profit_cum_percentage}}%</td>
                             </tr>
                         @endforeach
-                        <tr bgcolor="#d3d3d3">
+                        <tr style="text-align: center" bgcolor="#d3d3d3">
                             <td><strong>Total</strong></td>
                             <td><strong>{{moneyFormat($actualSales->sum('net_sales'))}}</strong></td>
                             <td></td>
@@ -142,9 +145,9 @@
                     </table>
                 @endif
                 @if(count($budgetSales))
-                    <table class="col-md-6 table table-responsive table-bordered table-vertical-center text-center" id="secondYearTable">
+                    <table  class="col-md-6 table table-responsive-sm table-responsive-md table-responsive  table-vertical-center text-center" id="secondYearTable">
                         <thead>
-                        <tr bgcolor="#d3d3d3" class="text-center">
+                        <tr style="text-align: center" bgcolor="#d3d3d3" class="text-center">
                             <th>{{$budgetYear}}</th>
                             <th colspan="2">Sales</th>
                             <th colspan="2">G.Profit</th>
@@ -152,7 +155,7 @@
                             <th colspan="1">N.Profit</th>
                             <th colspan="1">% N.P</th>
                         </tr>
-                        <tr bgcolor="#d3d3d3" class="text-center">
+                        <tr style="text-align: center" bgcolor="#d3d3d3" class="text-center">
                             <th></th>
                             <th>Monthly</th>
                             <th>Cumm</th>
@@ -166,7 +169,7 @@
                         <tbody>
                         <tbody>
                         @foreach($budgetSales as $key => $sale)
-                            <tr>
+                            <tr style="text-align: center">
                                 <td>{{$sale->monthName}}</td>
                                 <td>{{moneyFormat($sale->net_sales)}}</td>
                                 <td>{{moneyFormat($sale->net_sales_cum)}}</td>
@@ -178,7 +181,7 @@
                                 <td>{{$sale->rounded_net_profit_cum_percentage}}%</td>
                             </tr>
                         @endforeach
-                        <tr bgcolor="#d3d3d3">
+                        <tr style="text-align: center" bgcolor="#d3d3d3">
                             <td><strong>Total</strong></td>
                             <td><strong>{{moneyFormat($budgetSales->sum('net_sales'))}}</strong></td>
                             <td></td>
@@ -194,6 +197,7 @@
                         </tbody>
                     </table>
                 @endif
+                </table>
             </div>
 
             <div class="row justify-content-center py-8 px-8 py-md-10 px-md-0">
@@ -247,37 +251,31 @@
             });
 
             function toExcel() {
-                const mainTable = document.getElementById("tableToExport").outerHTML;
-                const companyInfoTable = document.getElementById("companyInfoTable").outerHTML;
-                const firstYearTable = document.getElementById("firstYearTable").outerHTML;
-                const secondYearTable = document.getElementById("secondYearTable").outerHTML;
+                const mainTable = document.getElementById("tableToExport");
+                const companyInfoTable = document.getElementById("companyInfoTable");
+                const firstYearTable = document.getElementById("firstYearTable");
+                const secondYearTable = document.getElementById("secondYearTable");
 
-                let tab_text = mainTable+companyInfoTable+firstYearTable+'<br>'+secondYearTable;
-                let textRange;
-                let j = 0;
-                let sa;
+                companyInfoTable.style.border = '1px solid black';
+                firstYearTable.style.border = '1px solid black';
+                secondYearTable.style.border = '1px solid black';
 
-                let ua = window.navigator.userAgent;
-                let msie = ua.indexOf("MSIE ");
-                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
-                {
-                    let txt = document.getElementById('txtArea1').contentWindow;
+                const mainTableOuterHtml = mainTable.outerHTML;
+                const companyInfoTableOuterHtml = companyInfoTable.outerHTML + '<br />';
+                const firstYearTableOuterHtml = firstYearTable.outerHTML + '<br />';
+                const secondYearTableOuterHtml = secondYearTable.outerHTML + '<br />';
+                let tab_text = mainTableOuterHtml+companyInfoTableOuterHtml+firstYearTableOuterHtml+'<br>'+secondYearTableOuterHtml;
 
-                    txt.document.open("txt/html", "replace");
-                    txt.document.write(tab_text);
-                    txt.document.close();
-                    txt.focus();
-                    sa = txt.document.execCommand("SaveAs", true, "Say Thanks to Sumit.xls");
-                }
-                else {
-                    let a = document.createElement('a');
-                    let data_type = 'data:application/vnd.ms-excel';
-                    a.href = data_type+','+encodeURIComponent(tab_text);
-                    // sa = window.open('data:application/vnd.ms-excel;,' + encodeURIComponent(tab_text)+';filename=summary-report-'+(new Date()).toDateString());
-                    a.download = `sales-and-gp-${(new Date()).toDateString()}`;
-                    //triggering the function
-                    a.click();
-                }
+                let a = document.createElement('a');
+                let data_type = 'data:application/vnd.ms-excel';
+                a.href = data_type+','+encodeURIComponent(tab_text);
+                // sa = window.open('data:application/vnd.ms-excel;,' + encodeURIComponent(tab_text)+';filename=summary-report-'+(new Date()).toDateString());
+                a.download = `sales-and-gp-{{$firstDate??$salesYear}}-{{$lastDate??$budgetYear}}-{{request('report_type') == 2 ? 'Actual With Budget' : 'Actual With Actual'}}`;
+                //triggering the function
+                a.click();
+                companyInfoTable.style.border = '';
+                firstYearTable.style.border = '';
+                secondYearTable.style.border = '';
             }
         });
 

@@ -3,6 +3,10 @@
 
 {{-- Content --}}
 @section('content')
+    @php
+       $firstDate = request('first_date');
+        $lastDate = request('second_date');
+    @endphp
     <div class="card card-custom overflow-hidden">
         <div class="card-body p-0">
             <!-- begin: Invoice-->
@@ -63,26 +67,26 @@
             <!-- begin: Invoice body-->
             <div class="row p-5" id="">
 
-                <table id="tableToExport" >
-                    <table class="table table-borderless" id="companyInfoTable">
+                <table id="tableToExport">
+                    <table class="table table-vertical-center text-center" id="companyInfoTable" >
                         <thead>
-                        <tr>
-                            <th colspan="2">Company Name:</th>
-                            <th colspan="2">Meshkati Trading Co.</th>
+                        <tr class="">
+                            <th colspan="3">Company Name:</th>
+                            <th colspan="3">Meshkati Trading Co.</th>
                         </tr>
                         <tr>
-                            <th class="" colspan="4">Monthly Sales & Sales Return</th>
+                            <th colspan="6">Monthly Sales & Sales Return</th>
                         </tr>
 
                         </thead>
                     </table>
                     @if(sizeof($firstYearSales))
-                        <table class="mr- col-md-6 table table-bordered table-vertical-center text-center" id="firstYearTable">
+                        <table class="col-md-6 table  table-vertical-center text-center table-responsive-md table-responsive-sm table-responsive" id="firstYearTable">
                             <thead>
-                            <tr bgcolor="#d3d3d3">
-                                <th colspan="6" class="text-center">{{$firstYear}}</th>
+                            <tr style="text-align: center" bgcolor="#d3d3d3">
+                                <th colspan="6" class="text-center">{{$firstDate??$firstYear}}</th>
                             </tr>
-                            <tr bgcolor="#d3d3d3">
+                            <tr style="text-align: center" bgcolor="#d3d3d3">
                                 <th>{{$firstYear}}</th>
                                 <th>Cash Sales</th>
                                 <th>Credit Sales</th>
@@ -93,24 +97,24 @@
                             </thead>
                             <tbody>
                             @foreach($firstYearSales as $sale)
-                                <tr>
+                                <tr style="text-align: center">
                                     <td>{{$sale->monthName}}</td>
                                     <td>{{moneyFormat($sale->cash)}}</td>
                                     <td>{{moneyFormat($sale->credit)}}</td>
                                     <td>{{moneyFormat($sale->total)}}</td>
-                                    <td class="text-danger">{{moneyFormat($sale->returns)}}</td>
+                                    <td class="text-danger" style="color: red">{{moneyFormat($sale->returns)}}</td>
                                     <td>{{moneyFormat($sale->net_sales)}}</td>
                                 </tr>
                             @endforeach
-                            <tr bgcolor="#d3d3d3" class="text">
+                            <tr style="text-align: center" bgcolor="#d3d3d3" class="text">
                                 <th>TOTAL</th>
                                 <th>{{moneyFormat($firstYearSales->sum('cash'))}}</th>
                                 <th>{{moneyFormat($firstYearSales->sum('credit'))}}</th>
                                 <th>{{moneyFormat($firstYearSales->sum('total'))}}</th>
-                                <th class="text-danger">({{moneyFormat($firstYearSales->sum('returns'))}})</th>
+                                <th class="text-danger" style="color: red">({{moneyFormat($firstYearSales->sum('returns'))}})</th>
                                 <th>{{moneyFormat($firstYearSales->sum('net_sales'))}}</th>
                             </tr>
-                            <tr bgcolor="#d3d3d3" class="text-danger">
+                            <tr bgcolor="#d3d3d3" class="text-danger" style="color: red; text-align: center">
                                 <th>%</th>
                                 <th>{{percentage($firstYearSales->sum('cash'), $firstYearSales->sum('total'))}}%</th>
                                 <th>{{percentage($firstYearSales->sum('credit'), $firstYearSales->sum('total'))}}%</th>
@@ -122,12 +126,12 @@
                         </table>
                     @endif
                     @if(sizeof($secondYearSales))
-                        <table  class="col-md-6 table table-bordered table-vertical-center text-center" id="secondYearTable">
+                        <table  class="col-md-6 table  table-vertical-center text-center table-responsive-md table-responsive-sm table-responsive"  id="secondYearTable">
                             <thead>
-                            <tr bgcolor="#d3d3d3">
-                                <th colspan="6" class="text-center">{{$secondYear}}</th>
+                            <tr style="text-align: center" bgcolor="#d3d3d3">
+                                <th colspan="6" class="text-center">{{$lastDate??$secondYear}}</th>
                             </tr>
-                            <tr bgcolor="#d3d3d3">
+                            <tr style="text-align: center" bgcolor="#d3d3d3">
                                 <th>{{$secondYear}}</th>
                                 <th>Cash Sales</th>
                                 <th>Credit Sales</th>
@@ -138,24 +142,24 @@
                             </thead>
                             <tbody>
                             @foreach($secondYearSales as $sale)
-                                <tr>
+                                <tr style="text-align: center">
                                     <td>{{$sale->monthName}}</td>
                                     <td>{{moneyFormat($sale->cash)}}</td>
                                     <td>{{moneyFormat($sale->credit)}}</td>
                                     <td>{{moneyFormat($sale->total)}}</td>
-                                    <td class="text-danger">{{moneyFormat($sale->returns)}}</td>
+                                    <td style="color: red" class="text-danger">{{moneyFormat($sale->returns)}}</td>
                                     <td>{{moneyFormat($sale->net_sales)}}</td>
                                 </tr>
                             @endforeach
-                            <tr bgcolor="#d3d3d3" class="text">
+                            <tr style="text-align: center" bgcolor="#d3d3d3" class="text">
                                 <th>TOTAL</th>
                                 <th>{{moneyFormat($secondYearSales->sum('cash'))}}</th>
                                 <th>{{moneyFormat($secondYearSales->sum('credit'))}}</th>
                                 <th>{{moneyFormat($secondYearSales->sum('total'))}}</th>
-                                <th class="text-danger">({{moneyFormat($secondYearSales->sum('returns'))}})</th>
+                                <th class="text-danger" style="color: black">({{moneyFormat($secondYearSales->sum('returns'))}})</th>
                                 <th>{{moneyFormat($secondYearSales->sum('net_sales'))}}</th>
                             </tr>
-                            <tr bgcolor="#d3d3d3" class="text-danger">
+                            <tr style="color: red; text-align: center;" bgcolor="#d3d3d3" class="text-danger">
                                 <th>%</th>
                                 <th>{{percentage($secondYearSales->sum('cash'), $secondYearSales->sum('total'))}}%</th>
                                 <th>{{percentage($secondYearSales->sum('credit'), $secondYearSales->sum('total'))}}%</th>
@@ -226,37 +230,33 @@
             });
 
             function toExcel() {
-                const mainTable = document.getElementById("tableToExport").outerHTML;
-                const companyInfoTable = document.getElementById("companyInfoTable").outerHTML;
-                const firstYearTable = document.getElementById("firstYearTable").outerHTML;
-                const secondYearTable = document.getElementById("secondYearTable").outerHTML;
 
-                let tab_text = mainTable+companyInfoTable+firstYearTable+'<br>'+secondYearTable;
-                let textRange;
-                let j = 0;
-                let sa;
 
-                let ua = window.navigator.userAgent;
-                let msie = ua.indexOf("MSIE ");
-                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
-                {
-                    let txt = document.getElementById('txtArea1').contentWindow;
+                const mainTable = document.getElementById("tableToExport");
+                const companyInfoTable = document.getElementById("companyInfoTable");
+                const firstYearTable = document.getElementById("firstYearTable");
+                const secondYearTable = document.getElementById("secondYearTable");
 
-                    txt.document.open("txt/html", "replace");
-                    txt.document.write(tab_text);
-                    txt.document.close();
-                    txt.focus();
-                    sa = txt.document.execCommand("SaveAs", true, "Say Thanks to Sumit.xls");
-                }
-                else {
-                    let a = document.createElement('a');
-                    let data_type = 'data:application/vnd.ms-excel';
-                    a.href = data_type+','+encodeURIComponent(tab_text);
-                    // sa = window.open('data:application/vnd.ms-excel;,' + encodeURIComponent(tab_text)+';filename=summary-report-'+(new Date()).toDateString());
-                    a.download = `sales-analysis-and-comparative-${(new Date()).toDateString()}`;
-                    //triggering the function
-                    a.click();
-                }
+                companyInfoTable.style.border = '1px solid black';
+                firstYearTable.style.border = '1px solid black';
+                secondYearTable.style.border = '1px solid black';
+
+                const mainTableOuterHtml = mainTable.outerHTML;
+                const companyInfoTableOuterHtml = companyInfoTable.outerHTML + '<br />';
+                const firstYearTableOuterHtml = firstYearTable.outerHTML + '<br />';
+                const secondYearTableOuterHtml = secondYearTable.outerHTML + '<br />';
+                let tab_text = mainTableOuterHtml+companyInfoTableOuterHtml+firstYearTableOuterHtml+'<br>'+secondYearTableOuterHtml;
+
+                let a = document.createElement('a');
+                let data_type = 'data:application/vnd.ms-excel';
+                a.href = data_type+','+encodeURIComponent(tab_text);
+                // sa = window.open('data:application/vnd.ms-excel;,' + encodeURIComponent(tab_text)+';filename=summary-report-'+(new Date()).toDateString());
+                a.download = `sales-analysis-and-comparative-{{$firstDate??$firstYear}}-with-{{$lastDate??$secondYear}}`;
+                //triggering the function
+                a.click();
+                companyInfoTable.style.border = '';
+                firstYearTable.style.border = '';
+                secondYearTable.style.border = '';
             }
 
 
