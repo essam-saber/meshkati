@@ -1,7 +1,6 @@
 /node_modules
 /public/css
 /public/js
-/public/media
 /public/plugins
 /storage/*.key
 /vendor

@@ -70,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="265" column="20" selection-start-line="265" selection-start-column="20" selection-end-line="265" selection-end-column="20" />
+            <state relative-caret-position="475">
+              <caret line="270" column="36" selection-start-line="270" selection-start-column="36" selection-end-line="270" selection-end-column="36" />
               <folding>
                 <element signature="e#4249#4919#0#HTML" />
                 <element signature="e#4982#8065#0#HTML" />
@@ -89,6 +89,25 @@
                 <element signature="e#10314#10340#0#HTML" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+              <folding>
+                <element signature="e#33#71#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2523" />
           </provider>
         </entry>
       </file>
@@ -203,8 +222,8 @@
       <find>inventory pro</find>
       <find>padding</find>
       <find>style=&quot;border: 1px solid saddlebrown&quot;</find>
-      <find>style=&quot;border: 1px solid silver&quot;</find>
       <find>1px solid black</find>
+      <find>style=&quot;border: 1px solid silver&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>budget</replace>
@@ -227,7 +246,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/modules.php" />
         <option value="$PROJECT_DIR$/vendor/spatie/laravel-permission/src/Models/Role.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateRoleRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/UpdateRoleRequest.php" />
@@ -278,6 +296,7 @@
         <option value="$PROJECT_DIR$/resources/views/pages/reports/summary.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-analysis-comparative.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
       </list>
     </option>
   </component>
@@ -516,12 +535,12 @@
       <workItem from="1619922000430" duration="22818000" />
       <workItem from="1620172126416" duration="1743000" />
       <workItem from="1620215739358" duration="1610000" />
-      <workItem from="1624666226699" duration="25539000" />
+      <workItem from="1624666226699" duration="26322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236492000" />
+    <option name="totallyTimeSpent" value="237275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -534,9 +553,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1716418" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1716418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -551,7 +569,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32941177" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32998884" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.29411766" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.29319954" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -615,13 +633,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/UpdateEmployeeRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/spatie/laravel-permission/src/Traits/HasRoles.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
@@ -863,11 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-717" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
@@ -1045,8 +1051,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/reports/sales-gp-budget.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="265" column="20" selection-start-line="265" selection-start-column="20" selection-end-line="265" selection-end-column="20" />
+        <state relative-caret-position="475">
+          <caret line="270" column="36" selection-start-line="270" selection-start-column="36" selection-end-line="270" selection-end-column="36" />
           <folding>
             <element signature="e#4249#4919#0#HTML" />
             <element signature="e#4982#8065#0#HTML" />
@@ -1061,6 +1067,21 @@
             <element signature="e#10314#10340#0#HTML" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding>
+            <element signature="e#33#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2523" />
       </provider>
     </entry>
   </component>
